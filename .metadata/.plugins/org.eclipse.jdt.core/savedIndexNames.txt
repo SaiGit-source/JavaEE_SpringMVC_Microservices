@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\saito\source\repos\Telusko_Java_Enterprise_Spring\JavaEE_SpringMVC_Microservices\.metadata\.plugins\org.eclipse.jdt.core
+1123509009.index
+2947360199.index
+1865797976.index
