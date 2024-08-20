@@ -1,0 +1,26 @@
+i have a Java program Launch.java -> Javac (Java compiler) -> converts into launch.class -> JVM executes the Java program on JRE.
+
+JRE is Java runtime environment and it runs on RAM. JRE is allocated area on RAM
+
+JVM uses stack and heap area
+1. Stack area: local variable, methods - all will happen in Stack area
+2. Heap area: instance variable, static variable, object - all will happen in Heap area
+
+difference between instance (declaration happened inside class) and local variable (declaration happened inside method) 
+instance variable and object variable are the same
+
+Once activity of method is over, memory of local variable (along with stack frame) on stack is gone. after main() method, control will leave main() method and go back to JVM. in Java, garbage collector scans Heap area constantly, it deletes referenceless variables. Instance variable deallocated by Garbage collector when object becomes referenceless
+
+Instance variables are directly declared inside a class
+Instance variable memory is allocated on Heap area with object/instance
+Instance variable memory is deallocated by Garbage collector when object becomes referenceless
+The scope of Instance variable can be used anywhere within the class
+When you assign values to Instance variables, they are automatically assigned to them on Heap area
+Default value for instance variable will be initialized so we wont get any errors for even unassigned variables
+
+Local variables are directly declared inside method / block / loop within a class
+Memory is allocated in Stack area
+Memory is deallocated when Stack frame of that method / block is deleted after completing its last.
+Scope of local variables are limited to method/block/loop where it is declared
+There is no default value for local variables. so int n with no values will throw an error
+
