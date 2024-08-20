@@ -1,0 +1,7 @@
+Wora - Write Once Read Anywhere
+
+Java is platform-independent unlike C.
+
+Java sourcecode -> Java compiler (Javac) -> Bytecode -> JVM -> Machine code MLL
+
+This Bytecode is non-readable and it can be read only by JVM. So it can be transported to any platform (Windows, Mac, Linux). But JVM is platform-dependent so it converts Bytecode into MLL for the respective platform. Bytecode usually has extension .class.
