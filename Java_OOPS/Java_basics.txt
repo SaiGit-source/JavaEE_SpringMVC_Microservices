@@ -4,7 +4,7 @@ JRE is Java runtime environment and it runs on RAM. JRE is allocated area on RAM
 
 JVM uses stack and heap area
 1. Stack area: local variable, methods - all will happen in Stack area
-2. Heap area: instance variable, static variable, object - all will happen in Heap area
+2. Heap area: instance variable, static variable, object (inside object we have instance variables created) - all will happen in Heap area
 
 difference between instance (declaration happened inside class) and local variable (declaration happened inside method) 
 instance variable and object variable are the same
