@@ -1,0 +1,47 @@
+
+class StudentInfo { // class name must start with capital letter
+	int studentID;
+	int id;
+	String student_name;
+	String studentName;
+}
+
+
+Basic Naming Convention
+class Name must be starting with capital letter or uppercase and if there are multiple words in class name without any space in between, every word first letter must be capital
+example: class StudentDetail {}
+
+Method name will be lowercase or small letters however if there are multiple words in method name then first word will be small letter and second word first letter will be capital letter so on for every new word in method name without space, camel case
+
+variable name must be in small letter/lowercase however if there are multiple names in variable then we can go with camel case or snake case
+
+class employee {}
+no_of_wings;
+
+
+Method overloading:
+
+class AdditionCalc 
+{
+	int add(int n1, int n2)
+	{
+		return	n1+n2;
+	}
+	int add(int n1, int n2, int n3){
+		return n1+n2+n3;
+	}
+}
+
+one add method is overloaded with multiple tasks - this is only an illusion. method is not overloaded in reality. same method names with different parameters is method overloading. Method overloading refers to multiple methods within same class with same name but different parameters. Java compiler will resolve this at compile time based on number of parameters, datatype of parameters and order of parameters. Hence this is also called as false-polymorphism / compile-time polymorphism. One is to many that's polymorphism. Method is always name and parameters
+
+when the method is called, Java will look for matching name and parameters otherwise will look for another method that can accommodate example add(int, double) can hold two ints.
+
+can you overload main() method in Java?
+same method name and different parameters
+
+we can overload main() method in Java but JVM will invoke main() method only with (String[] args) not other parameters
+
+
+
+
+

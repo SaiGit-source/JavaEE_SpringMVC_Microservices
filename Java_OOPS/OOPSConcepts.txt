@@ -1,0 +1,14 @@
+Encapsulation:
+{private, setter, getter, constructor, this, }
+
+class Book {
+private int pageNum;  // because this is private this variable cannot be accessed by book.pageNum from main method 
+
+void setBook(int pg){
+if (pg>=0){
+pageNum = pg; // now this variable is protected with private clause
+}
+}
+
+Shadowing problem
+
