@@ -10,5 +10,78 @@ pageNum = pg; // now this variable is protected with private clause
 }
 }
 
-Shadowing problem
+To achieve Encapsulation in Java we need 3 things: {private keyword, setters, getters}
 
+it is recommended to give setID for the setter method
+class Learner
+{
+	private int id;
+	private String name;
+
+	void setId(int id)
+	{
+		id=id;
+	}
+
+	void setName(String name)
+	{
+		name=name; // here compiler is confused whether this is instance var or local var, this is the shadowing problem, we can change name to some other String example nam
+	}
+
+	int getId()
+	{
+		return id;
+	}
+
+}
+
+
+class Learner
+{
+	private int id;
+	private String name;
+
+	void setId(int id)
+	{
+		this.id=id;
+	}
+
+	void setName(String name)
+	{
+		this.name=name; // we solve the shadowing problem with this.
+	}
+
+	int getId()
+	{
+		return id;
+	}
+
+}
+
+we can use constructor to avoid setters(). inside constructor we can do this.id = id; etc. lets say we have two objects of the same class Learner() -> learner and learner1. now inside setter() method we have this.id = id for learner.setId(1) this is pointing to learner object address (in the instance area of Heap). for learner1.setId(1) this is pointing to learner1 object address (in Heap). Two different objects are created in Heap area of memory.
+
+even if we dont include a constructor, Java compiler will include a default constructor in the background
+
+we can create multiple constructors in a class. multiple constructors with same name but different parameters called as "Constructor overloading"
+
+Encapsulation: process of giving controlled access to data members(instance variable) of a class by making them private and using setters and getters
+
+Process of binding data members and methods as a unit
+
+Process of providing security to most important component of object(data member) by making it private and giving controlled access through setters and getters
+
+Encapsulation can be achieved using private keyword, setters and getter
+
+Constructor: It's a specialized setter whose name is same as that of class name and doesn't have any explicit return type;
+
+Constructor is invoked during object creation
+
+If there is a call to constructor and Java developer has not included any constructor in a class than Java compiler would include default zero parameterized constructor
+
+If there is a constructor coded in a class then Java compiler would not include any default constructor in the background (non-visible)
+
+We can have multiple constructors in a class, creating multiple constructors with same name and different parameters is referred as Constructor overloading
+
+this keyword will have address of currently running instance/object i.e currently whichever object is getting executed it will refer to that object instance
+
+it will be used inside setter and constructor to be differentiated local and instance variable and to assign data to instance variable from local. (Solution for shadowing problem)
