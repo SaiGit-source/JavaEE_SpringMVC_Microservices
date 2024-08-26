@@ -1,0 +1,59 @@
+Aug 26
+Constructor - part II
+
+constructor will have class name and will not have a return type
+
+both instance and object creation are the same
+
+during object creation, there is a call to Constructor	
+
+Only if Constructor is not defined Java will use the default constructor
+
+behind the scene always super() method is there in the constructor - you see it or not
+
+Demo()
+{
+	super() // it is there to invoke parent class constructor - to call parent class constructor
+}
+ there is a this() method then super() wont be there.
+both super and this methods must be the first line only
+
+this() method it will invoke control of same class
+
+this() method call - constructor chaining
+
+Wrapper classes:
+Java is not 100% Object-oriented because of primitive datatypes like int, which are not objects
+can you force Java to be 100% pure object-oriented?
+for 'int' -> corresponding class is 'Integer'
+for 'short' -> corresponding class is 'Short'
+for 'char' -> corresponding class is 'Character' // int, char etc are primitive classes
+
+the answer is yes
+
+int a = 10;
+
+Integer i = new Integer(10); // this option is deprecated thats why we see a line
+
+better option is Integer i = Integer.valueOf(10); // from Java 6
+
+
+Boxing, Unboxing, Autoboxing, Autounboxing
+Boxing: Primitive to Object is Boxing int n1=10; Integer n2 = n1; // converting primitive datatype into its corresponding wrapper class
+
+Autoboxing: Automatically converting primitive into object by Java compiler
+
+Unboxing: object into primitive  Integer n1 = 14; int n5 = n3.intValue() // unboxing
+
+Auto-unboxing: Automatically converting object into primitive by Java compiler
+
+to go with 100% object-oriented , i need to use objects (wrapper classes)
+
+
+
+
+
+
+
+
+
