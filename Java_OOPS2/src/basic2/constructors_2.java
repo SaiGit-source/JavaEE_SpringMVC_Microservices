@@ -75,7 +75,7 @@ public class constructors_2 {
 		System.out.println(person1.getName());
 		Person person2 = new Person("Mno"); // here we are instantiating with "Mno"
 		System.out.println(person2.getName());
-		person2.setName("Xyz"); // here we are replacing with "Xyz"
+		person2.setName("Xyz"); // here we are replacing with "Xyz" also know as 'setter injection'
 		System.out.println(person2.getName()); // and it did get replaced
 		
 		

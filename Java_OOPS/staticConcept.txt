@@ -1,0 +1,40 @@
+Static keyword:
+
+A class can have so many following things:
+
+JVM - Java Virtual Machine
+
+abc.java -> Java compiler -> abc.class file -> JVM -> 01001 JVM converts into 0 and 1s
+
+JVM doesn't check for Java syntax, only Java compiler takes care of Java syntax
+
+When JVM gets .class file, it executes so it has 3 components : Class loader subsystem, Runtime data areas (keeps track of data like instance variable), Execution engine (executes conversion of 0s and 1s)(Interpreter, JustInTime compiler, Garbage collector)
+
+Class loader subsystem - Loading (Bootstrap loader, execution class loader, application loader), Linking (verification, preparation, resolution), Initialization
+
+when does memory for Static variable allocated?
+during class loading time. Which area? Heap area
+
+during class loading, Static block gets executed
+
+all Java code is loaded into JVM ecosystem -> pre-written code by Java then code we have written will be loaded -> verification of whether the Bytecode is correct position etc -> 
+
+Runtime data areas -> Method area (all code is kept), Stack (Method call), Heap (Object/instance), PC Register, Native method stalk
+
+Execution engine (executes conversion of 0s and 1s)(Interpreter-> converts Java code line by line into 0 and 1, JustInTime compiler->it is there to support Interpreter, at a time, convert 0s and 1s, Garbage collector-> to remove referenceless objects)
+
+Is Java a compiled or interpreted language?
+Both compiled and interpreted language. Initially, Javac compiles code later Interpreter for 0s and 1s
+
+Why we call as static, non-instance or class variables? even though they are in Heap area
+because they are object-independent. During class loading, Static block memory is allocated then Main() method is executed. Object variable int x,y,z come to life only when object is created in Heap. but Static memory is allocated in Heap during class loading time independent of object creation - object-independent. 
+
+
+Is there anything that gets executed before main() method?
+JVM will start execution of class where main() method is present. yes static block if it is present within the main() method class
+
+Static block is not associated with Object creation (it is associated only with initial class loading) but Java initialization block is. Construction is called whenever object is created and Java init block is called before Constructor(). 
+
+
+ 
+
