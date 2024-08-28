@@ -1,0 +1,20 @@
+class xyz
+{
+	static
+	{
+		System.out.print("Static1");
+	}
+	static {
+		System.out.print("Static2");
+	}
+}
+
+if main() method is empty then JVM doesn't know class xyz exists. but if you create an object in main(), JVM knows class xyz is present then loads class only once so static variables are initialized only once no matter how many object we create in the main() method
+
+static variable can be invoked with both Demo.disp() or d.disp() object reference
+
+Loan application: Loan amount, rate of interest, Loan duration
+
+Static variables memory will be allocated on Heap area during class loading itself (Class loader subsystem -> Linking -> Preparation) JVM would also initialize default value to static variable at this stage
+
+Inheritance
