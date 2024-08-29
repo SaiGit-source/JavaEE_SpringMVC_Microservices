@@ -1,0 +1,61 @@
+Inheritance:
+
+class ABC(){
+	void disp(){
+	}
+}
+
+class Alien() {
+
+}
+
+main() {
+	Alien = new Alien();
+	a.disp();
+}
+
+here Alien and ABC classes are unrelated.  but if i say class Alien extends ABC then it is fine. Inheritance promotes reusability.
+
+Inheritance is one class acquiring properties and behaviors of another class, which promotes code reusability
+
+before "extends" whatever class is there, it is called as "child class", "derived class" or "sub class". after "extends" it is called as "parent class", "base class", "super class"
+
+Inheritance also promotes ISA relationship. whenever there is parent-child relationship there ISA relationship. for example, Alien ISA Alien
+
+one parent class can have multiple child classes
+
+Inheritance refers to one class acquiring non-private properties and behaviors (methods) of another class. It also refers to writing code as hierarchy of classes rather just one class
+
+Inheritance can be achieved using "extends" keyword
+
+Inheritance promotes is-A relationship
+
+A class which acquires properties and behaviors(methods) of another class is referred as child class or derived class or sub class
+
+private members of a class will not get inherited. This is to ensure "Encapsulation" is preserved
+
+to access private members outside class, we got to use getters and setters
+
+Multilevel Inheritance is allowed. that is one child class can have its parent1 and parent1 can have parent0. 
+
+A class that's not inheriting any class is also extending a default class called as "Object class". thats why see more methods in the child class like getClass()
+
+multiple inheritance is not allowed. a parent can have multiple children but a child cannot have multiple parents. 
+
+A class cannot extend multiple classes. multi-level inheritance is allowed but not multiple inheritance
+
+Similarly cyclic inheritance is not allowed: 
+
+Constructor doesn't participate in Inheritance, however Parent Constructor does get executed when we create object of Child class because of Super() class present in Child class constructor
+
+Inherited methods - child inherited parents as it is
+Overriden methods - child inherited methods from parents but modified them
+Specialized methods - new methods only in child not in parent
+
+upcasting - creating parent ref obj for child obj also called as runtime polymorphism
+downcasting - changing parent type to match child object
+
+
+
+
+
