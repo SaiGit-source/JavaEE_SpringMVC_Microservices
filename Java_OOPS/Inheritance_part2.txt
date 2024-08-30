@@ -1,0 +1,49 @@
+Inheritance part II
+
+Access modifiers or specifiers
+		within a class			 within a package outside class		outside package 
+											different is-A relationship		outside package
+																no relationship
+public 		Yes i can access within a class		Yes				Yes					Yes -- it can be access anywhere in the project
+
+protected	Yes					Yes				Yes					No
+
+<default>	Yes					Yes				No					No
+
+private		Yes					No				No					No
+
+all these modifiers can be used along with class, variable, methods, 
+
+recommended to name package with com.package
+void disp(){ // considered as default when no access specifier is not there
+
+	}	
+
+private to public accessibility is increasing
+public to private accessibility is decreasing
+
+for example, private is accessible only within the class
+
+=> Constructor -> in case of Inheritance:
+this() will call current class constructor, will call constructor of the same class
+
+an object of Child class is equivalent of obj of parent class as well
+
+
+
+public Beta1(int x, int y){ lets say Beta1 is child of Alpha1
+	this.x x; // super() method will be there by default, the control goes into parent zero constructor
+}
+
+
+how to invoke param constructor of parent class?
+
+public Beta2(int x){ 
+	super(4); // this will invoke param constructor of parent (Alpha)
+	this.x = x;
+}
+
+this() keyword holds currently running objects
+
+super() refers to parent class members. always goes to parent
+
