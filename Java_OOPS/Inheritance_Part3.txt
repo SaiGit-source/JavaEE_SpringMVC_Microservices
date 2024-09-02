@@ -1,0 +1,56 @@
+Inheritance with method scope
+
+we cannot decrease the visibility of overridden methods
+
+class parent{
+	public void method(){
+	}
+
+}
+
+
+class child {
+	void method(){ // here we are decreasing visibility from public to default -- NOT ALLOWED
+	}
+}
+
+we can increase the visibility of inherited methods void to protected is OK
+
+
+void method() in parent cannot be overridden to int method() child --> the return type cannot be changed. primitive return types cannot be changed
+
+
+we have to follow rules and regulations while overriding methods in child class
+
+
+However, on return type, if there is parent-child relationship it is allowed -> co-variant return type public parentObj method() and public childObj method() is OK. no ISA relationship between void and int
+
+private methods from parent will never get inherited so if we have private void method() parent -> protected void method() child is a specialized method bcos we cannot inherit private methods. protected is increasing visibility
+
+parent: void method(parm 1) -> child: void method() : here it is specialized again because of method overloading, that method from parent class with zero param is still present in the child class
+
+Method overloading: same method names, & diff params, occurs in same class, 
+
+Constructor doesn't get inherited so only Overriding is possible
+
+Method hiding: static methods can be inherited but cannot be overridden in child class. actually it is a specialized method in Child class
+
+ final keyword: final class will not participate in inheritance, if you dont want a class to be inherited then make it 'final'
+final keyword can be applied to methods as well. final void method(), final methods do participate in inheritance. final methods cannot be overridden in child class
+
+final and static methods get inherited but not overridden in child
+
+parent: final int=10; it is like constant and cannot be re-assigned or changed anywhere. it is like the value of pi
+
+final can be applied to static var also, also to static method, final cannot be applied to constructor() though
+
+
+
+
+
+
+
+
+
+
+
