@@ -1,0 +1,55 @@
+Polymorphism or Runtime Polymorphism
+
+parent type reference for child type object is upcasting. why upcasting?
+
+AeroPlane cp = new CargoPlane();
+cp.takingOff();
+cp.landing();
+
+with parent reference, i still can access overridden and inheritance methods of child class. creating reference is not equivalent of creating new objects. for example, no AeroPlane object is created in the Heap area
+
+both parent reference (AeroPlane cp) and child reference can access both overridden and inherited methods of child class. why parent-type reference?
+
+What's the purpose of upcasting?
+to achieve runtime polymorphism, we need parent-type reference.
+child1 c1 = new child1();
+child2 c2 = new child2();
+
+parent ref;
+
+ref=c1; // ref refers to memory of c1 object in Heap
+ref.takingOff(); // here child1's methods are only getting executed bcos it has address of child1 object
+
+
+ref=c2; // ref refers to c2 object address
+ref.takingOff(); // method of child2 object
+
+parent ref is the same but i am getting different behaviors that's polymorphism
+
+Polymorphism means code should be flexible and reducing code size. without creating parent-type reference for child objects, we cannot achieve polymorphism
+
+say i am not overring methods in child classes, then i will get only parent inherited methods/behaviors. so if we are not overriding, then there is no runtime polymorphism. method-overriding is the base of runtime polymorphism
+
+ref.takingOff() gives different outputs based on the child reference so instead of writing multiple same lines, we can write only once
+
+we can write only once in a method
+class NewClass{
+public void permit(Parent ref){
+ref.takingOff();
+}
+} 
+
+now we can pass in different child objects c1 or c2 for different behaviors. one is to many true or runtime polymorphism.
+
+two things come in pic for polymorphism: parent ref and overridden methods. also method-overriding is runtime-polymorphism
+
+whenever you want to access specialized methods to access child class using parent-type reference then we need to downcasting. what's the purpose?
+
+
+pseudo-polymorphism:
+in method-overloading, we have same method names but not same methods handling diff parameters, they are all actually diff methods performing handling diff params
+
+
+
+
+
