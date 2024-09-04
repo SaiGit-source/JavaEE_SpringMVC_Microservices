@@ -1,0 +1,84 @@
+Abstract keyword and Interface
+
+if child classes are overriding methods then why we need implementation for parent methods
+
+whenever we have methods without implementation, we declare those methods with abstract keywords
+
+public abstract void fly(); // only signature not implementation/body. we need semicolon to end ;
+
+even if one method() is 'abstract', then class must be 'abstract' 'abstract class AeroPlane'
+
+in abstract class, we can have both abstract and concrete methods()
+
+we cannot create instance or object of an abstract class
+
+
+abstract class Parent{
+	abstract void method();
+}
+
+abstract class Child extends Parent {
+	
+} // Child class that extends abstract Parent class must be declared abstract as well because it has inherited all abstract methods from Parent so it must be declared abstract class as well
+
+however we can create reference of abstract class to achieve polymorphism
+
+child classes can have different implementations but same method signature
+
+can abstract class have Constructor()?
+by default, super() will be there even if there is no explicit Constructor(). Yes abstract class can/will have a Constructor. The Constructor in Parent abstract class is executed through super() present in child classes
+
+abstract class Parent{
+	public Parent(){
+	
+	}
+	abstract void method();
+}
+
+if abstract class can have a Constructor(), can we create object of abstract class?
+No
+
+can you make Constructor abstract? 
+whether we write body or not, Constructor will have super() method by default. Hence we cannot make Constructor abstract, illegal
+
+we can declare class, method as abstract. we cannot make a variable, constructor as abstract
+
+can we make abstract class as final?
+abstract means no implementation and someone should extend and give implementation. if you make a class final, that class cannot be inherited. if we cannot inherit the class then we cannot write implementations. so abstract cannot be final. if abstract class cannot be inherited and if nobody gives body/implementation then it is not possible. final and abstract keywords for the same class is illegal and both are opposite. 
+
+
+*************************** important ***********
+final methods do get inherited but cannot be overridden. yes final methods participate in inheritance. 
+final variables are like constants
+final class cannot be inherited at all
+***********************************************
+
+abstract methods must be overridden in child classes, however, final methods cannot be overridden so cannot be achieved - illegal
+
+why we write concrete methods in abstract classes?
+yes if we want to inherit methods in child classes. if you dont want child to override, then use final keyword to concrete methods
+
+if you want to achieve 100% abstraction, then you need 'Interface'. 100% abstraction means all methods are abstract
+
+using Interface, we can extend any (n) number of Interfaces. Abstract class only can extend one Parent class. Multi-inheritance is not possible with abstract class. But Interface make this possible. Multiple inheritances are possible with Interfaces.
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
