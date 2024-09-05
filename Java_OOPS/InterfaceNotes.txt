@@ -1,0 +1,65 @@
+Interface:
+
+through Interface, 100% abstraction can be achieved
+
+through Interface, we give requirements -> someone else will give implementation
+
+JDBC -> Java Database Connectivity -> in the industry they only use Spring JPA -> Hibernate -> behind the scene it is still JDBC
+
+because there are some difficulties with JDBC
+
+different DB companies have developed implementations for the DB connectivity with Java and Java only provided the requirements (Interface), because those methods are developed by different DB companies we import them as JAR files and not from JDK. JDK was developed by Java team as opposed to DB methods
+
+interface Calc
+{
+	void add(int a, int b);	// by default public abstract void add(int a, int b);
+	void sub(int a, int b);	
+
+} // no abstract and public keywords for methods. by default, methods in Interface are public abstract
+
+class to interface connection is 'implements'
+
+class MyCalc implements Calc{
+	public void add(int a, int b){
+		} // here public is mandatory because we cannot reduce the visibility of overridden methods. it is compulsory for implementing classes to implement all methods of Interface.
+	
+} // abstract methods got inherited into this class. even if one method is abstract, make Class also abstract. 
+
+
+we should have the same method signature but implementations are different
+
+Interface helps to achieve Standardization. Interface is the way to specify requirements
+
+we can achieve Polymorphism through Interface also. One Interface can have any number of Implementing classes
+
+we cannot create object of Interface, we can create reference of Interface to achieve Polymorphism
+
+A class can implement multiple Interfaces. i can extend as well along with Interfaces. However, only one class can be extended.
+
+An Interface can extend another Interface. Interface cannot implement another Interface
+
+Interface Abc {
+	float pi = 3.14f; // by default, all variables inside Interface is public, final and static so we cannot edit the variable
+}
+
+
+Interface cannot have a Constructor
+
+************************** Story of Interface until Java 7 *****************************
+
+in 2014, they said Interface can have a body
+
+default void disp(){ // default keyword is required for concrete methods within an Interface
+	System.out.println("Hello");
+}
+
+these methods will get inherited in the implementing class, if there is a need, we will override
+
+default of method in interface then they are referring to the method with body/implementation
+
+default of class is non-protected and non-public
+
+static methods dont participate in Inheritance. also Static methods must not be abstract
+
+
+
