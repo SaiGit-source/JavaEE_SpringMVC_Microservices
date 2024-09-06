@@ -1,0 +1,55 @@
+Has-A association -> Loose coupling -> why Spring?
+
+
+class Alpha {
+
+	void disp(){
+	}
+}
+
+class Beta {
+	void show(){
+	}
+}
+
+if i want to call a method of a different class, then i need to create an object then alpha.disp(); (this is composition). the other option is extends (inheritance)
+
+
+Alpha alpha = new Alpha(); //this is 'tight-coupling' if Alpha is not there, then we will have a error here. 
+
+Inheritance and Composition will make two classes tightly-coupled.. if one is error then other is also error
+
+we want to achieve loose-coupling. so we will not use the Alpha name in the new class.
+
+
+we create a separate class and pass the services objects. so the separate class is called as Target class. the service objects are passed into target class.
+
+Target class is a class where services of other classes are being used.
+
+dependent class is a class that provides services to target class. 
+
+i am injecting the dependent class into target class through constructor -> constructor injection
+
+through setter if you do it, it is called as setter injection. when we do both constructor injection and setter injection, Setter will win and it will be present
+
+Which is better? Constructor vs Setter dependency?
+Constructor dep -> we are injecting during target object creation that means dependency objects must be ready before target object creation.
+Setter dep -> we can create the target object without even dependent class objects. so it is better
+
+overall it is called as dependency-injection
+
+thats how we achieve loose-coupling
+
+creating the object of target class, creating objects of dependent classes, or dependency injection -> all taken care by Spring framework
+
+Spring will make the application loosely-coupled. if object is created by Spring, we call it as 'Bean'
+
+Why Spring framework?
+object creation and dependency injection are all done by Spring framework. thats why we need Spring framework
+
+
+
+
+
+
+
