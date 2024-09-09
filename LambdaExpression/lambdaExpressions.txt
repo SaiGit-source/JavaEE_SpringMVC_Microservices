@@ -1,0 +1,61 @@
+LambdaExpressions
+
+Java will create class files for each class. if we have 2 classes in the file, then it will create 2 class files in the out
+
+why we need a class inside a class?
+if you want to restrict a particular class, then we do this
+
+class A {
+	int a;
+	static class B {
+		int b;
+	}
+}
+
+here class B use is restricted to class A
+
+A obj = new A();
+A.B obj1 = new A.B(); // when B class is not static we cannot use this way
+A.B obj2 =  obj.new B(); // when class B is non-static
+
+A obj = new A() {
+	public void show(){
+		System.out.prinln("in new show"); // Anonymous inner class
+		}
+	};
+	obj.show(); // Anonymous inner class overrides the show() method
+
+new A() // also called as Anonymous object no reference
+
+new A.method();
+
+
+abstract class P{
+	abstract void show();
+	}
+
+P obj = new P(){ // we normally cannot create objects from abstract class but possible with Anonymous inner class. if we want to use this method() only once
+	public void show(){
+		System.out.println("Show");
+		}
+	}
+thats why we need lambda expressions
+
+P obj = () -> System.out.println("Show"); // lambda is replacement for Anonymous inner class
+obj.show();
+
+same thing, we can do anonymous inner class with Interface as well
+
+interface -> normal interface, SAM - Functional interface (interface with only one method), Marker interface(interface with no methods)
+
+Lambda function only works if we have only one abstract method in an abstract class
+
+
+
+
+
+
+
+
+
+	
