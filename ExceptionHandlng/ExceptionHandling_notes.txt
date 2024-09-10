@@ -1,0 +1,23 @@
+Exception Handling:
+
+what's exception?
+
+Demo.java -> JavaC -> ByteCode file -> JVM -> Binary format -> Processor -> result
+--------------------------------------++++++++++++++++++++++++++++++++++++++++++++
+Compilation phase or Compile time	|Execution time / Runtime when Java code is getting executed
+					|errors during program runtime, 
+Error in the Compile time is due 	|runtime error vs runtime exceptions
+to rules of programming language, 	|say you divide 100/0 it throws a runtime error. if application terminates abnormally, then runtime error
+syntax errors. using reserve word as var| runtime exception occurs during runtime when application terminates abruptly.
+
+How do we handle runtime exception?
+we need to identify the risky statement. for example, division is risky, so we enclose with try{} block. Only catch{} block will handle the exceptions. Only runtime errors within try{} block will be handled. catch{} block code will be executed only if there is an exception. catch{} block will ensure normal termination of the application, no abrupt termination. lines after catch{} block will continue to execute smoothly
+
+if exception occurs at a line then lines after that line (within try block) will not get executed instead we will start executing catch block
+
+exception within method or stack are the same
+
+stack frame of main() method will create the exception object. basically where-ever exception occurred that method will create the exception object not necessarily main() method. the technical term is that particular method stack will create exception object
+
+the exception will go to JVM, if exception handling is not provided, it will go to default exception handler. default exception handler will result in abnormal termination of application
+
