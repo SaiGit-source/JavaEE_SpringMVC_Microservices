@@ -1,0 +1,66 @@
+Arrays
+
+say to store marks for 50 students, we need 50 variables like int a, int b, int c etc
+
+we cannot remember all variable names as well
+
+thats why we need Array, Array is index-based data structure to store large volume of homogeneous data. Homogeneous is same type of data
+
+Array is treated as an object
+
+Array object memory is created in the Heap area ar = new int[5]; // so 5 contiguous memory locations
+
+ar is an array of integer type
+
+int[] marks = new int[10];
+
+so here we dont need to remember 10 variable names to retrieve data
+
+marks.length -> not a method, it is a variable that's why . and no () -> object.variable
+
+say we have an Array to store class# and NoOfStudents -> if No of students is the same then 2D regular array
+
+int[][] marks = new int[3][4]; -> there are 3 classes and each class has 4 students
+
+
+lets say we have 3 classes -> 0, 1, 2 and students -> 4, 2, 3  this is 2D jagged array / irregular array
+int[][] ar = new int[3][];
+ar[0] = new int[4];
+
+
+it's a 3D regular array because we have same num of students, same no of classes and same num of schools
+schools	class	students   int[][][]ar = new int[2][3][4]; ar.length, ar[i].length, ar[i][j].length
+0	0	4
+	1	4
+	2	4
+
+1	0	4
+	1	4
+	2	4
+
+if jagged array, ar[0] = new int[2][]; // leave last [] empty because we dont know no of students
+		ar[0][0] = new int[4];
+
+In C language, we have the buffer overrun problem.
+
+do we have buffer overrun problem in Java?
+int[] ar = new int[3];
+3 memory locations are given to you. in Java, arrays are guarded by boundaries
+if you try to surpass the boundary, say ar[3] = 3; it will lead to runtime exception Array out of bounds. Hence Buffer overrun problem is not there.
+Java is a robust programming language and arrays are guarded by boundaries
+
+Arrays store only homogeneous data. so if integer only integer, it is a drawback. Collections overcomes this drawback
+
+Array size will not grow or shrink in Java
+
+double[] ar = new double[4]; only positive integer must be there for array size. negative integer will result in exception
+
+int[] ar = new int[4]; // each int is 4 bytes, 4 is the size, so 4*4=16bytes contiguous memory is needed and that's a limitation as well
+
+RAM is semiconductor -> stores data as 0, 1s. byte a = 45;, int a = 45; -> integer will take 4 bytes of RAM -> 1 byte = 8 bits -> 8*4 = 32 bits
+
+
+
+
+
+
