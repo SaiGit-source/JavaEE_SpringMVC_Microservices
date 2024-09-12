@@ -1,0 +1,47 @@
+Arrays second part:
+
+
+int ar[] new int[]{2,4,6,4};
+int a[] = {4,3,4,5};
+
+int ar2[][] = {{2,3,4,5},{4,3,5}}; // 2D jagged array
+
+Array is treated as an object -> int a[] = new int[4];
+Array object gets object methods because there is no parent to this class
+
+directly on Array we cannot perform operations on data inside array, thats why we have Arrays class like Arrays.sort(ar);
+
+these are static methods thats why accessible from object
+
+Loops:
+for-each loop
+enhanced for loop
+advanced for loop
+
+int ar[] = {4,5,6,4};
+
+for (int a: ar)
+{
+	S.O.P(a);
+}
+
+for (int row[]:ar){
+	for (int elem:row){
+	}
+} // enhanced for loop for 2D array
+
+Enhanced loop there is no control like where to start, how to start etc like i<ar.length-2  while no control in enhanced loop
+
+we have the utility class Arrays to perform operations on Array, all methods in the utility class are static methods like Arrays.sort(ar);
+
+
+Note: toString() method is there by default (inherited from parent), if you print the object, it prints the address by default. if we override the toString() method, even without calling the method, we are able to print the result
+
+Strings:
+
+
+
+
+	
+
+
