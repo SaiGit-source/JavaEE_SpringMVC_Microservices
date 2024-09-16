@@ -1,0 +1,82 @@
+Strings:
+
+whatever you write within double quotes, it is considered as String. single quotes is character
+
+convention to write a class is to start with uppercase char
+
+String -> String is a class and it starts-with uppercase
+
+Strings are divided into two parts: immutable string and mutable string
+
+immutable string -> values we dont change often like name, father's name
+mutable string -> values we change often like email, password etc
+
+
+to create immutable string -> pre-defined class is String
+to create mutable string -> pre-defined classes are StringBuffer and StringBuilder
+
+Immutable string -> ways -> String str = "abc";, String str = new String("abc"); we are adding in Constructor
+
+String is an object -> memory is allocated in Heap area -> within Heap area, we have one more area -> called as String constant pool (SCP) -> if we allocated String in regular Heap area then Duplicates are allowed. However, if we allocated memory for String object in SCP then duplicates are not allowed.
+
+String str = "abc"; will go into SCP -> this is direct literal
+String str = new String("abc"); will go into normal area of Heap -> this is new keyword
+
+How to compare Strings?
+1. == (compares references of string objects not data), 2. equals() (compares the data), 3. compareTo(), 4. equalsIgnoreCase() (compares the data ignoring case-sensitivity)
+
+
+String str1 = "abc";
+String str2 = "abc"; -> memory allocated in SCP no duplicates are allowed since both strings are "abc", str1 and str2 are referring to the same memory address in SCP since no dulpicates
+
+String str1 = new String("abc"); -> two string objects are created since duplicates are allowed in the normal Heap area. so different memory addresses are allocated. so both String objects are referring to two different memory addresses in the normal Heap area
+String str2 = new String("abc");
+
+Java is case-sensitive
+String str1 = "abc";
+String str2 = "Abc"; // both are different. before allocating memory in SCP, SCP will be scanned to check for duplicates. both contents are different
+str1.equalsIgnoreCase(str2); // the output will be true if we ignore case-sensitivity
+
+Concatenation: Adding two strings is considered as Concatenation
+two ways: + operator or concate()
+String str = "Abc"; 
+System.out.println(str); // it should print only ref Address but it prints the data why? because they have overriden the toString() method internally
+str.concat("Alien");
+
+String str = "Abc";  -> immutable behaving like 'final' constant but no. it is not like 'final'. here we are able to concat() str.concat("Alien");
+str1 = str.concat("Alien"); // i am able to change the reference. immutability means a new string obj will be created in the memory and old "Abc" will not be replaced only in the memory.
+"Abc Alien" is a new String object thats the meaning of immutability. same old string object is not getting extended
+
+whenever an object becomes referenceless then Garbage collector will remove them
+
+str1 = str.concat("Alien"); // whenever ref variable is used (str), there will be a copy in Heap area even though no 'new' keyword. ref variable str1 is referring to Heap area only
+str2 = "Abc Alien";
+str1==str2 is false because str1 is referring to Heap area and str2 is referring to memory on SCP
+
+what's the difference between concat() and + methods?
+with + operator i can add any number of strings, but concat() method can add only two Strings
+
+String s1 = "Abc" + "alien" + "xyz"; // now it is in the SCP not heap because seen as String literal
+String s3 = s1+s2; // this will get created in the Heap area because of reference variables not + operator
+
+To a string, anything i concatenate it will become string
+String s = "Abc" + 12+10; // first string is there, now it will all become string
+
+Java in-built methods: length(), toUpperCase(), toLowerCase(), toCharArray();, contains();, startsWith(), indexOf(), lastIndexOf()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
