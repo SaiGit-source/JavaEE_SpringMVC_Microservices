@@ -10,10 +10,14 @@ public class MutableStrings {
 		
 		StringBuffer sb1 = new StringBuffer("Abc");
 		sb1.append(" Alien"); // same string is getting extended no new String object is being created unlike mutable
-		System.out.println(sb1.capacity());
+		System.out.println(sb1.capacity()); // still 19 because we haven't exceeded the capacity
+		sb1.trimToSize();
+		System.out.println(sb1.capacity()); // 16 is default capacity, only 9 are occupied by characters so capacity trimmed to 9
 		
 		StringBuilder sb2 = new StringBuilder("Abc");
-		System.out.println(sb1.capacity()); // when capacity goes beyond 19 lets say, then new capacity = old capacity * 2 + 2
+		System.out.println(sb2.capacity()); // when capacity goes beyond 19 lets say, then new capacity = old capacity * 2 + 2
+		
+		
 		StringBuilder sb4 = new StringBuilder("Abc");
 		// whenever we have the 'new' keyword memory is allocated in the Heap area
 		// so duplicate objects with the same content is allowed

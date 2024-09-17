@@ -44,7 +44,7 @@ System.out.println(sb1.capacity()); // initial capacity for both StringBuilder a
 // i can surpass the capacity 16 and still add characters in StringBuffer old_capacity * 2 + 2 = 34 (16*2+2)
 sb1.trimToSize() // it will remove all empty spaces eg the capacity will be 3 not 16
 
-StringBuilder sb2 = new StringBuilder("Abc"); // capacity 3+16 = 19
+StringBuilder sb2 = new StringBuilder("Abc"); // capacity 3+16 = 19 default capacity is 16
 StringBuilder sb3 = new StringBuilder("Abc");
 sb1.equals(sb2); // returns false even though in immutable strings it compares only refs
 // equals() method in immutable string returns String, but for mutable strings returns Object. in mutable classes, it behaves like an inherited method not overridden method
