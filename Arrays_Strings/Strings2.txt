@@ -1,0 +1,77 @@
+Strings part II
+
+Immutable is not equivalent to 'final' keyword
+
+final String s1 = "Abc";
+s1 = s1 + " Java"; // because of final keyword we are not able to change. whenever there is a ref variable (s1), it is always in the Heap area
+
+String s2 = s1 + " Java"; // this is ok
+
+//compareTo() method compares strings lexicographically returns -1, 1, or 0
+
+
+s1 = "ABC"; // values for A=65, B=66, C=67
+s2 = "ABC";
+
+s1.compareTo(s2); // it will return 0, it compares character by character -> 65=65, 66=66, 67=67 so no difference
+
+equals() method returns Boolean
+
+s1 = "CBA" 
+s2 = "ABC" 
+s1.compareTo(s2); // 67-65 = +2 C=67-A=65 = 2, if there is difference in first character it will not go further
+positive number means s1 > s2 negative means s2 > s1
+
+// trim() method removes leading and trailing spaces, stripTrailing(), stripLeading()
+
+
+**************************************
+Mutable string: changeable with respect to memory only.
+StringBuilder()
+StringBuffer()
+
+StringBuffer s1 = new StringBuffer("Abc"); // new keyword always in Heap area
+StringBuffer s2 = new StringBuffer("Abc"); // referring to different string objects
+s1.append(" Alien");
+s1.append(true); // Boolean or double value anything
+so no reassigning the reference
+
+same string value is getting changed so mutable
+
+StringBuffer sb1 = new StringBuffer();
+System.out.println(sb1.capacity()); // initial capacity for both StringBuilder and StringBuffer is 16 no difference
+
+// i can surpass the capacity 16 and still add characters in StringBuffer old_capacity * 2 + 2 = 34 (16*2+2)
+sb1.trimToSize() // it will remove all empty spaces eg the capacity will be 3 not 16
+
+StringBuilder sb2 = new StringBuilder("Abc"); // capacity 3+16 = 19
+StringBuilder sb3 = new StringBuilder("Abc");
+sb1.equals(sb2); // returns false even though in immutable strings it compares only refs
+// equals() method in immutable string returns String, but for mutable strings returns Object. in mutable classes, it behaves like an inherited method not overridden method
+default behavior of inherited method is comparing references only not contents. it is comparing contents in immutable classes because it is an overridden method
+
+Difference between StringBuffer and StringBuilder?
+Multithreading is not allowed in StringBuffer but allowed in StringBuilder
+All methods are synchronized in StringBuffer while they are non-synchronized in StringBuilder.
+At a time only one thread can run in StringBuffer, At a time, many threads can run in parallel in StringBuilder
+
+String in general in Java is immutable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
