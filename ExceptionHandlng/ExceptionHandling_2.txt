@@ -1,0 +1,62 @@
+Exception Handling part II
+
+try catch is used for exception handling
+try {
+
+}
+catch (Exception e) {
+	System.out.println("Some problem");
+} // this is a generic catch() block. we want to know what problem exactly so we add more specific catch blocks
+catch (ArithmeticException e){
+
+	System.out.println("Please enter non-zero number);
+
+// only ArithmeticException will go into this catch block, other catch() block wont get executed
+}
+catch (NegativeArraySizeException e){
+
+}
+catch (ArrayIndexOutOfBoundsException e){
+
+}
+in Java, can single try block have multiple catch() blocks? the answer is Yes
+
+recommendation is, in a multi-catch() block hierarchy, write one generic catch (Exception e) block at the end for something that could be potentially missed to cover
+
+catch (Exception e) -> parent class
+
+we can write one try catch for say division then another try catch for array operations with array exceptions
+
+lets say in main() we call an obj's method1() -> that calls another obj's method2() and exception occurred here, JVM will go through all the method's stack then throws the exception to user. for each method(), a stack frame is created. 
+
+Exceptions -> what to do -> handle (try catch), duck (throws Exception) and re-throw (throw within catch block)
+
+if you already handle the exception, it is not getting propagated to other stack frames
+
+We can duck by using method() 'throws ArithmeticException'-> i will not handle with catch statement, whoever is using will handle it. recommended is handling exceptions with catch block, bare minimum is duck the exception. handling is try catch. in main method() when i am writing try catch and handle. however, i have told the developer (moral responsibility) that if you call this method() there is a possibility of exception, up to you to handle exception. Ducking is method exception not body exception
+
+say you handle the exception in body of the method1() will the matter go back to main() method / caller of method1()? no matter wont go to main() method or propageted in hierarchy.
+
+Why we may have to use both try-catch in body of method1() and throws Exception()?
+
+Re-throwing: we have already handled the exception in method1() but still we want to throw the exception to the caller (main() method) as well. sometimes, situation will arise even after handling in the body of method1(), still we may have to propagate to caller. when we handle in method1(), it doesn't propagate. 
+inside catch (Exception e) block of method1() -> we write throw e; throw means we are telling thread to leave the stack immediately. usually lines after catch block will be executed not if the throw is there. if i want to execute lines after throw statement (doesn't matter exeception is there or not, exception handled or not), i add a special block finally{  } in Java. finally block can be used without catch block but try is must.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
