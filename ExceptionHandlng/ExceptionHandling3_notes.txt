@@ -1,0 +1,44 @@
+ExceptionHandling: part 3
+
+try{
+	return 10;}
+finally {
+	return 44;}
+
+will return and finally? who takes precedence?
+finally will still get executed even after return
+return statement of finally will get executed
+
+
+Stack overflow error?
+in RAM, stacks are being created when a method is executed when we have non-terminating method recursions. Stack will overflow in RAM
+
+Runtime error: faulty coding by developer, end user is not responsible. it is the developer that wrote incorrect logic
+Runtime exception: usually caused by end user due to inputs, exceptions can be handled
+
+where-ever thread goes, that will get executed. if thread is sleeping, nothing is happening in the application. Thread.sleep(5000); // such exceptions whose possibility is checked by Compiler is called "Checked exception". Checked exception doesn't occur during Runtime. Unchecked exception occurs during runtime.
+
+All ables like Runnable are Interfaces in Java except Throwable
+
+For example, ArithmeticException comes under the family of Unchecked exception. Child class can declare (throws) unchecked exception but cannot declare (throws) Checked exception like IOException. If a Parent is not throwing any Checked exception, Child class cannot throw Checked exceptions while overriding Parent method(). but still Child class can throw Unchecked exceptions. can a Child throw partially Checked exception? No. one Child class throws an Unchecked exception and other throws Checked so partially Checked exception
+
+Only try block is not possible, try-catch or try-finally, no only Catch block, no only Finally block
+
+multiple try - single catch not possible
+
+single try - multiple Catch with same exceptions are not allowed - compile time error
+
+try - catch (excep1 | excep2) allowed
+
+try - catch -finally allowed, Catch-finally not allowed, try-finally-catch not allowed
+
+
+
+
+
+
+
+
+
+
+
