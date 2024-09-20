@@ -1,0 +1,24 @@
+Exception Handling part 4
+
+What's the need of exception? we could manage with if-else?
+if i make some errors, if-else will provide only one chance. 
+
+one more use case of EH is, we can precisely control how many exceptions we could throw. say you can throw 3 times.
+with try-catch we can precisely control the program flow
+
+say if i enter wrong username and Password, it will not come under any of the standard category. so we create a Custom exception
+
+Custom Exception: create a class
+class InvalidCustomerException extends RuntimeException // this is checked exception so we could do Exception
+{
+	
+}
+
+InvalidCustomerException ice = new InvalidCustomerException();
+throw ice;
+or
+throw new InvalidCustomerException();
+
+
+
+
