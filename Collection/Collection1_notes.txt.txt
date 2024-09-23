@@ -1,0 +1,39 @@
+Collection:
+
+whenever we want to store data in program, we got to create variables
+
+array -> collection of data in one place but there are some disadvantages. Array is not friendly for many operations
+
+collection hierarchy -> if we have bulk data and we want to process. Array disadvantages are fixed here
+
+3 major interfaces: List, Queue, Set -> parent of all these interfaces is 'Collection' -> parent of Collection is 'Iterable'
+
+1. ArrayList, 2. LinkedList,  3. ArrayDeque, 4. PriorityQueue, 5. TreeSet, 6. HashSet, 7. LinkedHashSet -> these classes are to store large amount of data in one place
+
+
+1. ArrayList -> implementing List interface -> it follows Dynamic Array data structure. if you add something it will grow dynamically and if you delete it will shrink. inside this one collection, i can have any kind of data integer, double, string or Boolean
+ArrayList al = new ArrayList(); // heterogenous data, i can store any datatype because it stores as objects
+i can add elements at any index, i can add another collection into one collection as well using 'addAll()'
+it preserves the order of insertion. duplicates allowed in the ArrayList
+
+
+2. LinkedList -> implementing List interface and DeQueue interface -> so it will have all methods in ArrayList. internally it follows Double linkedList datastructure
+They are all part of the java.util library
+it is also maintaining the order of insertion. we can perform insertion operation at any point of the linkedlist
+add() method adds data to the rear end, offer() also does the same thing, adding data to rear end. if you add data using offer(), offer may get added or rejected if there are problems. however, add() will ensure data is added. Duplicates allowed in LL
+
+
+3. ArrayDeque -> implements Dequeue interface -> index-based insertion is not allowed -> it follows Double-ended queue datastructure
+order of insertion is preserved. because it follows double-ended queue, it allows insertion at both front and rear of queue. Duplicates allowed in AD
+
+
+4. PriorityQueue -> implements Queue interface -> it follows min-heap datastructure -> min-heap will make sure the root node is the smallest, until then it will keep swapping
+order is not in the order of insertion due to min-heap operations. Duplicates are allowed in PQ
+
+
+5. TreeSet -> implements Set interface -> sorted set -> child is navigable set and it is implementing navigable set -> follows binary search tree -> inorder traversal (Left child->Node->right child : Left Value Right) -> thats why data is always sorted. go to left, if null return value
+we can add heterogenous data here also because it is not good in real-time. Duplicates are not allowed because it is a Set anyways
+
+
+ 
+
