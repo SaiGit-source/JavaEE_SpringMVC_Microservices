@@ -1,0 +1,62 @@
+Collection part II:
+
+Searching in ArrayList, LinkedList -> O(n)
+
+Searching in Balanced binary search tree -> O(logn)
+
+TreeSet:
+
+if the data is like 10, 20, 30, 40, 50, 60, 70 -> O(n) search in this case because it forms a right-skewed tree
+
+TreeSet ts = new TreeSet();
+ts.ceiling(50); // it will check 50 is there or not, if yes 50, otherwise nearest higher value
+ts.higher(50); // it will just return higher than 50 -> 75
+same floor() and lower()
+ts.tailSet(75);// prints everything after 75 to end of list
+ts.headSet(75); // 25, 50
+
+HashSet | LinkedHashSet -> uses hashing algorithm runs in O(1)
+HashSet -> implements Set<> interface
+maintains order of insertion. In Hashing there is something called as Hash function. 
+Load factor = 0.75, if 75% of locations are filled, automatically the size will be doubled
+hash.add(50);, hash.add(100), everything will get stored in a specific bucket only without collision
+no sorting, no duplicates
+
+family of Set() interface doesn't allow duplicates
+
+LinkedHashSet hs = new LinkedHashSet();
+
+Interfaces: List<>, Queue<>, Set<> -> parent interface for all three interfaces is Collection<> -> Parent of entire Collection hierarchy is Iterable<>
+ 
+can you access specialized methods() inside child classes if we have parent reference? the answer is NO. this explains why some classes like ArrayList have access to only some methods while other classes dont
+
+Two more interfaces are Deque<> extends Queue<>, SortedSet<> extends Set<>
+
+ArrayList -> can be accessed with for-loop but it is not recommended because of fail path. However, Iterator is recommended to access Collections
+
+All these Collections are Dynamic not fixed sized. for loop doesn't understand Concurrent modification like i<al.size() then in the loop we add al.add(44), it keeps printing 44 and doesn't understand Concurrent modification al.add(44);
+
+Iterator itr = al.iterator();
+while (itr.hasNext()){
+	S.o.p(itr.next());
+	al.add(44); // concurrent modification -> immediately program fails because we cannot fool around Iterator.
+}
+
+i want to fail but safely. Exception is abnormal termination. Fail fast mechanism: Concurrent mechanism with Exception. it fails immediately thats why Fail fast
+Fail safe mechanism: Concurrent modification also cannot happen at the same time we dont want Exception. No Exception. use CopyOnWriteArrayList() class to achieve Fail safe mechanism, that's fail safe mechanism
+
+ListIterator litr = al.listIterator(al.size()); // reverse iteration
+
+while (litr.hasPrevious())
+{
+	S.O.P(litr.previous());
+}
+
+
+	
+
+
+
+
+
+

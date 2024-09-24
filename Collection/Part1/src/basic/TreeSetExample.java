@@ -14,11 +14,17 @@ public class TreeSetExample {
 		TreeSet ts = new TreeSet();
 		ts.add(400);
 		ts.add(25);
+		ts.add(50);
 		ts.add(250);
 		ts.add(100);
 		ts.add(75);
 		ts.add(75); // duplicates not allowed
 		System.out.println(ts);// inorder traversal of binary search tree gives sorted order not insertion order
+		
+		System.out.println(ts.ceiling(50)); // first looks for 50 otherwise nearest higher value
+		System.out.println(ts.higher(50)); // always higher than 50 no matter what
+		System.out.println(ts.tailSet(100)); // all items after 100
+		System.out.println(ts.headSet(100)); // all items before 100
 
 	}
 
