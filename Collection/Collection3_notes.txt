@@ -1,0 +1,54 @@
+Collection 3:
+
+Vector v = new Vector();
+v.addElement(100); // this is part of Enumerator interface. both add and addElement will do the same thing. thats why we see methods() of ArrayList here
+
+Enumerator is a legacy class
+
+Generics:
+
+int ar[]; arrays are much faster than ArrayList
+for most of the operations we dont need utility methods
+
+Array by default support type-safety -> when retrieval, we know 100% sure it will be integer data while retrieving for example (int[]).
+
+No confusion when we are retrieving data from Array. it promotes Type-safety
+
+
+No type-safety: ArrayList al = new ArrayList();
+al.add("Abc"); String s1 = (String) al.get(0); s1 = s1.toLowerCase();
+but we are not sure that the collection has only String elements. 
+
+say if i have an integer data al.add(44); String s2 = (String) al.get(1); s2 = s2.toLowerCase();
+but this will lead to Runtime exception because we are trying to perform String operation on an integer
+Is there any type-safety? the answer is NO
+
+How to achieve Type-safety in ArrayList()?
+ArrayList<String> list = new ArrayList<>(); // now that yellow line warning has disappeared. this is Generics
+now i am 100% sure only String data is there in ArrayList and i am 100% sure while retrieval
+
+we can achieve type-safety in Collections using Generics
+
+i create a class Employee
+
+ArrayList<Employee> employee = new ArrayList<>();
+employee.add(new Employee(1, "Abc", "Charlotte")); // only Employee object
+
+Primitive like 'int' etc is not allowed for the Generic type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
