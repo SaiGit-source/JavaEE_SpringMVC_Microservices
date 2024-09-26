@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.maven.learning</groupId>
+  <artifactId>JUnit-01</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <description>Maven project provides a means to create JUnit tests</description>
+  <dependencies>
+  <!-- https://mvnrepository.com/artifact/junit/junit -->
+  <!-- Maven has added all dependencies to our project -->
+  <!-- https://mvnrepository.com/artifact/junit/junit/4.13.2-->
+	<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.2</version>
+    <scope>test</scope>
+	</dependency>
+  </dependencies>
+</project>

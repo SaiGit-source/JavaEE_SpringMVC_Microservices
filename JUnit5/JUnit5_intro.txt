@@ -1,0 +1,67 @@
+Need for JUnit5:
+
+Unit testing is performed by developer itself and not QA
+
+Each method() is considered as a Unit for instance. So unit testing is testing one method() at a time in simple words. it need not be necessarily that way, a unit could represent a bunch of classes as well
+
+
+JUnit5 is a Unit testing framework
+Prepare a Test environment -> we may have to prepare differently for different units, depending on the type of unit. for example, if it is an instance method() or non-static method(), first we may have to create an instance of the class then invoke that method(). To invoke static method(), class.method() can be used to invoke. Preparation is always different
+
+Provide testing input -> we may have to provide different inputs to different methods()
+
+Run the test -> Running the test case is the same no matter what the type of input is or type of operation is
+
+Provide expected output to compare
+
+Perform Assertion (verify result with standard/expected result) -> Again Assertion is the same regardless of the nature of that unit. this is common regardless of the type of operation method is performing
+
+Report test results -> alert the developer about result.
+
+Need for JUnit5:
+Basically: 
+Running the test, Perform assertion and Alerting developer -> these are common steps regardless of the type of operation the unit is doing. that's where JUnit comes into picture. JUnit will take care of running test, assertion and reporting results. we only have to prepare, provide appropriate inputs, expected outputs that's all.
+
+JUnit5 Architecture:
+
+JUnit5 is not JUnit4 + New features -> unlike Java7+new features is Java 8
+
+Platform (foundation of JUnit5, provides environment to run tests) -> Jupiter API (APIs to access JUnit services) / Vintage API (When we want to run JUnit4/older version tests in JUnit5) 
+Platform -> Extension (we can work with JUnit5 architecture / platform without having to use Jupiter API, yes it is possible with Extensions)
+Platform -> IDE (like Eclipse, IntelliJ IDEs are integrated with the platform, you can right click unit test, we can run JUnit tests) -> this is what we use mostly
+
+Maven project helps to write JUnit tests
+for example: we can write project code in the src/main/java
+we can write test cases in src/test/java
+
+Step 1:
+go to pom.xml and add this
+<dependencies>
+  <!-- https://mvnrepository.com/artifact/junit/junit -->
+  <!-- Maven has added all dependencies to our project -->
+  <!-- https://mvnrepository.com/artifact/junit/junit/4.13.2-->
+	<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.2</version>
+    <scope>test</scope>
+	</dependency>
+  </dependencies>
+
+Step 2: go to src/main/java, create class as usual, method()
+
+Step 3: right click on src/test/java then JUnit Test Case -> Class under test (browse and pick our created class) -> fill Name
+
+Step 3: option 2: otherwise, right click on the class we created and pick JUnitTestCase -> here IDE will fill everything for us
+
+
+
+
+
+
+
+
+
+
+
+
