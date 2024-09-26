@@ -1,0 +1,31 @@
+Sorting:
+
+Array: Utility class is Arrays
+Collection: Utility class is Collections
+
+Collection is an interface<> and Collections is a class
+
+=> two interfaces in Collections -> Comparable and Comparator
+
+Collections.sort(al); // sort ArrayList
+
+how to sort an object with multiple attributes?
+class Abc {
+	int age;
+	String name;
+	int avg;
+}
+
+ArrayList<Abc> al1  new ArrayList<>(); Collections.sort(al1); cannot do
+
+so we need two pre-defined interfaces Comparator and Comparable
+
+how to implement interfaces<>?
+3 ways: implements, anonymous inner class, lambda
+
+in Comparator: in compare method() : return 1 means swap otherwise dont swap elements. so if obj1 > obj2 return 1 then ascending order sort. it is outside of the target class
+
+in Comparable: compareTo(): we got to pass only one variable because it is implemented inside the target class
+if we dont have access to Target class then we need Comparator with two variables
+
+

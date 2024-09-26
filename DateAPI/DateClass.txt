@@ -1,0 +1,31 @@
+Date class:
+
+Date class -> util package to handle Date type data
+Date class -> sql package if you want to handle Date datatype in database
+
+
+the new one is Date API from JODA API (Java 8) it is inside the time package
+
+Date date = new Date();
+System.out.println(date);
+
+int year = date.getYear(); // this is deprecated
+long timeInMs = date.getTime(); // 
+System.out.println(timeInMs);
+
+
+In JODA API:
+
+LocalDate date = LocalDate.now(); // these are static methods to class.method()
+
+int dayOfMonth  date.getDayOfMonth();
+int dayOfYear = date.getDayOfYear();
+
+
+LocalDate dob = LocalDate.of(1994,3, 8); // some other date
+
+Recommended package is time package from JODA API
+
+
+
+
