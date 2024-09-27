@@ -1,0 +1,45 @@
+Map is an interface, Map is a collection but not a part of Collection hierarchy
+
+two classes implementing Map<> interface directly -> HashTable, HashMap (LinkedHashMap extends HashMap) 
+
+Interface extending Map<> is SortedMap<> -> NavigableMap<> interface
+
+basically, 4 classes -> HashTable, HashMap, LinkedHashMap, TreeMap
+
+Data is stored in the form of Key Value pair
+
+HashMap hm1 = new HashMap(); // not generics
+
+key can be of any type, same value can be any type as well. Key must be unique
+
+Only in HashMap(), Key and value could be null
+
+No order of insertion is maintained
+
+=> LinkedHashMap is child class of HashMap
+
+HashMap<Integer, String> hm2 = new HashMap<>(); generics
+hm2.put(1, "Java"); // this is called as an Entry, key-value together is called as an Entry
+
+=> Hashtable ht = new Hashtable(); // key cannot be null, value cannot be null
+
+=> TreeMap tm = new TreeMap(); // sorted values
+// key cannot be null, value can be null though in TreeMap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
