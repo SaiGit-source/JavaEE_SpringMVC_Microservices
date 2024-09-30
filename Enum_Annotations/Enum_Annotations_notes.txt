@@ -1,0 +1,52 @@
+Enum & Annotations:
+
+group of named constants. group of data, which is of specified type then go with enum like PASS, FAIL, NR
+
+enum Week {
+	MON, TUE, WED, THU, FRI, SAT, SUN; -> pre-defined constants called as Week. Recommended to be in UpperCase(). all these constants belong to week type
+	}
+
+99.5% of case we are going to use pre-defined Enums and pre-defined Annotations extensively
+
+what's Constant? such value nobody can change. for example, names of week will never change
+
+Week[] weekAr = Week.values();
+
+int index = Week.THU.ordinal(); // prints the index
+
+enum Result {
+
+	int marks;
+	Result() {
+		SOP("Constructor for Enum");
+	}
+	
+	getter and setter
+} // what's happening here? for this Enum behind the scene, one class called as Result gets created. whenever we create an instance, Constructor gets executed
+everytime we create an ENUM, behind the scene we have an object of that Enum created
+
+
+Annotation:
+
+always ,we write comments on methods() like // overriding parent class etc. -> it is not even reaching Compilation level, it is getting ignored by Compiler. it is only in the Developer level
+// with the help of comments we can understand methods()
+
+one more method to provide information to developer, compiler, JVM, SpringBoot also -> new way for maintaining information about code in Java -> Annotations
+
+this is a pre-defined Annotation -> @Override .. every Annotation cannot be used everywhere
+
+@interface Player -> this informs compiler that Annotation type is being created
+
+Two things need to be specified: Target like Constructor, 
+
+Annotations used to create Annotations are called Meta Annotations
+
+@Retention(RetentionPolicy.RUNTIME) -> until JVM, @Retention(RetentionPolicy.SOURCE) -> until developer level only, RetentionPolicy.CLASS -> till Compile time
+@Target are the Meta Annotations we use to create our own annotations
+
+
+
+ 
+
+
+ 
