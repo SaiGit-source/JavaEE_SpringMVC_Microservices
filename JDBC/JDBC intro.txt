@@ -1,0 +1,73 @@
+Java Database Connectivity
+
+there are recent frameworks like Spring JDBC, Hibernate etc, still we got to learn JDBC to understand behind the scene. it will help to troubleshoot and optimize the code
+
+Need for JDBC
+
+entire Software relies on data heavily. everywhere we are trying to share information. so there is a requirement to take and store data in permanent place
+
+in Java, we have an option to store in Array, Collection, Variable etc. 
+
+if we want to store data in a Database then we need JDBC
+
+How do we store data on a Database regardless of where it is like cloud, remote server, local ? Java application should get connected to Database to store the data
+
+in Relational database, where we can store data in the form of tables
+
+JDBC program enables to connect Java program to connect to Database, anything data-related operation: storing, manipulating, retrieving
+
+Java App/Program <=> JDBC <=> Database (local server/remote/cloud)
+
+
+Steps in developing a JDBC application:
+
+1. Import the required package (Also download & Add Database specific jar file into the project). for example to connect with Oracle database, we need to download Oracle jar file, similar MySQL jar, 
+
+2. Add jar into project before proceeding with coding
+
+Java team has developed a lot of interfaces with methods(), implementation is done by different DB vendors like MySQL, OracleDB, PostgresDB and they are in the form of jar files
+search keyword: mysql jdbc driver download
+https://dev.mysql.com/downloads/connector/j/  select Platform Independent
+
+Create a new Java project -> right click Build path -> Configure build path -> Libraries tab -> Classpath -> Add Library -> User library -> new -> Enter MySQL library name -> Apply&Close -> Finish -> Add External Jar
+
+Open MySQL workbench
+run this query
+use jdbclearning;
+
+CREATE 	table studentInfo1 (
+id INT not null,
+sname VARCHAR(40) not null,
+sage INT not null,
+scity VARCHAR(40) not null,
+PRIMARY KEY(id)
+);
+
+then run MySQLConnect.java
+
+create a new package -> class -> import java.sql.*; delete module-info.java if necessary
+
+Java App -> interface<> name and method() name is the same (also called as implementation class or JDBC driver) -> Database
+
+3. Load and register driver
+
+4. Establish connection from Java to Database
+
+5. Create the statement
+
+6. Execute the query
+
+7. Process the result
+
+8. Close the connection
+
+
+
+
+
+
+
+
+
+
+
