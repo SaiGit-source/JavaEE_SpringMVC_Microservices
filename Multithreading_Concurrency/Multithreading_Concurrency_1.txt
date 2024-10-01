@@ -1,0 +1,131 @@
+Multithreading Part 1:
+
+Multitasking can happen at OS level and Application level also.
+
+if you are using Insta, someone can call, someone can email. Multitasking happening at OS level.
+
+Example, Facebook, getting feeds, getting friend requests etc -> Multitasking at Application level. within Application level, how can you perform Multitasking? within Appln, when tasks can be completed concurrently then it is multi-threading.
+
+One of the important memory areas is Stack area: inside Stack, we will have a thread -> name is Main Thread -> whereever this main thread goes, that code gets executed. Thread is available in the Stack area.
+
+default priority in Java is 5
+
+Thread thread = Thread.currentThread();
+
+thread.setPriority(4); // set priority
+
+thread.setName("Abc"); // can we change the thread name or priority of main thread in Java? YES.
+
+Lets say we have 3 independent activities, we can use multi-threading. CPU's time cycle is getting wasted if we run all activities in one thread. 
+
+Java is multi-threaded programming language
+
+How to achieve multi-threading?
+1. Extending thread, 2. Runnable interface<> -> inside this one method() is there. 
+
+Whenever we want to create a new thread, we want to create an object of thread class. class Alpha extends thread -> when extending, we inherit the parent class behavior so if we create an object of Alpha class then we create an object of thread class also. with Alpha object, a new thread is also created
+
+inside run() method we define which function to run
+
+a.start(); // inherited method from Thread class. we are giving life to thread
+b.start(); // we cant predict the output of the program, we dont know who will execute first etc. However, it will make sure CPU time is not getting wasted
+
+We are not waiting for IO anymore, other threads will run other methods concurrently
+
+Runtime stack:
+Main stack -> within that main thread -> when we create a new thread, new stack is getting created.
+
+The controller of the thread is Thread Scheduler -> all threads will get a chance, this is concurrency -> it will make sure CPU time is not getting wasted
+
+the default priority of all threads is 5
+
+Second method is Runnable interface<>
+
+class Alpha implements Runnable
+class Alpha a = new Alpha(); // now no new thread is not getting created because we are not extending
+
+Thread thread1 = new Thread(a);
+thread1.start(); // we are starting thread
+
+thread1.isAlive(); //false
+
+Application started and Application terminated -> it is done by main thread and they are finished initially itself
+
+how to make main thread wait?
+a.join(); // wait until Alpha thread completes and joins
+b.join(); // wait until all thread complete then terminate main thread
+One way of controlling threads using join() method
+
+still we dont know which thread will get a chance first
+
+a.start(); 
+a.join(); // Alpha should complete before Gamma starts
+
+g.start();
+g.join();
+
+Concurrent Vs Parallel execution?
+Parallel -> two tasks executing parallel
+Concurrent -> only one thread is executing at a time, but it makes sure CPU time is not getting wasted. in milliseconds, it switches to the next thread and executes.
+Multi-threading is executing concurrently
+
+thread1.setName("Bank"); // giving a name to a thread
+whichever thread gets a chance, will execute the run() method thats why we have only one run() method
+
+Race condition:
+all threads compete to complete their tasks at the same time. Abc is driving the car, Xyz is driving the car etc. but we have only one car
+
+In a Synchronized environment only one thread runs with a lock. so only one thread finishes all dependent tasks.. like entering car, driving car, exiting car etc. we have only one car
+
+synchronized public void run()
+{
+	try{
+	
+	}
+
+}
+
+
+StringBuffer()
+ThreadSafe synchronized, it means only one thread can run at a time. still multi-threading is allowed
+
+StringBuilder()
+non-synchronized so multi-threading with multiple threads are allowed no locks
+
+for data consistency, we use the "synchronized" keyword, it allows only one thread to run at a time
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
