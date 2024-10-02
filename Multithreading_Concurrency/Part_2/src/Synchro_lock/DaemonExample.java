@@ -1,6 +1,7 @@
 package Synchro_lock;
 
-// Daemon thread is a background process where it follows the main thread closely but will make sure it will get executed in the end. so it will run as an infinite loop
+// Daemon thread is a background process where it follows the main thread closely but will make sure it will get executed in the end. so it will run as an infinite loop but wont get executed infinite times because it is a Daemon thread
+// Garbage collector is an example of Daemon thread, it will make sure it gets executed once in the end to clean up
 // usually it takes a priority lower than main thread
 // the application is where we have three methods(): typing, spellchecking, autosaving. it needs to happen in a sequence. for example, checking cannot happen while typing. otherwise race condition could occur
 

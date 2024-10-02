@@ -43,7 +43,7 @@ Livelock: 3 people are trying to pay the restaurant bill and nobody is able to p
 ms1.setName("TYPE");
 ms2.setName("SPELL"); // here race condition can occur, Typing should occur first then Spelling should occur.
 
-ms2.setDaemon(true); // Daemon thread runs in the background, the priority should be lower than the primary thread. it will follow the primary thread. it will make sure it gets executed in the end as a background thread. it will run in an infinite loop
+ms2.setDaemon(true); // Daemon thread runs in the background, the priority should be lower than the primary thread. it will follow the primary thread. it will make sure it gets executed in the end as a background thread. if you keep Daemon thread within an infinite loop, it will never get executed infinite times, instead will follow the primary thread. in this case, TYPE is the primary thread. Daemon thread will make sure it will get executed at last at least once. Garbage collector is a Daemon thread. at last , at least once it will get once to clean things
 
 
 
