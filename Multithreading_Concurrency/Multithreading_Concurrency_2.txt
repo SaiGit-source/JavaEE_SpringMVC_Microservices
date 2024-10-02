@@ -1,0 +1,53 @@
+Multithreading part 2:
+
+MyCar1 implements Runnable {
+
+we allow all drivers to enter parking lot at the same time
+
+synchronized (this)
+{
+	only threads inside this function will execute
+}	
+ 
+
+States of Thread:
+1. New
+whenever we create a new thread it will be in the new state. 
+
+2. Runnable
+waiting to be scheduled it is in Runnable state
+
+3. Running
+thread in run() method, it is in Running state -> while in Running state, it can go to Blocked state. it will go to Blocked state if required resource is not available
+
+4. Dead
+once task is over, they will go to dead state
+
+5. Blocked state: if resources are not available for the thread they go into blocked state
+
+
+always one thread in running state, this is concurrency
+
+
+Sleep state: 
+it will come out of Sleep state when time is over then goes into Runnable state
+
+thread.start() will take thread to Runnable state, then scheduler will decide and put it in Running state
+
+Deadlock: due to cyclic dependency of resources, the threads are not able to proceed. multiple threads are stuck in blocked state
+
+Solution for Deadlock is Proper use of Synchronized keyword
+
+Livelock: 3 people are trying to pay the restaurant bill and nobody is able to pay the bill, it is called as Livelock
+
+ms1.setName("TYPE");
+ms2.setName("SPELL"); // here race condition can occur, Typing should occur first then Spelling should occur.
+
+ms2.setDaemon(true); // Daemon thread runs in the background, the priority should be lower than the primary thread. it will follow the primary thread. it will make sure it gets executed in the end as a background thread. it will run in an infinite loop
+
+
+
+
+
+
+
