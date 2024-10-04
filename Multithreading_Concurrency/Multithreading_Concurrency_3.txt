@@ -1,0 +1,42 @@
+Multithreading part 3:
+
+Intra -> within same class, we are able to enable communications between threads
+
+Inter thread communications : 
+Producer thread -> Consumer threads they are in two different classes
+
+class Producer extends Thread
+{
+// Logic to produce new data
+
+}
+
+class Consumer extends Thread
+{
+// 
+
+}
+
+class Queue (mediator class)
+{
+
+
+}
+
+new Producer(q).start(); // here only once the object is being called so Anonymous object
+new Consumer(q).start(); 
+
+Producer should produce only when the Consumer has consumed. if Consumer has not consumed the data, then Producer must not produce
+So we use synchronized keyword
+
+A thread gets out of sleep state when it encounters the notify() method
+
+for interthread communication, we need wait() and notify() methods. Notify wakes only threads in wait state
+
+
+
+
+
+
+
+
