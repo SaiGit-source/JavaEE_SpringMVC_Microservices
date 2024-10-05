@@ -62,7 +62,8 @@ Java App -> interface<> name and method() name is the same (also called as imple
 8. Close the connection
 
 
-
+These are the boiler plate code we got to write again and again for all CRUD operations in JDBC. we create the table, update, or delete the same boiler plate code will be there
+instead we use frameworks to avoid repetition of the boiler plate code
 
 
 

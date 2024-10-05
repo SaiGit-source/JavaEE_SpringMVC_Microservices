@@ -1,9 +1,15 @@
 package com.jdbc.learning;
-import java.sql.*;
 
-public class MySQLConnect {
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class MySQLDeleteRecord {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+
 		// Load and Register the Driver
 		
 		Class.forName("com.mysql.cj.jdbc.Driver"); // load from DB vendor
@@ -20,21 +26,23 @@ public class MySQLConnect {
 		Statement statement = connect.createStatement();
 		
 		//execute query
-		String sql = "INSERT INTO studentInfo1(id, sname, sage, scity) VALUES(4, 'Name4', 33, 'Portland')";		
-		int rowAffected = statement.executeUpdate(sql);
+		// String sql = "DELETE FROM studentinfo1"; // this will delete all records from the table
+		String sql = "DELETE FROM studentinfo1 where id=2";
+		int rowAffected = statement.executeUpdate(sql); // for retrieving 
+		
+		// process the result
 		
 		if (rowAffected==0) {
-			System.out.println("Unable to insert the data");
-		} // if row Affected is 0 then no rows is affected
-		else {
-			System.out.println("Data inserted successfully");
+			System.out.println("Delete operation failed");
 		}
-		//process the result
-		
+		else {
+			System.out.println("Delete operation successful");
+		}
 		//close the resources
+		
 		statement.close();
 		connect.close();
-		
+
 	}
 
 }
