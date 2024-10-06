@@ -66,6 +66,43 @@ These are the boiler plate code we got to write again and again for all CRUD ope
 instead we use frameworks to avoid repetition of the boiler plate code
 
 
+Prepared Statement: Statement interface vs PreparedStatement interface<>
+in PreparedStatement, i can assign values dynamically into SQL statements. INSERT INTO studentInfo1(id, sname, sage, scity) VALUES(?,?,?,?)
+
+then we set values using prepStatement.setInt(1, id); // first placeholder in the query has integer datatype
+
+i think it's more like Jinja in Python, dynamically assign values into SQL query during runtime
+
+Statement is the parent interface<> -> PreparedStatement is the child interface<> -> 
+Statement stmt = connect.createStatement();	|	PreparedStatement psmt = connect.prepareStatement(query);
+stmt.executeQuery(query);			|	psmt.executeUpdate();
+stmt.executeUpdate(query);			|
+stmt.executeUpdate(sqlQuery);			|
+// using one stmt object from createStatement(),| 
+i can invoke this object multiple times	
+						|	using single psmt object, we cannot execute multiple times. we are passing the SQl 													query into only once at prepareStatement()
+Here, Query will be compiled by DBEngine and	|	here, compile once only and 100 times executed. only once query will be compiled during the prepareStatement object creation
+that will be executed				| 	only pre-compiled query gets executed
+if you compile the same query 100 times, 	|	
+100 times compiled and executed.		|
+here we create multiple query object		|
+
+Batch update
+		String sql = "UPDATE studentinfo1 SET sage=? WHERE id=?";	i want to update 5 records in the table then i got to repeat the same query again and again. now each time, database hits are more here. for each query, each time i am going to the database from Java
+
+how to achieve better performance? One query for multiple operations
+
+Batch update works only for non-select queries: insert, delete and update
+
+
+
+ 
+
+
+
+
+
+ 
 
 
 

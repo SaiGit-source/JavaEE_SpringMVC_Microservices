@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class JDBCUtil {
+	// this will load and register the driver
 	
 	static {
 		try {
