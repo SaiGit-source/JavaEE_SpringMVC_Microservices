@@ -1,0 +1,58 @@
+Starting and Installing Hibernate:
+
+Create a new Maven Project -> pom.xml file -> add the following code
+
+  <!-- Search google for Hibernate Maven dependencies -->
+  <!--- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core/6.3.1.Final -->
+  <dependencies>
+<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+	<dependency>
+    <groupId>org.hibernate.orm</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>6.3.1.Final</version>
+	</dependency>  	
+  </dependencies>
+
+
+Hibernate Project Setup / Architecture
+
+.java (Entity) -> Configuration file -> information about 1. Mapping, 2. Database -> follow steps
+
+1. Create configuration object
+2. Create Configuration file within Configuration Object
+3. Build Session factory (we will have all configuration objects)
+4. Open session()
+5. Get Session object from Session factory
+6. Perform all operations using Session object
+
+DB operation -> 'select' operation like data retrieval etc and 'non-select' operation like inserting data, updating data etc.
+
+Directly we cannot perform non-select operation using Session object -> we need Transaction object using beginTransaction() method to perform operations -> then commit() or rollback() operation -> then close() session
+
+
+Hibernate configuration file setup:
+right click src/main/resources -> new -> other -> XML -> first create an XML file -> if XML option is not there, open Eclipse Marketplace and install XML tools -> hibernate.config.xml -> finish (this is manual option to create config file content)
+
+To generate Hibernate config file automatically -> Then Help -> Eclipse Marketplace -> search "hibernate tools" look for JBoss tools -> install (uncheck all select only Hibernate Tools)
+right click src/main/resources -> new -> other -> Hibernate -> Hibernate Configuration File -> hibernate.cfg.xml (keep the name as it is) -> Database dilect (specify which database to work with) -> MySQL -> com.mysql.jdbc.Driver -> provide Connection URL later. Enter user and password: 
+
+Hit Finish -> click source tab
+
+Add connection.url manually
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jdbclearning/</property>        
+        <property name="hibernate.connection.password">MySQL123#</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+
+
+
+
+
+
+
+
+
+
+
