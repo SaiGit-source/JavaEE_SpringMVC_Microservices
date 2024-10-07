@@ -24,4 +24,24 @@ Persistence logic -> logic or code to perform persistence operations Eg IO strea
 Persistence Technology/Framework -> The technology or framework through which we write persistence logic Eg. Technology - JDBC, Frameworks - Hibernate, SpringJDBC, SpringORM, SpringDataJPA
 
 
+Need for Hibernate when we already have JDBC:
+if we go with JDBC without any frameworks then we got to hard code the SQL query like INSERT INTO.... etc
+it is forcing Java developer to learn SQL language, which is not Java
+
+there are many different types of SQL, most of the SQLs like MySQL or Oracle are the same however, there is some difference between SQLs. if RDBMS is changed to Postgres, then we got to tweak the SQL queries also. otherwise application may not work
+
+Also we got to write boiler plate code for JDBC. lots of repetition. Also with JDBC, application is forcing to handle exceptions.
+
+values(?,?) JDBC only supports positional parameters like setString(1, "abc") not named parameters. can i store entire object with methods and properties in JDBC? No, we cannot
+
+To overcome these problems, we have frameworks like Hibernate
+
+
+
+
+
+
+
+
+
 

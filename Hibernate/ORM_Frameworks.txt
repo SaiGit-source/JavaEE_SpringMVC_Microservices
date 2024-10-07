@@ -1,0 +1,35 @@
+JPA and Hibernate:
+
+Hibernate:
+
+we have seen limitations with JDBC. -> we got to hard code SQL query and we cannot store Java object directly into database
+
+thats where Hibernate saves us
+
+Hibernate is able to store Java object into a table and whatever query is required, Hibernate will generate that SQL query for you
+
+Hibernate is an ORM framework -> Object Relational Mapping
+
+for RDBMS, we store data in the form of tables -> that means rows and columns come into pic
+
+in Java world, we have the concept of classes and objects, ORM helps to bridge this gap between Java world and RDBMS world
+
+Hibernate simplifies interaction with database, which will allow us to work with Java object. we dont need to hard code SQL query, it will store Java object into table
+
+JPA:
+
+Java Persistence API is a specification of Java
+
+ORM -> helps us create Java class -> helps Java class into database
+
+JPA is like an interface / specification -> Hibernate is one of the implementations of JPA. Alongside Hibernate, there are many other tools, which have given the implementations like Toplink. the underlying architecture is JPA only
+
+Hibernate is implementation of JPA interface
+
+so it makes it easier to switch to any implementation of JPA
+
+it maps Java class also called as Java entity to a table in the database -> so we can perform data-related operations very easily
+
+
+
+

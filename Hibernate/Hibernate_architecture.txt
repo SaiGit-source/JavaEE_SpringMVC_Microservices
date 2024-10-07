@@ -1,0 +1,38 @@
+Hibernate Architecture
+
+Java application -> .java file -> lets say we write a class representing table in the database
+
+class Student 
+{
+private Integer id;
+private String name;
+private String city;
+
+
+setters() and getters()
+}
+
+this class is called as Entity -> to map this class into table in the database -> we have a specification called as JPA (Java Persistence API or Jakarta Persistence API) both are same
+
+  
+JPA given by J2EE technology
+
+now we will have to talk to Hibernate -> two ways: XML or Annotation approach -> we are going to communicate to Hibernate -> to map table in the database
+
+XML / Annotation:
+Student STUDENT
+id -> ID
+name -> NAME
+city -> CITY
+
+configuration information: database Url, Username, Password -> we got to give to Hibernate
+
+we have to create a class, which is a representation of the database. the queries are also taken care by Hibernate
+
+JDBC is also used behind the scenes. 
+
+the moment you activate Hibernate we got to give the details -> mapping and configuration details
+
+
+
+
