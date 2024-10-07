@@ -1,0 +1,40 @@
+Debugger:
+
+Eclipse IDE
+
+create a class -> debug as -> Java application -> 
+
+there is something called as Breakpoint: CTRL + SHIFT + B or double click the line number
+
+DebugAs -> Java application
+
+StepOver -> F6
+
+Window -> Show View -> Breakpoints to see Breakpoints.
+Window -> Perspective -> Breakpoints to see Breakpoints.
+
+inside the loop do StepOver and check i value
+
+
+on the left pane, i can see Main thread -> F8 to resume -> if there are any other breakpoints it will go to that breakpoint
+
+
+StepOver -> line-by-line we are checking
+Resume -> it will stop only at the breakpoints (it will debug only breakpoints)
+
+StepInto  -> go into the body of the method()
+
+For threads -> once we start(), only after that we can see threads on the left pane
+
+
+Threads, run, Runnable
+
+synchronized: 
+Bank -> 3 activities so 3 threads -> withdrawal, deposit, bank check
+
+3 activities are happening at the same time -> co-ordinations between threads -> synchronized keyword
+
+when there is only one abstract method() -> it is a functional interface -> lambda is suitable
+
+
+

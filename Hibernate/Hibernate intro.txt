@@ -1,0 +1,27 @@
+Hibernate:
+
+Object Relational Mapping (ORM) framework -> Hibernate
+
+Pre-requisites
+Java, DBMS, MySQL, JDBC,  
+
+With Hibernate, how can we store data, update data or manipulate data
+
+Persistence -> Storing or managing data for long-term (in Java, we store data in Array or Variables but they are temporary -> the moment Java program execution is finished, the data is gone)
+We want to store the data in a place so we could use the data again -> that's Persistency (process of storing or managing data for longer term)
+
+two options -> 1. File operations (HDD, DVD etc), 2. Database (Storing in the form of table)
+
+Persistence store -> storage area where we keep data for longer term
+1. File operations (Storing in HDD) java.io.* package, 2. Database (Storing in the form of Table) java.sql.* package (store data from Java application into Database)
+
+Persistence data -> data in persistence store is called as Persistence data (DB tables)
+
+Persistence operation -> CRUD operation or operations performed on the persistence data
+
+Persistence logic -> logic or code to perform persistence operations Eg IO streams logic, JDBC API, Hibernate code, Spring JDBC, Spring ORM, Spring DataJPA 
+
+Persistence Technology/Framework -> The technology or framework through which we write persistence logic Eg. Technology - JDBC, Frameworks - Hibernate, SpringJDBC, SpringORM, SpringDataJPA
+
+
+
