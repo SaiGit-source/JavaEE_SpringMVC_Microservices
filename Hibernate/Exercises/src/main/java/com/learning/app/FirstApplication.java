@@ -34,6 +34,8 @@ public class FirstApplication {
 		
 		// Step 6: Perform operation
 		session.save(student); // save entire object
+		// save is deprecated after Hibernate 5
+		
 		
 		// Step 7: Perform Transaction operations
 		transaction.commit();

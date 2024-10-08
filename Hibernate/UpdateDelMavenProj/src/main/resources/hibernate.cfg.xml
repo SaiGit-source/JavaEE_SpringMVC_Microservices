@@ -14,6 +14,7 @@
         <!--  <property name="hibernate.hbm2ddl.auto">create</property>  --><!--  it will create a new table based on entity class -->
         <property name="hibernate.show_sql">true</property> <!-- if you want to see the generated SQL query by hibernate in the console -->
         <property name="hibernate.format_sql">true</property> <!-- Hibernate could you show the generated SQL query in the console in a proper format -->
-        <mapping class="com.learning.model.Student"/> 
+        
+        <!-- <mapping class="com.learning.model.Student"/>  --> 
     </session-factory>
 </hibernate-configuration>
