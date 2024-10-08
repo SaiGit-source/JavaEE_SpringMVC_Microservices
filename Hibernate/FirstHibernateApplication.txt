@@ -1,0 +1,12 @@
+Hibernate application:
+
+right click -> src/main/java -> Java Package -> com.learning.model and com.learning.app
+
+in com.learning.model -> create Student.java file
+
+com.learning.app -> create FirstApplication.java file
+
+
+
+
+
