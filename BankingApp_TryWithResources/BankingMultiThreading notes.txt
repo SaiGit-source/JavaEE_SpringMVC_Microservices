@@ -1,0 +1,50 @@
+BankingApp multithreading notes
+
+Object level locking (synchronized method applied to non-static methods) vs Class level locking (synchronized method applied to static methods)
+
+Lets see we have three activities -> withdrawal, deposit, bank balance. all three activities are independent of each other so we can have multiple threads. 
+At the same time, we got to protect accountBal variable or resource with synchronized()
+
+Object level locking -> in the entire object only one thread can operate, other threads cannot operate due to Synchronized() locking.
+
+go to Debugger toolbar and check which thread owns the variable accountBal
+
+Class level locking -> we need to make the variables and methods() static (object independent). static int accountBal=4000;
+if lock is applied to class, then another thread cannot run any other objects of the same class
+
+so it will be HSBCBank.withdrawal(); // class name.method()
+within same class, i can have multiple objects, here multiple threads can lock different objects but they cannot lock the resource within the same object. However, when i apply lock on the class, then different object of the same class cannot be accessed by a different thread. 
+
+static objects can be invoked with object and without object.
+
+Try with Resources (Finally block):
+
+best block for closing resources like conn.close() etc, is finally{} because it will run no matter exception occurred or not
+
+try 
+{
+open resources
+}
+catch()
+{
+
+}
+finally 
+{
+close resource
+}
+
+
+new feature Try with resources
+
+try(open resource here) // auto-close resources after Java 8 ..  it works like finally block. no matter exception handled or not, auto-closeable closes the resources
+{
+
+}
+catch()
+{
+
+}
+
+
+
