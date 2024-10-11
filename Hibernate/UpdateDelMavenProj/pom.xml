@@ -4,6 +4,11 @@
   <artifactId>UpDel001</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>HibernateUpdateDelete</name>
+  <properties><!-- thats where we update the Java version -->
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <maven.compiler.source>14</maven.compiler.source>
+  <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+  </properties>
   
     <!-- Search google for Hibernate Maven dependencies -->
   <!--- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core/6.3.1.Final -->
