@@ -1,2 +1,31 @@
 Streams:
 
+say i have collection List<Integer> list=new ArrayList<>();
+list.add(5);
+list.add(10);
+
+
+
+best way to implement functional interfaces is lambda expressions
+
+i want to sort a list of data but i dont want to affect the original list. then we need Streams. it creates a new stream of data
+
+Stream<Integer> streamData1=list.stream();
+Stream(Integer> sortedStream = streamData1.sorted();
+sortedStream.forEach(n->System.out.println(n));
+sortedStream.map(mapper);
+
+System.out.println(list);
+
+System.out.println(n->n*2); // lambda because functional interface<>
+
+Stream<Integer> streamData2 = sortedStream.map(n)
+
+take a stream of data and perform different operations on stream. once stream is consumed, we cannot re-use the stream
+
+say Stream<Integer> sortedStream = streamData1.sorted(); i already performed an operation on streamData1. so another operation is not possible. so we got to use sortedStream for additional operation
+
+list.stream().sorted().map(n->n*2); // each time we run stream() it will give a new Stream object same thing sorted() gives a new Stream. so it's the same thing, we are only operating on different streams
+
+Stream method is there only for Collections.
+
