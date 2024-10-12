@@ -34,7 +34,7 @@ public class SelectiveInsertion {
 		catch (HibernateException e) {
 			e.printStackTrace();
 		}
-		finally
+		finally // this part is important only then it will perform insertion. commit()
 		{
 			if(insert==true) {
 				transaction.commit();

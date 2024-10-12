@@ -49,4 +49,10 @@ public class Student
 		this.scity = scity;
 	}
 
+	@Override
+	public String toString() {
+		return "Student [sid=" + sid + ", sname=" + sname + ", scity=" + scity + "]";
+	}
+	
+
 }

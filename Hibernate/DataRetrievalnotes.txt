@@ -1,0 +1,16 @@
+Data retrieval:
+
+Student student = session.get(Student.class, 1);
+at ID 1, i want to get record from the table
+
+we want to communicate with Hibernate. we have given class details, to which Hibernate has to map to the table. we have given configuration to Hibernate like entity class. Based on this, Hibernate will write the SQL query
+
+select * from table where ID=? // Hibernate will create one JDBC environment. all of them are taken care by Hibernate
+
+the return data type will be ResultSet -> it is a representation of one record -> behind the scene, Hibernate will create an object of Student. through setters Hibernate will inject the value. Hibernate will inject data into object. As a Java developer we are only working with objects
+
+
+Can we retrieve data from database using get() method? the answer is Yes the other is load() method
+
+
+
