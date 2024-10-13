@@ -1,0 +1,33 @@
+Lazy loading vs Eager loading in Hibernate
+
+Student student = session.get(Student.class, 1); -> get() method and load method
+
+Student student = session.load(Student.class, 1); // it is deprecated  
+in load method(), two objects are being created. 
+Hibernate is creating one object of entity class then it is giving id
+Hibernate is trigerring the query one more time object is being created. twice, constructor message is being created. two objects are being created
+
+
+Student student = session.getReference(Student.class, 1); // this is the non-deprecated method
+
+getReference() is doing lazy loading -> Hibernate will create an object of entity class. during object creation constructor will be called. Hibernate will create an object with these details lets say id=1. This is one object Hibernate has created, and this object Hibernate has created without even getting the data from database. that means, Hibernate not yet triggered the query and JDBC environment is also not yet created. So this is called as Proxy object or fake object. lets say we want more like Student name (getSName();) -> at this time, Hibernate will trigger the query and create JDBC environment in order to perform database related operation. based on the data we received from the table, Hibernate will create one Student object, which is the Actual object. that time Hibernate will trigger the query and create a JDBC environment. Hibernate will give it back to Student. During object creation, Constructor will be invoked. 
+
+Using Setters, it will inject values into Object and actual object will return to Student. Using Getters(), we could get the name and city. When we asked Hibernate initially, it only created a Proxy object. then we ask Hibernate for other details like name, city, that time we query, we create JDBC environment, this actual object we return to Student, later we retrieve name and city post we ask for name and city. this process is also called as Lazy loading. The moment we ask Hibernate, could you retrieve data and give it based on ID? Hibernate immediately didn't trigger query (means actually going to database), didn't visit database and retrieved data. First it will create an Object with ID 1, when you want other column details, then Hibernate will trigger query then go to database receive data. based on the received data, actual object is created and returned to user. the object for the entity class is created twice,   
+
+
+Student student = session.get(Student.class, 1); -> get() method -> early loading or eager loading
+the moment we ask for the data, it will not create Proxy object, instead will trigger the query or go to the database, based on the data retrieved from database/table, it will create actual object and real object is returned to you. 
+
+Student student = session.get(Student.class, 44); // 44 is not there in the table. so it will return null
+
+if (student!=null)
+{
+	only then retrieve data
+}
+else {
+	SOP(no record with given id)
+}
+
+
+Student student = session.getReference(Student.class, 44); // it will lead to runtime exception object non-found -> lazy loading with id not in database
+
