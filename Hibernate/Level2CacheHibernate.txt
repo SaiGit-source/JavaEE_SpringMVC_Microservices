@@ -1,0 +1,15 @@
+Level 2 caching in Hibernate
+
+Level 1 is at session level and each session object will have a L1 cache memory
+
+Level 2 cache is the cache memory at factory level. i want to have one common memory for the entire application that will work for session 1 and session 2 also.
+
+EH cache from Apache organization / Maven -> which is a third-party implementation
+
+https://mvnrepository.com/artifact/org.ehcache/ehcache/3.10.8
+
+https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache/5.6.15.Final
+we need Hibernate Ehcache Relocation also
+
+
+
