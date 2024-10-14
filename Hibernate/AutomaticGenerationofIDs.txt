@@ -1,0 +1,18 @@
+@GeneratedValue and @SequenceGenerator
+
+if you want the IDs to be generated automatically, in that case, we specify AUTO_INCREMENT
+sid INT AUTO_INCREMENT PRIMARY_KEY,
+
+
+in the Student.java file, we specify
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY) // to generate IDs automatically. specify .SEQUENCE for Oracle DB, .AUTO when DB vendor is unknown, .IDENTITY for MySQL
+private Integer sid;
+
+can i have sequence of my own choice?
+Yes
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY) // to generate IDs automatically. specify .SEQUENCE for Oracle DB, .AUTO when DB vendor is unknown, .IDENTITY for MySQL
+@SequenceGenerator(name="mySqequence", sequenceName="My_seq", initialValue=100,allocationSize=1); // our own sequence, allocationSize=1 increment by 1
+
+private Integer sid;

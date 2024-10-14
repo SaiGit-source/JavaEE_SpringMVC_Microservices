@@ -1,0 +1,19 @@
+Hibernate configuration using Java without XML file
+
+config=new Configuration();
+config.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver"); // we have to add in the form of key-value pair
+config.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/jdbclearning");
+and so on.....
+
+config.addAnnotatedClass(Student.class);
+sessionFactory = config.buildSessionFactory();
+
+
+the limitation with this approach is that, if we change the database in the future, you got to re-compile the entire Java code and it's a time waste and resource waste.
+
+the other option is to create hibernate.properties file
+
+config=new Configuration(); // after this statement it will automatically look for properties in the hibernate.properties file
+
+config.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver"); // we dont need configure() method etc
+
