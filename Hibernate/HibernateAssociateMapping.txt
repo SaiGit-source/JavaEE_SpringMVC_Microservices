@@ -17,6 +17,26 @@ Eg: One Employee has one Account, One Question has one Answer
 
 @OneToOne(cascade=CascadeType.ALL) annotation maps say one instance of Answer to one instance of Question. Cascading -> if question table is deleted, answer also should be deleted
 
+One-To-Many Association Mapping (1:M):
+Establish relationship between two entities where in One instance of one entity is mapped with multiple instances of another entity.
+one row of table is mapped with multiple rows of another table. 
+one question has many answers (so Collections come into picture like List<Answers> answers;
+one student has taken many courses
+one employee has worked on many projects
+
+Many-To-One Association (M:1):
+Many instances of one entity is mapped with exactly one instance of another entity. exactly the opposite of previous case. many courses have been taken by single student. many answers are there for one question. Multiple students have joined same course
+
+with bi-directional relationship, we can achieve both one-to-many and many-to-one relationships
+
+Based on the type of relationship we have defined, Hibernate will take care of the SQL query generation part.
+
+
+
+
+
+ 
+
 
 
 

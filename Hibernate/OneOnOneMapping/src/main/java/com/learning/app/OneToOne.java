@@ -48,11 +48,11 @@ public class OneToOne {
 		q1.setAnswer(answer1); // mapping question 1 to answer 1
 		q2.setAnswer(answer2);
 		
-		Question qa1 = session1.get(Question.class, 1);
-		Question qa2 = session1.get(Question.class, 2);
+		//Question qa1 = session1.get(Question.class, 1);
+		//Question qa2 = session1.get(Question.class, 2);
 		
-		System.out.println("QA ID 1: "+qa1);
-		System.out.println("QA ID 2: "+qa2);
+		//System.out.println("QA ID 1: "+qa1);
+		//System.out.println("QA ID 2: "+qa2);
 		
 		transaction = session1.beginTransaction();
 		session1.persist(q1);
