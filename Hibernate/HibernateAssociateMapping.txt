@@ -1,0 +1,27 @@
+Hibernate Association Mapping
+
+for better DB design, we store data into multiple tables and link with foreign keys
+
+Employee(eid, firstName,lastName,empAddr) and Employee_Address(aid, eCity). empAddr is the foreign key in Employee table linking with Employee_Address
+
+for every table we have, we have a class or Entity class in the application. Entity class is a representative of the table in the application
+
+linking two tables in database is achieved with primary key and foreign key. linking two classes in Java is achieved using association. relationships we have in database should be achieved between classes, which are representing the tables in database. this concept is supported in Hibernate and it is called as Association Mapping
+1 to 1 association mapping (1:1 mapping), many to 1 association mapping, many to many association mapping, 1 to many association mapping
+
+One-to-One Association Mapping(1:1):
+
+it refers to relationship between 2 entities where one instance of one entity should be mapped with exactly one instance of another entity
+
+Eg: One Employee has one Account, One Question has one Answer
+
+@OneToOne(cascade=CascadeType.ALL) annotation maps say one instance of Answer to one instance of Question. Cascading -> if question table is deleted, answer also should be deleted
+
+
+
+
+
+ 
+
+
+
