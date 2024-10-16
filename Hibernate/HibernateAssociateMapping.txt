@@ -31,6 +31,12 @@ with bi-directional relationship, we can achieve both one-to-many and many-to-on
 
 Based on the type of relationship we have defined, Hibernate will take care of the SQL query generation part.
 
+Many-To-Many Association(M:M):
+we are trying to establish relationship between two entities where multiple instances of an entity are mapped to multiple instances of another entity
+Multiple students have joined with multiple courses (one or two or n). Multiple courses have been taken by multiple students
+
+
+
 
 
 
