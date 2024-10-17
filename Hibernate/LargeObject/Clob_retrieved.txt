@@ -1,0 +1,1 @@
+This is CLOB example Java is the greatest language ever

@@ -1,0 +1,9 @@
+Large Objects (LOB) -> two types -> Binary Large Object (BLOB) and Character Large Object (CLOB)
+
+BLOB -> if data is like images, audio, video
+
+CLOB -> text file, xml file, file with characters
+
+with Hibernate, i want to be able to store both BLOB and CLOB
+
+
