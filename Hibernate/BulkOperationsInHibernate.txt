@@ -1,0 +1,32 @@
+Bulk operations
+
+in Hibernate, we deal with only Classes and Objects. 
+We will have one class Entity class direct representative of a database
+
+So far we have done only single row operations -> one object entity class is mapped with one record in table
+single row operations that too associated with primary key (ID) of the table -> one record only i am able to delete, update or retrieve
+
+What if i want to perform operations on multiple criteria based on my choice or my need (not necessarily on primary key or ID)?
+Bulk operations -> we can perform updation, retrieval, or deletion of multiple records that too based on my choice, my need
+
+in order to achieve this, there is something called as "HQL[JPQL]". also we could use native SQL
+HQL -> Hibernate Query Language -> until Hibernate 3, we use HQL only to retrieve the data -> after Hibernate 3, we can use HQL for insertion, deletion and updation
+
+HQL -> one of the implementations of JPQL -> using HQL, we can write the query in a simpler way 
+
+Example:
+
+SQL -> SELECT * FROM EMP WHERE EMPNO >? AND EMPNO <?
+HQL -> FROM EMPLOYEE WHERE ENO>? AND ENO <? -> EMPLOYEE is the className, ENO is the fieldName
+
+we are performing bulk operations that means, we are performing operations on more than one record at a time
+
+
+
+
+
+
+
+
+
+
