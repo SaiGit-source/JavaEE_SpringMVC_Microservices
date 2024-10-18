@@ -1,0 +1,71 @@
+Spring framework intro:
+
+www.spring.io
+
+Before Spring, it was EJB, that was bulky. 
+
+They have divided Spring into Spring modules like database for Spring data. Umbrella of different projects
+
+we can build enterprise level projects using Spring Framework
+
+If you want to develop database application in Java, we have JDBC
+If you want to develop server application in Java, we have Servlet
+
+to simplify all these developments, we have Spring framework
+
+To make Spring framework easy, we have SpringBoot -> how to work with Spring framework easily thats why we have SpringBoot
+
+Spring is design in modular fashion -> Spring Core is the base (core purpose of Spring framework) -> XML approach, XML + annotation approach, Java + Annotation, SpringBoot (Annotation or SpringBoot approaches)
+
+
+then we have got -> Spring + JDBC, Spring DataJDBC, Spring DataJPA, Spring WebMVC, Restful services, AOP, Spring security 
+
+We are going to discuss Actuators, Haitors, BatchProcessing, Redis, Apache Kafka, Profiles, Mockito, Postman tool, Swagger API, 
+
+
+
+After that -> Microservices with Spring cloud
+
+Base of all modules in Spring framework is Spring core
+
+Spring core -> Inversion of control(IOC) -> Decouple dependencies between classes -> to achieve loose coupling
+
+class Alpha
+{
+
+	public void alpha()
+	{
+	}
+}
+
+
+class Beta // if i say extends Alpha, then also it is tight coupling -> inheritence
+{ 
+	public void beta()
+	{
+		Alpha a=new Alpha(); // Composition is tight coupling 
+		a.alpha(); // also alpha() from inheritance
+
+	}
+}
+
+both inheritance and association lead to tight coupling
+
+one class should be able to invoke methods of another class without creating an object of another class
+
+if a class is implementing interface, it can still implement another interface, or extend another class
+
+i am in need of the object of another class, but i will invert the control of creation of object to some other class that's inversion of control (IOC). Usually we do it in main() method. Inversion of control to main() method
+
+Injecting dependent class object (Java course) into target class (Udemy) is called as Dependency injection
+
+i will handle entire inversion of control to Spring framework. Also entire dependency injection i will hand-over to Spring framework
+
+entire control of object creation, i will hand-over to Spring framework
+
+
+
+
+
+
+
