@@ -32,6 +32,13 @@ public class FirstApplication {
 		student.setSname("Name1");
 		student.setScity("Charlotte");
 		
+		/*
+		 * student.setSid(2); student.setSname("Name2"); student.setScity("Akron");
+		 * 
+		 * student.setSid(3); student.setSname("Name3");
+		 * student.setScity("Crown Heights");
+		 */		
+		
 		// Step 6: Perform operation
 		session.save(student); // save entire object
 		// save is deprecated after Hibernate 5
