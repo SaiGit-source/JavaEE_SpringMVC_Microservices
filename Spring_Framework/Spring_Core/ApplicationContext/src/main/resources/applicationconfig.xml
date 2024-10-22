@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+                           
+<bean id="java" class="service.Java"></bean>
+<bean id="springboot" class="service.Springboot"> </bean>
+<bean id="udemy" class="main.Udemy">
+
+  	<constructor-arg ref="java" name="course"></constructor-arg>
+  	<!-- <property ref="springboot" name="course"></property> -->
+  	<!--  we are injecting java at constructor and springboot at setter -->
+  	<!--  <bean> to create bean, <property> for setter injection, <constructor-org> for constructor injection -->
+</bean>
+</beans>
+

@@ -1,0 +1,79 @@
+Spring Core:
+
+we need to understand Inversion of control - Dependency Injection in the context of Spring framework
+
+Java:-
+if Spring is creating object of a class then we call it as Bean
+
+Java class -> Spring IOC <- config file
+		|
+		Bean
+
+class Alpha
+{
+	Alpha a = new Alpha()
+}
+
+Spring will create object 'a' then it is called as Bean. Bean is an object that's created and managed by Spring framework
+
+if you want Spring framework to do something then 
+1. XML approach
+2. XML + Annotation approach
+3. Java config + Annotation
+4. SpringBoot approach with Annotations
+
+last three are annotation approaches
+
+SpringBoot is easier to use Spring framework
+
+Spring framework = SpringBoot + Automatic configuration
+
+
+if there is a custom class say class Alpha, in order to use methods() of this class, we got to export JAR file. later we can use the methods of this class from the JAR file
+
+In JDBC, if we want to use implementations from MySQL for example, we add JAR file
+
+Maven project -> we tell Maven to download JAR file (by adding dependency inside pom.xml) -> Spring context for Spring framework dependency -> right click update project
+
+if we go with SpringBoot + Annotation, it is much easier
+
+Inversion of control -> we have handed object creation control entirely to Spring framework
+
+Two ways for SpringBoot -> application context and bean factory. SpringBoot internally uses Application context
+
+Application context promotes Eager initialization: whether you use that object or dont use that object i will keep them ready in the IOC container for application
+
+Bean factory promotes Lazy initialization: it will create objects only if you use them
+
+DefaultListableBeanFactory -> creates IOC container
+
+to create a bean, we use <bean> to create bean, <property> for setter injection, <constructor-org> for constructor injection in config
+
+Annotation needed for Spring framework:
+1. @Component
+2. @Controller
+3. @RestController
+4. @Configuration
+5. @Service
+6. @Repository
+7. @Bean
+8. @Annotated
+9. @Qualifier
+10. @Primary
+11. @SpringApp
+12. @Composition
+
+How many IOC containers in Spring framework?
+1. app context and 2. Bean factory
+
+latest Spring version is 6, SpringBoot 3
+In App context: 
+
+
+
+
+
+
+
+
+
