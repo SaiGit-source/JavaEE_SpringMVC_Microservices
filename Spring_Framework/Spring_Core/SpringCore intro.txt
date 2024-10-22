@@ -67,7 +67,8 @@ How many IOC containers in Spring framework?
 1. app context and 2. Bean factory
 
 latest Spring version is 6, SpringBoot 3
-In App context: 
+In App context: Using one IOC container, can you load multiple config files? No
+But yes in Bean factory
 
 
 
