@@ -1,0 +1,28 @@
+Surefire plugin
+
+When we right-click a unit test, we are able to execute the test. this feature is given to us by Eclipse. what if we dont have eclipse and what if my project is going into CI/CD?
+build process is not going to install Eclipse. in that case, i want to run as the entire project by using facility of Maven tests. for that, we may have to integrate the plugin Surefire plugin
+
+
+	<build>
+	    <plugins>
+	        <plugin>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <version>3.10.1</version> <!-- Use the latest version -->
+	        </plugin>
+
+	        <plugin>
+	            <artifactId>maven-surefile-plugin</artifactId>
+	            <version>2.22.2</version> <!-- Use the latest version -->
+	        </plugin>
+	    </plugins>
+	</build>
+
+
+Attach one more plugin Surefire plugin. Update pom.xml. right-click runAs "Maven Test"
+
+INFO] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 s -- in com.junit.learning.[1mShapesTest[m
+[INFO] 
+[INFO] Results:
+[INFO] BUILD SUCCESS
+
