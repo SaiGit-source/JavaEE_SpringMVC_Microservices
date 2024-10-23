@@ -108,6 +108,10 @@ autowire="byName" -> whichever class is attached to bean id="course" will be inj
 
 autowire="no" No autowiring
 
+*************************************
+
+Annotation approach for automatic dependency injection
+
 @Autowired -> automatic dependency injection 'byType'
 
 @Autowired
