@@ -1,0 +1,147 @@
+SpringCore_2
+
+Last class we used XML approach
+
+XML + Annotation approach -> we could also call as Annotation approach
+
+Annotation is also a way to talk to Spring framework
+
+some of the Stereotype annotations
+
+@Component
+@Controller
+@RestController
+@Service
+@Repository
+@Configuration
+@Autowired
+@Qualifier
+@Primary
+@Bean
+
+Stereotype annotations -> are class-level
+
+it's a message to Spring that you have to create a Bean of that class
+
+@Component -> Spring framework will create object -> tell Spring framework to create a bean of a particular class, use Annotation @Component
+Class A
+{
+
+}
+
+Web layer (Web logic, if RestAPI then @RestController, else @Controller), Service layer (Actual logic of business application will be written), Repo layer (Say we have a database where table is there. All logic to connect to database and perform operations)
+
+@Controller annotation = @Component + web logic (specific purpose)
+
+@Service = @Component + Business logic (purpose of application is written)
+
+@Service
+class Alpha
+{
+
+}
+
+@Repository => @Component + DB related activity (DB logic)
+@Configuration => @Component + configuration-related
+
+@Component is the basic common thing.
+
+Any of the Annotation applied to a class, bean gets created
+
+Method-level:
+@Bean is method-level we cannot apply at class level
+
+class A
+{
+	
+}
+
+we can only use some classes ArrayList() and LocalDate(), but we dont have permission to modify them then we use @Bean annotation
+
+
+in applicationcontext.xml -> we have to tell Spring that find config from Annotation and not xml file
+
+<context:annotation-config></context:annotation-config>
+
+<context:component-scan base-package="com.spring"></context:component-scan>  
+
+if you create a class in package="in.spring" then Spring will not create a bean from this package because we have told "com.spring" package
+
+Dao/repository layer are the same
+
+@Service()
+public class ServiceLayer { // bean id will be camel case of classname,serviceLayer or @Service("service") now beanID = service
+
+}
+
+for Utility class public class Utility{} nothing special about this class. so @Component is good here
+
+public class Password{}, no Annotation is required
+
+say, in another class i create an object
+
+Password pass = new Password("SHA");  // developer is creating the object then we apply @Bean so it will be part of Spring framework
+
+@Bean
+Password pass = new Password("SHA");
+
+to make sure bean is created, we write in main() method: Password p = container.getBean(Password.class);
+p.passwordAlgoUsed();
+
+
+i want dependency injection to happen automatically without <propery> or <constructor> in xml file. 
+<bean id="udemy" class="Udemy.class" autowire="byType"/> autowire creates dep injection automatically
+
+say if we have two beans <bean id="java" and <bean id="springboot" then it will throw an error. we should use only bean
+
+autowire="constructor" -> will do constructor injection
+
+autowire-candidate="false", Spring create a bean of that class but dont consider for 'autowire'
+
+
+say if autowire="byType", then if we dont have a setter() then it will throw an error. autowire="byType" we need Setter() method
+
+autowire="byName" -> whichever class is attached to bean id="course" will be injected. course variable matches with interface variable in Udemy class
+
+autowire="no" No autowiring
+
+@Autowired -> automatic dependency injection 'byType'
+
+@Autowired
+private iCourse iCourse; // default is byType we have two eligible classes belonging to this type iCourse interface. Java and SpringBoot so error
+so we got to say @Primary on any one of the classes
+
+or @Qualifier("java") -> setter we can apply but not on Constructor
+
+@Autowired
+public Udemy(@Qualifier("springBoot")
+
+@Qualifier takes precedence over @Primary
+
+@Qualifier cannot be applied to Constructor but yes to parameter inside Constructor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
