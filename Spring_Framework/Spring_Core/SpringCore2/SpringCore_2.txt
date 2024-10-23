@@ -88,6 +88,9 @@ Password pass = new Password("SHA");
 to make sure bean is created, we write in main() method: Password p = container.getBean(Password.class);
 p.passwordAlgoUsed();
 
+**********************************
+
+Autowire Dependency Injection:
 
 i want dependency injection to happen automatically without <propery> or <constructor> in xml file. 
 <bean id="udemy" class="Udemy.class" autowire="byType"/> autowire creates dep injection automatically
