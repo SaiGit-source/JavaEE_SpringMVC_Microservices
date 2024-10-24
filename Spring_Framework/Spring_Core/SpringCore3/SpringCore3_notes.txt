@@ -1,0 +1,51 @@
+SpringCore 3:
+
+Base annotation of stereotype annotation is @Component, it will create a Bean of the class
+
+
+Application with no XML and only 100% Annotation
+
+
+public class Employee(Integer empid, String name, Double salary)
+{
+
+}
+
+XML with parameterized constructor:
+if we have a param constructor, zero param constructor will not exist by default
+
+in param constructor, Spring needs params to create Bean of class. we need these parameters to create bean
+
+<bean id="emp1" class="service.Employee">
+// we need constructor-arg tag not property tag here
+<constructor-arg value="01" />
+<constructor-arg value="Abc" /> // name
+.
+.
+.
+</bean>
+
+
+<bean id="emp1" class="service.Employee">
+<constructor-arg name="empid" value="01" /> or <constructor-arg index="0" value="01" />
+<constructor-ard name="salary" value="2334.23" />
+....
+</bean>
+
+***************************
+
+<bean id="depart" class="service.Department" c:dpNo="1" c:dpName="Alien"/> c means constructor, p means property (setter injection)
+
+Spring framework approaches
+1.Pure XML approach
+2.XML + Annotation is recommended 
+3.Java configuration + Annotation approach -> problem is small change in Java code, we have to re-compile entire application
+4.Last approach is Springboot -> this is the easiest and recommended. if Springboot is not there, then XML+Annotation is recommended
+
+
+
+
+
+
+
+
