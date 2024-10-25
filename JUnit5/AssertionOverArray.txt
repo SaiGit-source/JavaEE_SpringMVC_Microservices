@@ -1,0 +1,10 @@
+Assertion Over Array
+
+To perform assertion over arrays
+
+assertArrayEquals() method
+
+Number of elements should match
+Elements of an array are equal
+Order of elements in an array should be equal as well
+

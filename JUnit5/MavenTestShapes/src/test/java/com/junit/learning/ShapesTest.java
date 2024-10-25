@@ -2,6 +2,8 @@ package com.junit.learning;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Test;
 
 class ShapesTest {
@@ -45,5 +47,43 @@ class ShapesTest {
 		// SupplierInterface() option is more efficient always
 		assertEquals(78.5, shape.computeCircleArea(5), ()->"Area of circle calculation is incorrect");
 	}
+	
+	//assertNotEquals() method supplier interface -> lazy evaluation
+	@Test
+	void testComputeCircleAreaNotEquals()
+	{
+		assertNotEquals(45, shape.computeCircleArea(5), ()->"Message if testcase fail");
+	}
+	
+	// assertTrue
+	@Test
+	void testAssertTrue()
+	{
+		String str = "JUnit";
+		assertTrue(str.equals("JUnit"));
+	}
+	
+	
+	// assertFalse
+	@Test
+	void testAssertFalse()
+	{
+		String str = "JUnit";
+		assertFalse(str.equals("JUNIT"));
+	}
+	
+	// Assertion over array
+	
+	@Test
+	void testArrays()
+	{
+		int[] expected = {2,4,6,8};
+		int[] actual = {4,8,6,2}; // Actual without sorting -> org.opentest4j.AssertionFailedError: array contents differ at index [0], expected: <2> but was: <4>
+		Arrays.sort(actual);
+		assertArrayEquals(expected, actual); // after sorting, num of elements in both arrays are the same, elements in them are the same, order of elements are the same as well
+		//assertEquals(expected, actual); // this will fail because it is comparing the reference variables not data within those references
+		//assertArrayEquals will check the data inside the references
+	}
+	
 
 }
