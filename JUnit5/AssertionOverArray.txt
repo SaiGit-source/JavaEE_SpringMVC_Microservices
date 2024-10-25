@@ -8,3 +8,10 @@ Number of elements should match
 Elements of an array are equal
 Order of elements in an array should be equal as well
 
+Testing performance:
+
+whenever we have a longer running unit or task, lot many tasks, we may want to test the performance of this particular unit. 
+
+@Timeout(value=100) -> @Timeout can be used along with @Test as well to test performance of a unit
+@Test
+

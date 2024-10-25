@@ -5,8 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
-class ShapesTest {
+public class ShapesTest {
 
 	@Test
 	void test() 
@@ -74,6 +75,7 @@ class ShapesTest {
 	
 	// Assertion over array
 	
+	@Timeout(value=100)
 	@Test
 	void testArrays()
 	{
