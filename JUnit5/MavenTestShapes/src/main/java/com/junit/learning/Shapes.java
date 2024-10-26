@@ -16,4 +16,9 @@ public class Shapes
 		return 3.14 * radius * radius;
 	}
 
+	public double computeRectArea(double length) {
+		// Logic is not yet developed;
+		return 0;
+	}
+	
 }

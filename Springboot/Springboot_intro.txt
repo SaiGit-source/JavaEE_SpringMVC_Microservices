@@ -28,6 +28,12 @@ latest SpringBoot version is 3 -> internally they use Spring framework 6 -> mini
 
 Only way is Spring Initializr (Spring tool suite, IntelliJ) -> start.io. in Eclipse, we can integrate STS
 
-Gradle is a competitor of Maven -> 
+Gradle is a competitor of Maven -> Maven is only for Java stack -> Gradle for Kotlin, Groovy, Java also, 
+
+3.2.12(Snapshot) means still in update stage. if start.spring.io is down then we cannot create Springboot project
+
+when you click Generate button -> the Springboot project will be downloaded -> Eclipse file -> Import
+
+
 
 
