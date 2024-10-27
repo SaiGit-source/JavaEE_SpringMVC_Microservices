@@ -1,0 +1,54 @@
+Servlet intro:
+
+Develop web applications with Java using technologies like Servlet, JSP and MVC architecture (a design pattern that will help us to organize code in a way it is easy to understand and maintain).
+
+MVC is a design pattern to develop web application
+
+Frontend knowledge is not mandatory to develop Java web applications
+
+
+
+Fundamentals of client-server architecture:
+
+How to develop a web application?
+	|
+Service on internet (Internet based application, it will work only if your device has the capability to connect to other devices)
+	|
+
+
+Can i access my server without internet?
+can you access a job application without internet? the answer is NO
+
+Social media app, Ecommerce app will work only if we have internet connectivity
+
+if you want your device to be called a 'client' machine, we should have one software -> browser software. from browser, we can seek service available in the internet
+
+if your system has a browser, then you can call your system as a 'client' computer, from where you can browse over the internet and seek some services
+
+Server machine is a machine from where service is served to all clients across the world. Once you develop application, you got to deploy it somewhere where everyone can access -> that machine we call as a 'Server computer'
+
+with the protocol called as http -> we send a http request from client machine to server machine. from client machine, if you want to access one of the applications where-ever the application is residing, that address you have to give: ip address (doorstep of the machine) then provide port number. in that server machine, there could be many applications running on different ports. so port number to reach the exact application, which is residing on the server machine.
+
+
+one device -> browser software -> we will seek for some service -> one more computer service will be provided to you. based on the http request, it will give back the response. if we access the server through internet then it is called as a 'Web server'
+
+
+client seeks service, server provides service
+
+
+we need to develop such an application we will be deploying onto the server -> from where our application will be served to the world through the concept of internet
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+	
