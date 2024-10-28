@@ -1,0 +1,21 @@
+Apache Tomcat:
+
+Download Apache Tomcat 11 from internet and install
+
+Configure in Eclipse IDE
+
+Eclipse JavaEE perspective
+
+Click on Servers tab in the bottom of IDE
+
+Click this link to create a new server
+
+Tomcat v10 is better -> because everything comes from Jakarta package
+
+Double click Tomcat v10.1 at localhost to configure server
+
+Tomcat Adminport dont keep it blank 8484 maybe
+
+Right click start server
+
+you can click Red button to stop the server

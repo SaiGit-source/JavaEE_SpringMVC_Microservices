@@ -23,6 +23,7 @@ public class Springboot001Application {
 		
 		String message = greet.generateWish("NameABC");
 		System.out.println(message);
+		IOCcontainer.close();
 		
 	}
 
