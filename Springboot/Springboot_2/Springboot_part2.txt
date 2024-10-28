@@ -1,0 +1,25 @@
+Springboot part 2:
+ 
+Precedence: 	Static block -> when class gets loaded in JVM
+		Java init block -> 
+		Constructor
+		Method call
+
+
+Bean Lifecycle: Bean lifecycle and Java lifecycle are the same
+
+
+To create a bean of the class: i will have to apply @Component annotation
+
+@PostConstruct -> after Constructor this method is getting called
+@PreDestroy -> before bean destruction it is executed
+
+without @Autowired we can perform only Constructor injection
+
+for Setter and Field injection, we need @Autowired
+
+
+Connection pooling: behind the scene Spring framework uses Hikary CP
+ 
+
+We only asked Spring to create 3 beans, behind the scene -> Spring is creating 52 extra beans total 55 beans
