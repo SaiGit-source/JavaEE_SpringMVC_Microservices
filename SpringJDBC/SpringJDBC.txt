@@ -1,0 +1,105 @@
+Spring_JDBC:
+
+What's the difference between application.properties and application.yaml?
+Application properties we got to provide in kay-value pairs
+
+POJO -> Plain Old Java Object 
+POJI -> Plain Old Java Interface
+
+if you are not using any classes/interfaces from outside the scope of Java -> POJO
+in real world, you are not using any technologies outside the world of Java
+
+extends HTTP_Servlet -> this is not POJO because this class is coming from Jakarta
+
+public class EmployeeDaoImpl implements IEmployeeDao
+{
+
+	@Override
+	public List<Employee> getEmployeeInfo()
+	{	
+		try
+		{
+			// register driver
+			// establish connection object
+			// once application is connected to database, we can perform remaining operations
+		}
+		catch(Exception e)
+		{
+
+		}
+		return null;
+	}
+
+}
+
+CRUD or CURD operations are the same:
+	- Insert record
+	- Update record
+	- Retrieve record
+	- Delete record
+Java application is opening door to connect to DBMS. establishing connection and closing door
+
+It's a costly operation to connect to database everytime, thats why we need Connection pooling.
+
+In Connection pooling, URL, username, passwd -> get an object and give it back. it's a pool of so many connections
+
+Common connection pooling mechanism is Hickary CP (Connection pooling).
+By default, Hickary CP is a default pooling mechanism in SpringBoot
+
+Are we going to create a connection object or get object from pool of connections?
+Get object from connection pool is the answer
+
+these two steps are covered by Hikari CP: 		
+// register driver
+// establish connection object	
+	Connection connection=dataSource.getConnection();
+	
+inside application.properties -> key-value pair. spring.application.name=SpringJdbc
+
+spring.datasource.url=jdbc:mysql:///finishers
+spring.datasource.username=root
+spring.datasource.password=MySQL123#
+
+Hickari CP will look into application.properties and get an object from a pool of objects. HCP will return the connection object
+
+To simplify boiler plate redundant code of JDBC, Spring has provided the options. who will write the boiler plate code? Spring will write it
+
+Entire Dao implementation logic is taken care by Spring framework thats where DataJPA comes into picture
+
+****************************************************
+
+H2 database:
+
+H2 database: fast in-memory database
+
+JdbcTemplate class is part of Hikari CP
+
+install SQL Editor 1.4.0 in Eclipse
+
+look into the url: jdbc:h2:mem:finisher, we get it when we run H2 application -> H2 console database
+
+Can you perform Spring + JDBC? yes
+
+still we have to write Dao classes, if we have 100 tables, 100 Dao classes, we are still hard-coding SQL query.
+
+SpringJDBC is better than JDBC because no boiler plate code. 
+
+SpringDataJDBC simplifying logic of data, so better than SpringJDBC
+
+However, we dont have to write Dao classes in Spring DataJPA. Spring DataJPA is better than SpringDataJDBC
+
+SpringDataJPA > SpringDataJDBC > SpringJDBC (> better than)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
