@@ -1,0 +1,28 @@
+Spring Data JPA
+
+Java + SpringCore + Hibernate -> prerequisites for SpringDataJPA
+
+say if you have 100 tables then 100 classes -> same thing we are doing CRUD
+
+to simplify entire web repository layer -> Spring says Repo logic we will give you
+
+Java Persistence API (JPA) -> now known as Jakarta Persistence API
+
+JPA -> Hibernate -> Spring Data JPA
+
+Specify what you want, someone-else will give you implementation -> Interface -> interface provides specification
+
+CRUD repository, Pagging and Sorting Repository and JPA Repository -> all these are Interface
+
+Mongo Repository() interface for NoSQL database
+
+for Spring Data JPA, we need Spring Data JPA, MySQL driver dependency
+
+jdbc:mysql:///finishers also work
+
+to see what kind of SQL queries are generated : spring.jpa.properties.hibernate.format_sql=true
+
+extends CrudRepository<>
+
+At runtime, one Proxy class will take care of the implementation, we dont have to write implementation
+
