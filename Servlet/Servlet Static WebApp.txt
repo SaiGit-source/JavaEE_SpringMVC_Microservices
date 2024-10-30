@@ -1,0 +1,16 @@
+Static WebApp using Servlet:
+
+Eclipse -> File -> New -> Dynamic web project -> name: FirstWebApplication -> Apache Tomcat_v10 -> content directory: src/main/webapp is ok -> next -> Finish
+
+open project -> look for webapp -> rightclick HTML file -> index.html (automatically server will identify index.html)
+
+rightclick html file, run on server because we dont want to execute on JVM instead Server
+
+runs on "http://localhost:8085/FirstWebApp/index.html"
+
+
+For Dynamic application: we need to develop a Servlet that has capability to handle both requests and responses. so we write that into Java folder not webapp folder
+Right-click src/java -> new Servlet
+
+Right-click -> project itself -> Run as Run on Server
+
