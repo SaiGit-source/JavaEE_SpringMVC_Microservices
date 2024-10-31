@@ -1,0 +1,3 @@
+Servlet lifecycle:
+
+init() method is called only once, static block only during class loading, constructor during object creation, service() method based on number of client requests, destroy() method only once
