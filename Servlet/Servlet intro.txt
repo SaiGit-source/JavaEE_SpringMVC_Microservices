@@ -32,7 +32,6 @@ with the protocol called as http -> we send a http request from client machine t
 
 one device -> browser software -> we will seek for some service -> one more computer service will be provided to you. based on the http request, it will give back the response. if we access the server through internet then it is called as a 'Web server'
 
-
 client seeks service, server provides service
 
 
@@ -48,7 +47,9 @@ Introduction to Servlet:
 The needs for Servlet is to generate Dynamic responses to the client. Whenever client sends a request to server, we receive the request and send something Dynamic. Servlet is a simple Java program which is residing on the server computer, within that we will have a server software inside that we will a web container (Servlet container). Such a Java program with capability of handling http request and responding dynamically is called as a "Servlet". The web "Servlet" container will be inside the Server software and will do these things. The Servlet will be executed by the server software. So no "main()" method is required because JVM is not executing Servlet. Servlet is executed by Server software. For Servlet, we need to download and install the server software on our machines. Server software which we are going to use is "Apache Tomcat", which is free. 
 
 
-
+JSP: Java Server Pages
+HTML is very static displays only static content
+it cannot display any variables thats why we have JSP: extension of Servlet. that means, it is also a Server-side technology. it looks like HTML only but has additional capability. whatever view page you want to display to the client, that also you can do in JSP. whatever you can do in Servlet, same thing you can do in JSP also. it has capability of both Servlet and HTML. Additional features and more easy than Servlet to write program. Server-side technology with a capability of dynamic response to client. 
 
 
  
