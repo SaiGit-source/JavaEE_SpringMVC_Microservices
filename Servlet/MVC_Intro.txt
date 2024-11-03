@@ -1,0 +1,26 @@
+MVC intro:
+
+MVC is an architectural design pattern. 
+
+Model, View, Controller
+
+we developed a Form application, we took form data into Servlet and we connected to Database from Servlet only. then we displayed the response from Servlet itself
+
+
+in real application, we might be large, so within that Application we follow one pattern MVC
+
+Model: Fetch data, Store data, Update data, Delete data (all classes or code that's responsible to interact with database, we keep within model
+
+View: Anything that's visible to client we keep within view. 
+
+Controller: in between view and model, we have something called as Controller, whose duty is to handle request coming from the client and redirect to model. that means model and view must not interact with each other. whatever is visible to end user of application, all those files, HTML or JSP files we keep within the view part. Anything that's responsible to connect to database and perform operations, that means JDBC code we keep within model. Controller will enable communication between view and model. 
+
+Controller takes in request from Client and processes the request. Form data in the application will be collected by Servlet and after that Servlet will interact with the files in the model. And Servlet will interact with the files in the model, data will be sent to model, model will connect to Database and store the data. Based on the data Controller receives back from model, Controller will update the end-user. it will re-direct proper view page to user. Client or user will get the update. 
+
+Model: all JDBC code
+View: all JSP and HTML code
+Controller: medium between Model and View - all Servlet technology
+
+
+
+
