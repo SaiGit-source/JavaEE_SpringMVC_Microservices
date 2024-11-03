@@ -21,6 +21,14 @@ Model: all JDBC code
 View: all JSP and HTML code
 Controller: medium between Model and View - all Servlet technology
 
+In terms of the Registration App:
+View -> we put the form elements in that (HTML etc). Once you click Submit button it will be redirected to Servlet.
+Controller -> Servlet lets say Registration.java is part of Controller. This Servlet is responsible for receiving data from View page. request.getParameter -> all data i want to collect on my Servlet. 
+Model -> within Model, we will be developing one Java application. Column names, we can create as Fields -> setters and getters. from Register servlet, we can create object of Model. Through the setter, we can pass the form data we received from client. Model will connect to database table and register the data. in Model, we will take the response, and in Controller, we will take that data through the concept of getter. if the registration is successful, we will redirect to one page called as "success.jsp". In JSP, i can collect info from session. success.jsp is in the view layer.  if failed, it will be redirected to one more page -> failed page. Model and View are not interacting with each other directly. 
+
+
+
+
 
 
 
