@@ -1,5 +1,6 @@
 package com.springboot.VaccineSpringJPA.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,60 @@ public class VaccineService implements VaccineInterface {
 	public Boolean checkVacAvailability(Integer id) {
 		
 		return repo.existsById(id);
+	}
+
+
+	@Override
+	public Optional<Vaccine> getVaccineById(Integer id) {
+	
+		return repo.findById(id);	
+		}
+
+
+	@Override
+	public String removeVaccineById(Integer id) {
+		
+		Boolean status=repo.existsById(id);
+		if (status) {
+			repo.deleteById(id);
+			return "Successfully deleted: "+id;
+		}
+		return "id: " + id+" is not present to delete"; 
+		 
+	}
+
+
+	@Override
+	public String removeVaccineByVaccineObj(Vaccine obj) {
+		
+		Integer id = obj.getId();
+		Optional<Vaccine> optional = repo.findById(id);
+		if (optional.isPresent()) {
+			repo.deleteById(id);
+			return "Record with id "+id+" deleted";
+		}
+		
+		return "Record with id "+id+" not available to delete";
+	}
+
+
+	@Override
+	public String removeAllVaccines(List<Integer> ids) {
+		
+		int countDB = (int) repo.count();
+		int countIDs = ids.size();
+		if (countIDs==countDB) {
+			repo.deleteAllById(ids);
+			return "deleted all IDS";
+		}
+		return "couldn't delete all IDS";
+
+	}
+
+
+	@Override
+	public Iterable<Vaccine> getAllVaccinesByIDs(Iterable<Integer> ids) {
+		return repo.findAllById(ids);
 	}
 
 }

@@ -1,0 +1,11 @@
+SpringDataJPA
+
+three interfaces
+1.CrudRepository()
+2.PagingAndSortingRepository()
+3.JpaRepository()
+
+
+Pagination is getting emails/searches everything in multiple pages
+
+
