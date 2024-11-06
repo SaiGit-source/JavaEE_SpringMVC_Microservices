@@ -7,5 +7,5 @@ three interfaces
 
 
 Pagination is getting emails/searches everything in multiple pages
-
+Optional class is good, it doesn't throw an exception even if data is not present
 
