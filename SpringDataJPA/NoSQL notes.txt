@@ -1,0 +1,47 @@
+SpringDataJPA:
+
+Hibernate mapping
+
+NoSQLDB -> how to connect with SpringBoot App
+
+MongoDB
+
+SQL with MySQL, Oracle or Postgres -> RDBMS (Relational database management system) 90% of SQL is same regardless of MySQL, Oracle etc
+
+
+In NoSQL -> we have MongoDB, Cassandra, Redis etc -> data is organized in the form of tables (rows and columns).
+
+SQL: schema (id, name, age, city) information -> all records we have all have same number of data. fixed information. we might store data in multiple tables then we join the tables
+
+In NOSQL -> we store data in the form of documents no fixed schema. schema-less. it's a document for person1, document for person2, no fixed schema for data. inside document, document is stored in JSON data.
+
+Table (SQL) | Collection (NoSQL)
+
+Record or Row (SQL) | Document (NoSQL) in documents the fields may not be the same
+
+To connect to MongoDB server go to command prompt -> type mongosh
+
+show dbs, use finishers, db.createCollection("customer"), db.customer.insertOne({id:1, name:"Rohan", city:"Bengaluru"}), db.customer.find()
+
+db.customer.find.pretty()
+
+
+Spring project -> add dependency -> Spring Data MongoDB
+
+Model is same as Business object, entity, 
+Value object -> class representing frontend form -> maybe there is a class to receive the form data. 
+Data transfer object (DTO) -> such an object to transfer data from one layer to another layer. Transfer data from web layer to business layer to data layer. in the end, it is an object only
+
+default port# for mongoDB is 27017
+
+@Document for NoSQL similar to @Entity
+
+
+
+
+
+
+
+
+
+
