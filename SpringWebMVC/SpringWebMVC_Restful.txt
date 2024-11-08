@@ -1,0 +1,54 @@
+Spring Web MVC:
+
+earlier there was a technology called as Servlets
+
+behind the scene, SpringMVC uses only Servlets
+
+under MVC, we have Spring Rest
+
+two types: end user to business (C to B) and business to business (B to B). Facebook for example, C to B.
+
+when we require a lot of developers, but we dont have resources to hire developers, in that case, we use third-party like Paypal, Razor etc we have outsourced Payment services
+
+Paypal is an example of B to B. 
+
+Spring Web MVC -> 2 design patterns : MVC architectural design pattern and Front controller design pattern.
+
+SpringMVC components: Front controller (behind uses Dispatcher servlet), Handler mapper, Controller (class annotated with Controller annotation), View resolver, View components
+
+End user -> will make a request to an application on server -> when we make request, we use HTTP protocol, then we give response back
+
+the Front controller along with Dispatcher Servlet ->  takes care of the HTTP process.
+
+three layers: Web layer (Controller classes), Business layer, Dao layer (JDBC)
+
+Request will go to Frontcontroller (Dispatcher Servlet), Dispatcher servlet will ask its assisstant Handler mapper. Handler mapper will identify the correct Controller for the particular request from client. Handler mapper will give only info to Frontcontroller. based on the info, FC will handover request to Business layer. Controller (Web layer) will respond back to the FC with model and view object. Frontcontroller knows which file to render like index.html but it doesn't know which technology like HTML, JSP. so Frontcontroller talks to ViewResolver to get this technology information. FC will give data to ViewComponent which will render file. ViewResolver only identifies the frontend file and its location. In short, FC both takes requests from clients and responds back. it both pre-processes and post-processes the requests
+
+FrontController (Dispatcher Servlet) will receive incoming HTTP requests. -> Preprocessing and Postprocessing of requests
+Dispatcher Servlet is a predefined class in Spring MVC module acts as FrontController
+Dispatcher Servlet will forward the requested URL to HandlerMapper
+HandlerMapper will identify which Controller will handle the client requests -> this details will be given back to Dispatcher Servlet
+Dispatcher Servlet will now call the respective Controller in web layer
+Controller will process the request and return the model and a few objects as response to Dispatcher Servlet (Front Controller).
+Model is the actual data, View is the logical Viewname (View filename thats all no extension or technology information)
+Dispatcher Servlet will call View resolver to identify the extension (JSP, HTML etc) and view file location. These details will be given back to Dispatcher Servlet
+Dispatcher Servlet will send model data to View component -> Model data will be rendered in the View file and send back the View to Dispatcher servlet
+Dispatcher Servlet will respond back to Client in client-understandable format (View page)
+
+in Spring Web MVC module, the Front controller is DispatcherServlet, which is a ready-made Servlet component. All the activities in Spring MVC module takes place under the control or monotoring of Dispatcher Servlet, which is the Front controller 
+
+if you want to develop Web app with Spring Web MVC module -> is it compulsory to use SpringBoot? No, we could go with XML driven config, Annotation approach, XML+Annotation approach. Easiest one is SpringBoot MVC (Annotations). We are only going to look into SpringBoot MVC
+
+JAR and WAR?
+Java Archives and Web Archives. JAR is a collection of .class files (compiled Java files). On the web applications, only WAR files will be deployed on the server. inside that all other code files are present. in Servlet, we downloaded the Tomcat server and we deployed manually. in SpringBoot, it has embedded Apache Tomcat Server and that's the advantage of SpringBoot. Automatically Tomcat server will be added into your application. if you want to deploy your application on a different server (other than Apache Tomcat) then got to manually create WAR files. Select WAR in SpringBoot project (Spring website). When you create a WAR project, we see two files: WebApplication file (to deploy on Tomcat), ServletInitializer.java for other servers. default Tomcat server port# 8080 where application is deployed. however, port number can be changed. server.port=8484
+
+To render JSP files, we need to add a dependency in properties: Jasper -> tomcat-embed-jasper
+
+
+
+
+
+
+
+
+
