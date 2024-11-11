@@ -44,7 +44,17 @@ Java Archives and Web Archives. JAR is a collection of .class files (compiled Ja
 
 To render JSP files, we need to add a dependency in properties: Jasper -> tomcat-embed-jasper
 
+Default protocol of @RequestMapping was 'GET', method=RequestMethod.GET -> to bind different types of HTTP requests in our application -> for Spring 1 to 4
 
+From Spring 4 onwards, the story changes, to bind our method to GET request we have introduced one request called as @GetMapping -> to Bind our method to HTTP POST request, we have @PostMapping. similarly we have @PatchMapping, @DeleteMapping
+
+it is not recommended to have same controller endpoints however it is allowed it binded to different HTTP methods like GET and POST
+
+Invasive application and Non-invasive application: Invasive means tightly coupled with third-party (entire application is controlled by Spring framework). if we use Map instead of Model, then it becomes non-invasive Controller. Map also works in controller
+
+Dep: Spring Web, Spring Boot DevTools
+
+pre-defined classes like LocalTime() and we want to hand-over to Spring then we must use @Bean 
 
 
 
