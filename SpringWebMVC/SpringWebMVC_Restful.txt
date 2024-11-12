@@ -56,6 +56,27 @@ Dep: Spring Web, Spring Boot DevTools
 
 pre-defined classes like LocalTime() and we want to hand-over to Spring then we must use @Bean 
 
+***********************************************************************
+
+QueryParameter Vs PathParameter -> technology for web development is Servlet -> Frontcontroller uses Servlet technology. Spring internally uses Servlet only
+
+With Project Lombok, we dont have to use setters() and getters()
+
+client is making a request -> server (how to respond) -> possible controller methods
+
+if client is sending data, how to receive data at Server? three ways: Query parameter, Path parameter, Form data
+
+Query parameter -> send parameter in URL not recommended. Data from Client to Server is in URL not in request body
+Type this in the URL: http://localhost:8484/EducationApp/getInfo?name=Abc&course=Springboot  // we need this '?' symbol followed by key-val pair that's how we send data to Server through URL
+
+Path parameter -> type this: http://localhost:8484/EducationApp/getInfo/Abc/Devops -> @GetMapping("/getInfo/{name}/{course}") to receive at Server @PathVariable("name")String n
+
+
+
+
+
+
+
 
 
 
