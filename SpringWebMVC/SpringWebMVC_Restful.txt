@@ -72,6 +72,14 @@ Type this in the URL: http://localhost:8484/EducationApp/getInfo?name=Abc&course
 Path parameter -> type this: http://localhost:8484/EducationApp/getInfo/Abc/Devops -> @GetMapping("/getInfo/{name}/{course}") to receive at Server @PathVariable("name")String n
 
 
+Server to -> Client (JSP, JSTL within JSP). Form is there then we got to use Form-Spring Tag library -> two way communications. when we want to run loops in jsp, we use JSTL
+
+***************************************
+
+We created a class Employee, and automatic binding happened. Map is used for one-way binding, for two-way we need SpringTag library
+
+
+
 
 
 
