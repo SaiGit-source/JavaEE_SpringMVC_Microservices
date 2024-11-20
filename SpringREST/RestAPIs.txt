@@ -1,0 +1,61 @@
+RestAPIs:
+Before Rest we had SOAP-based web services. it was invented by Roy Fielding
+
+
+4 projects:
+
+1. Banking rewards: group project - Whenever we purchase with credit card, it gives Rewards. Person should be able to redeem the points, show products on the page, there should be points for the purchase, whenever user register, we can give 1000 points, whenever user does a transaction, we give points like 10 points for 100Rs transaction. do random simulation of transactions every 5 seconds with random amount.
+
+2. Ecommerce: individual project
+4 weeks:
+1 week-MVP -> we need to write code
+2 week-product -> need to code
+
+3. Tours and Travel:
+They will give requirements later
+
+4. Realtime quiz - group project
+similar to Menti. we got to learn WebSocket
+
+
+Two services are talking to each other like Udemy and Paypal. when one application is talking to another application it is called as Distributed Enterprise App
+
+Technologies for RestAPIs or to develop Distributed Enterprise Application: CORBA, RMI (one application can seek help of another application), Java came up with Enterprise Java Bean (EJB). the problem with EJB was it was difficult to maintain. with EJB, we cannot connect to another application with a non-Java tech stack. Say Paypal must be in Java as well for EJB to work.
+
+WSI: Web Services Interoperability -> we should come up with business services over web by achieving interoperability. they came up with BP.1.0 -> Basic Profile. in this case, a Java application can talk to a Python Django application. to exchange data between application, thats where web services/Restful services come in picture. Java came up with JAX_RPC to exchange data. web services interoperability help to exchange information between different applications.
+
+After BP.1.0 success BP.1.1. was released. Java team came up with JAX_WS based on specifications from WSI. Apache Axis, IBM WebSphere, Oracle WebLogic, they all provided their own implementations. JAX is Java API for XML. These web services is called as SOAP based web services. for a Java developer it is based on JAX_RPC or JAX_WS. XML is the data exchange format between different applications. Application 1 in Python -> XML object -> Application 2 in Java. For Java developers, in SOAP based services, we use two terminologies Marshelling (Java to XML object) and Unmarshelling (XML to Java object). one application seeking help (consumer application) of another application (provider or producer application).  We document APIs using WSDL -> XML document with producer API information. Consumer -> WSDL -> UDDI -> Producer API. Web Services Description Language -> WSDL (documentation of APIs). UDDI -> Universal Description Discovery Integration. This is the architecture of SOAP based web services
+
+JSON:
+due to SOAP-based web services disadvantages, Roy Fielding came up with JavaScript Object Notation (JSON). lets replace XML with JSON. Fielding introduced RESTful services. The address should be unique. Uniform Constant Interface. Based on REST specification, Java came up with JAX_RS. Client -> HTTPRequest -> Rest resource. REST resource sends back HTTPResponse. data exchange format can be in both XML and JSON. SpringMVC has something internally called as SpringREST. SpringMVC uses JacksonAPI to convert JSON object to Java object and vice-versa. Dispatcher servlet(JacksonAPI) will convert say Java Student object into JSON object and vice-versa. void disp(Student st) and returns st Student object only. JacksonAPI will take care of the remaining things. if you add @ResponseBody to a controller method, it becomes a RestAPI. Browser doesn't send JSON data thats why we need Postman tool to test APIs
+
+@Controller + @ResponseBody = @RestController
+@RequestBody converts JSON format into Java object -> we use to receive JSON data
+for editing data: PUT or PATCH method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
