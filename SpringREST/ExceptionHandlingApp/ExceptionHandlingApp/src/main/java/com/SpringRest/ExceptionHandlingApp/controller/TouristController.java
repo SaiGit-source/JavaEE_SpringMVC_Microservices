@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -62,5 +65,47 @@ public class TouristController {
 			return new ResponseEntity<String>("Exception: problem in register", HttpStatus.INTERNAL_SERVER_ERROR);	
 			}
 	}
+	
+	// to update majority of the record, we use @putMapping otherwise @patchMapping
+	// http://localhost:8686/updatetourist
+	// set put in postman
+	
+	@PutMapping("/updatetourist")
+	public ResponseEntity<?> updateEntireRecord(@RequestBody Tourist tourist){
+		String status;
+		try {
+			status = service.updateTouristInfo(tourist);
+			return new ResponseEntity<String>(status, HttpStatus.OK);
+		} catch (TouristNotFoundException e) {
+			return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	// http://localhost:8686/updatetouristbudget/2/4342.36
+	// set patch in postman
+	@PatchMapping("/updatetouristbudget/{id}/{budget}")
+	public ResponseEntity<?> updateTouristParam(@PathVariable("id") Integer tid, @PathVariable("budget") Double tbudget){
+		String status;
+		try {
+			status = service.updateTouristBudget(tid, tbudget);
+			return new ResponseEntity<String>(status, HttpStatus.OK);
+		} catch (TouristNotFoundException e) {
+			return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	// http://localhost:8686/deletetourist/2
+	@DeleteMapping("/deletetourist/{id}")
+	public ResponseEntity<?> deleteRecord(@PathVariable("id")Integer tid){
+		String status;
+		try {
+			status = service.deleteTouristById(tid);
+			return new ResponseEntity<String>(status, HttpStatus.OK);
+		} catch (TouristNotFoundException e) {
+			return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+		
+	}
+
 
 }

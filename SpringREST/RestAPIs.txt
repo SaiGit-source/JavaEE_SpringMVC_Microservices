@@ -33,6 +33,25 @@ due to SOAP-based web services disadvantages, Roy Fielding came up with JavaScri
 @RequestBody converts JSON format into Java object -> we use to receive JSON data
 for editing data: PUT or PATCH method
 
+What's Global Exception Handling?
+For Update, we have @PutMapping, @PatchMapping -> to update majority portion of record, PutMapping otherwise go with PatchMapping
+
+Primary logic -> Application logic, Exception handling is secondary logic (AOP)
+
+Purpose of Controller method is receive HttpRequest process then give it back -> @RestControllerAdvice (exception is handled automatically). @ExceptionHandler -> no try and catch.
+
+Main purpose of AOP is to separate main logic and secondary logic -> Aspect Oriented Programming
+
+Globally i would like to handle exceptions of the application. When i send request to RestAPI, it calls the service method to process the request. if exception occurs, instead of exception going to RestController it goes into RestControllerAdvice. that's Aspect Oriented Programming (AOP)
+
+How to integrate third party application like Paypal into our application? RestTemplate (Synchronous) or WebClient (Asynchronous)
+
+
+
+
+
+
+
 
 
 
