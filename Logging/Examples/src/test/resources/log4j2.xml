@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+	<Appenders>
+
+		<Console name="LoggingToConsole" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>
+					%d - %c - [%M] - (%p) - %m -%n 
+					<!-- %d is dateandtime %c is class info [%M] is method info (%p) is priority method %m is debug, info, trace %n is next line  -->
+					<!--  this pattern matches 2024-11-21 18:36:45,552 - com.logging.Log4JTest - [process] - (INFO) - INFO METHOD -->
+				</Pattern>
+			</PatternLayout>
+		</Console>
+		
+		<File name="LoggingToFile" fileName="logs/mylogging.log">
+			<PatternLayout>
+				<Pattern>
+					%d - %c - [%M] - (%p) - %m -%n 
+					<!-- %d is dateandtime %c is class info [%M] is method info (%p) is priority method %m is debug, info, trace %n is next line  -->
+					<!--  this pattern matches 2024-11-21 18:36:45,552 - com.logging.Log4JTest - [process] - (INFO) - INFO METHOD -->
+				</Pattern>
+			</PatternLayout>
+		</File>
+		
+	</Appenders> <!--  multiple appenders console, file etc -->
+		
+	<Loggers>
+		<Root level="info"> <!-- all levels specified here and all lower levels will also be printed -->
+		<!-- levels -> first level is trace, debug, info, warn, error, fatal -->
+			<AppenderRef ref="LoggingToConsole"/>
+		
+		</Root>
+		
+	</Loggers>
+
+
+
+</Configuration>

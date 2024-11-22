@@ -1,0 +1,4 @@
+LogPattern 2024-11-21 19:04:30,068 - com.logging.Log4JTest - [process] - (INFO) - INFO METHOD -
+LogPattern 2024-11-21 19:04:30,072 - com.logging.Log4JTest - [process] - (WARN) - WARN METHOD -
+LogPattern 2024-11-21 19:04:30,072 - com.logging.Log4JTest - [process] - (ERROR) - ERROR METHOD -
+LogPattern 2024-11-21 19:04:30,072 - com.logging.Log4JTest - [process] - (FATAL) - FATAL METHOD -

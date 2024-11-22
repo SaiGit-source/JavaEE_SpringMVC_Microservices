@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+	<Appenders>
+
+		<Console name="LoggingToConsole" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>
+					%d - %c - [%M] - (%p) - %m -%n 
+					<!-- %d is dateandtime %c is class info [%M] is method info (%p) is priority method %m is debug, info, trace %n is next line  -->
+				</Pattern>
+			
+			</PatternLayout>
+		</Console>
+		
+		<File name="LoggingToFile" fileName="logs/mylogging.log">
+			<PatternLayout>
+				<Pattern>
+					LogPattern %d - %c - [%M] - (%p) - %m -%n 
+					<!-- %d is dateandtime %c is class info [%M] is method info (%p) is priority method %m is debug, info, trace %n is next line  -->
+					<!--  this pattern matches 2024-11-21 18:36:45,552 - com.logging.Log4JTest - [process] - (INFO) - INFO METHOD -->
+				</Pattern>
+			</PatternLayout>
+		</File>
+		
+		
+	</Appenders>
+		
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="LoggingToConsole"/>
+			<AppenderRef ref="LoggingToFile"/>
+		
+		</Root>
+		
+	</Loggers>
+
+
+
+</Configuration>

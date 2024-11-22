@@ -1,0 +1,31 @@
+Logging with Log4J:
+
+i want to get updates / details from application. how do we get info about application? 
+
+if you want to know something about application, we log onto console. Console is only limited so we can keep only Limited information there and that too it is temporary
+
+App -> Compile/Build/Deployed -> App.war (Server) -> (request and response) Client. Client making a request to Server and getting response.
+
+Logging can be anything about -> message, error and application status when application is in production or when it is running as App.war on server. you can log onto console using Log4J
+
+Logging:
+1. getting info about application when it is in production to monitor application
+2. using log files we can find bugs
+
+Logging tools: Log4J, Java logging, Commons logging
+
+Where to store logging messages? Console (System.out.println) and Files(.log), Database(table), Email messages 
+
+3 components: Logger (Which classes you want to participate in logger process -> where to create Logger objects so classes can participate in logging process), Appender (Where to store -> console, file, mail), Layout (Format -> how to print or store log messages)
+
+
+
+
+
+
+
+
+
+
+
+ 
