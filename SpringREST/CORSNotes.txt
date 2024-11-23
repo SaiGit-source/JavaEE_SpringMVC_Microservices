@@ -1,0 +1,32 @@
+CORS: Cross Origin Resource Sharing
+
+CORS is a mechanism that allows websites on one URL to request data from a different URL
+
+Client browser makes a GET request with origin: foo.com -> goes to Server (SpringBoot) bar.com. this is a cross-origin request. GET from foo.com. 
+
+Request header:
+Origin: http://localhost:5000/ 
+needs to match
+Response header:
+Access-Control-Allow-Origin: htpp://localhost:5000
+
+
+A resource will have certain policies to share with certain domains
+
+A feature that relaxes the security of website. CORS specifies certain origins that are allowed to access API. we can let in only certain domains rather than everyone.
+
+access-control-allow-origin: * (it allows all clients to access)
+
+we tell the browser that what URLs are allowed to access its APIs
+
+React fix
+cors({
+	origin: "http://127.0.0.1:5500",
+	methods: ["GET", "POST"]
+}) -> we allow only method GET and POST. Only access to this url ("http://127.0.0.1:5500") is allowed
+
+right click page and go to Inspect and look into Console tab to check CORS policy error
+Lets say Server is running on port 8080, Frontend is running on port 5173 basically different port numbers. from same resource only you can access the APIs but not from Cross thats CORS error
+
+SpringBoot fix
+just add @CrossOrigin in Controller
