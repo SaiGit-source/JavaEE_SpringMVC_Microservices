@@ -51,6 +51,27 @@ Scopes, Swagger: Passenger details -> Web app -> Book a ticket (Two Applications
 
 we are developing APIs for use by some other developers so we dont share code source, thats why we use @Operation(). how to connect from one appln to another appln via APIs? thats why we need RestTemplate and WebClient
 
+Reactive programming: For WebClient add Spring Reactive Web dependency in Spring application. Method chaining webClient.post().uri(url).body(passenger).retrieve().bodyToMono(Integer.class).block(); // block for synchronous request. post request to URL send body, retrieve convert response to Integer class.
+
+WebClient
+block() means webclient will act as Synchronous that means thread will wait. But if you use Subscribe it is Asynchronous communication that means thread will not wait
+
+RestTemplate is only for Synchronous communication
+
+When to go with RestTemplate vs WebClient
+
+if you want to make a call to third-party APIs like PayPal, Razor, WhatsApp, we got to use either RestTemplate or WebClient
+	
+WeatherApp -> City -> ZipCode API   	WeatherApp -> ZipCode -> WeatherAPI 
+	<- ZipCode				    <-- Weather info
+
+if ZipCode API doesn't generate ZipCode we cannot run WeatherAPI so one thread must wait if we dont have response from ZipCodeAPI. without response from ZipCode API we cannot call Weather Info API -> Synchronous communication (by default RestTemplate supports that, WebClient with block. that means dont proceed further unless we have a response from API1, when you use WebClient with subscribe() method then it becomes asynchronous communication)  
+
+Sometimes we want Emp Personal Info and Emp payslip both APIs are independent of each other so communication can happen in parallel. So Asynchronous communication will work here. WebClient with subscribe() method will do
+
+
+
+
 
 
 
