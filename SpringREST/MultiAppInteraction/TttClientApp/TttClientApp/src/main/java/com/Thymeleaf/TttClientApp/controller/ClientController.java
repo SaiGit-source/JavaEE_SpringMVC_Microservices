@@ -20,6 +20,7 @@ RestTemplate is only for Synchronous communication
 Synchronous communication is used for dependent APIs for eg: Bank balance API and Withdraw API,  Asynchronous communication is used for non-dependent APIs eg: Emp info API and Payroll API
  */
 
+// http://localhost:8787/ClientApp/ClientHomePage
 
 @Controller // not a RestController
 public class ClientController {
