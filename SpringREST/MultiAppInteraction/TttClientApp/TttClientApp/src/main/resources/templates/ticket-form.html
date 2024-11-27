@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link type=text/css rel="stylesheet" href="./style.css">
+</head>
+
+<body bgcolor="blue" style="align-content: center">
+<div align="center">
+<h2>Ticket Form</h2>
+	<form action="#" th:action="@{/retriveFullTicket}" method="POST">
+			<p><label for="fn">Enter Ticket Number</label>
+			<!-- <input id="fn" type="text" th:field="*{ttNumKey}" name="ttNumKey" placeholder="Ticket Number"></p> -->
+			<input id="fn" type="text" name="ttNumKey" placeholder="Ticket Number"></p>
+			<p><button type="submit" >RetrieveTicket</button></p>
+			<!-- as soon as you hit Register, it goes to '/BookTicket' path and brings the Ticket number object -->
+	</form>
+	</div>
+	<p><A th:href="@{/ClientHomePage}">Goto PassengerForm Homepage</A></p>
+	
+</body>
+</html>

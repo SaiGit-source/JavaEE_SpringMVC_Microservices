@@ -2,10 +2,21 @@ package com.Thymeleaf.TttClientApp.model;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Passenger {
+	private Integer pid;
 	public String pname;
+	public Integer getPid() {
+		return pid;
+	}
+	public void setPid(Integer pid) {
+		this.pid = pid;
+	}
 	public String pdeparture;
 	public String parrival;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	public LocalDate pdateOfJourney;
 	public String getPname() {
 		return pname;
@@ -31,8 +42,9 @@ public class Passenger {
 	public void setPdateOfJourney(LocalDate pdateOfJourney) {
 		this.pdateOfJourney = pdateOfJourney;
 	}
-	public Passenger(String pname, String pdeparture, String parrival, LocalDate pdateOfJourney) {
+	public Passenger(Integer pid, String pname, String pdeparture, String parrival, LocalDate pdateOfJourney) {
 		super();
+		this.pid = pid;
 		this.pname = pname;
 		this.pdeparture = pdeparture;
 		this.parrival = parrival;
@@ -44,8 +56,9 @@ public class Passenger {
 	}
 	@Override
 	public String toString() {
-		return "Passenger [pname=" + pname + ", pdeparture=" + pdeparture + ", parrival=" + parrival
+		return "Passenger [pid=" + pid + ", pname=" + pname + ", pdeparture=" + pdeparture + ", parrival=" + parrival
 				+ ", pdateOfJourney=" + pdateOfJourney + "]";
 	}
+	
 
 }
