@@ -69,6 +69,29 @@ if ZipCode API doesn't generate ZipCode we cannot run WeatherAPI so one thread m
 
 Sometimes we want Emp Personal Info and Emp payslip both APIs are independent of each other so communication can happen in parallel. So Asynchronous communication will work here. WebClient with subscribe() method will do
 
+XML
+To convert XML to Java object and vice-versa, we use @JacksonXmlRootElement on top of model class. for that we take maven dependency for Jackson dataformat XML. XML interaction is needed to access SOAP-based APIs
+
+Profile:
+Software Development -> two steps: Step1: Writing the code (Developer task), Step2: Building & Deployment(Devops task) -> write code push to Git -> pull code from Git then build and deploy on Kubernetes. Jenkins will automate the build and deploy application. Three environments: first deploy on Dev environment, then SIT (System in Testing), then UAT, Pilot env and Prod environment. Prod env means application is deployed for the entire world. end users can access the application
+
+Dev env might have a different database MySQL 8080, SIT might be on PostGres 8081, UAT on Oracle 8084 and so on. to avoid making changes in application multiple times, thats why we have SpringBoot Profiles. Create multiple profiles or create multiple application.properties/configuration files. Application becomes flexible for different environment configurations.
+
+@Profile() takes precedence over @Primary
+
+Spring Hateos:
+Dont give all information fully and give only if enduser clicks on it requesting information
+in eCommerce websites, first we see some products, then it says more info, they have to click only then you will see more products
+first give limited information, then provide links for more information
+
+Spring Scopes:
+Spring supports 4 scopes: 1. Singleton, 2. Prototype, 3. Request, 4. Session
+
+Spring Actuators:
+
+
+
+
 
 
 
