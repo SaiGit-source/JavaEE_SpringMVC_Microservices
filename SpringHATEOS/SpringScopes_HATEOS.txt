@@ -1,0 +1,66 @@
+Spring Scopes: Singleton, Prototypes, Request, Session
+
+Default scope of all projects is Singleton then we have Prototype
+
+whenever we create a bean, constructor will be invoked. Default scope of all beans is Singleton
+
+
+ITouristService repo; // only one implementing class is there, so no confusion for IOCContainer during dependency injection
+
+even though the object is getting injected multiple times, still the bean is being created only once. if it is Singleton, it supports eager initialization, one bean per IOCContanier. doesn't matter how many times we are using the beans
+
+to change scope, we say @Scope("prototype") or @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+
+Default scope of all beans is Singleton
+
+In Singleton, the bean is getting created no matter whether it is being used or not, thats eager initialization. (Eager initialization and One bean for all dep injections)
+
+In Prototype, how many times you are injecting the beans, that many number of beans are getting created. everytime you want to inject the bean that many times it is getting created. if you perform 10 dependency injection of a particular object, 10 times bean is being created, that's Prototype scope. Prototype promotes LAZY initialization. say if you are not using the bean, Protype scope will not create a bean (Lazy initialization and num of beans depends on num of injections)
+
+In Request scope, usually we apply to APIs or Controller methods. @Scope("request") in Controller. Unless and until you dont use the bean, there wont be bean created. LAZY initialization. In Controller, only when the API is being called, the bean is created. Bean will be created everytime there is a HTTP request to Application. if we have 100 requests, then 100 bean is created
+
+In Session scope, when you make a request to an application one Session ID is created. after that, for next n requests, the same Session ID is being used. that means the same user is making the requests. @Scope("session"). this is also applied to Controller. it supports LAZY initialization. As soon as i make the request, TouristRestAPI bean is created. TouristRestAPI is the Controller class. Only one controller bean will be created for entire user session. 
+
+Mostly we go with the default scope, which is Singleton. Default container SpringBoot follows is Application Context and it support EAGER Initialization. however, we can make beans behave like Lazy using @Scope(). if you want a different bean or data for different requests then we use Scope("request")
+
+******************************************
+
+application.properties VS application.yaml file
+right now, we are doing all application configurations in application.properties. we use it to configure various configurations of application. in application.properties, data is configured in the form of key=value pairs. In Eclipse, if you right-click application.properties, we can convert application.properties to application.yaml file. data will be represented in hierarchical manner. Yaml is not specific to Java but application.properties is specific to Java. Yaml is universal. spring.datasource.url in application.properties => 
+spring:																					
+  datasource: // two spaces																				
+    url:																				
+    username:
+
+***********************************************
+
+HTTPRequest & HTTPResponse:
+
+HTTPRequest -> 3 things 1. request Url (request type like GET + URL), 2. Request header (metadata information about request, JSON or XML?), 3. Request Body (Actual data or Payload)
+
+HTTPResponse -> 3 things 1. Response line(Status code & Status message), 2. Response header (metadata info), 3. Response body (Payload).
+
+HTTPStatus -> Success OK (200 to 299 or 2XX), ClientError: BadRequest (400 to 499 or 4XX), ServerError: (500 to 599 or 5XX), Information: 100 to 199 (1XX), Redirection: 300 to 399 (3XX)
+
+if 404 then client has not provided correct input or input format
+
+Thats why ResponseEntity<> is better because ResponseEntity<> will provide header, status other info also to the client. so dont return only Payload in the Controller methods. ResponseEntity<> is recommended.
+
+*****************************************************
+
+Spring HATEOS: upcoming class
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
