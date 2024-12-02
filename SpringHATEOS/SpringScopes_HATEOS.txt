@@ -50,6 +50,19 @@ Thats why ResponseEntity<> is better because ResponseEntity<> will provide heade
 
 Spring HATEOS: upcoming class
 
+we will get only a few information, then we provide the link for more information.
+
+Hypermedia as the Engine of Application State. WebMvcLinkBuilder gets the link for more info. 
+
+*********************************************
+
+React with SpringBoot notes:
+@CrossOrigin(origins="http://localhost:5173/") // we are allowing React to access my SpringBoot server
+
+************************************************
+
+Unit testing must be done in isolation:
+dev 1 developed void alpha() {} and dev 2 developed void beta() { }. but dev1 is using beta() method in void alpha(){}. so if beta() fails then alpha also will fail the unit test. thats why we got to mock beta() functionality in alpha(). mokito will mock beta() unit so testing alpha() in isolation
 
 
 
