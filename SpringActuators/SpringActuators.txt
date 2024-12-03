@@ -1,0 +1,16 @@
+Actuators:
+
+Actuators has pre-defined endpoints, we can learn what's going on with the application during production. we can monitor the application using HTTP endpoints
+
+management.endpoints.web.exposure.exclude=env, beans to avoid these things to be displayed for security reasons
+
+shutdown is the only endpoint that's not binded to GET request, shutdown needs to be enabled manually
+
+**************************************
+
+Batch processing:
+
+How to process bulk data? SpringBatch
+
+
+
