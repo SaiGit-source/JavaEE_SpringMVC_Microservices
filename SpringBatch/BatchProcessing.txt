@@ -1,0 +1,35 @@
+Batch processing:
+
+Processing thousands of pay slips of employees. at a time, they are processing thousands of records. Processing bulk data at a time.
+
+use chatGPT to generate a large CSV file. -> read all records -> Use SpringBoot to process the dataset and store permanently in database
+
+
+Fastest programming language -> C -> Rust -> Java ...... -> Python. Slowest language is Python
+
+Spring Batch Terminologies:
+
+JobLauncher
+Job
+Step -> ItemReader, for this you got to specify Source from where i got to read data and write data. ItemReader will read data into application. Read data into application so configure Item Reader
+     -> ItemWriter, write data into destination (Database).
+     -> ItemProcessor. all these are configured into something called as JobRepository
+
+
+All ItemReader, ItemWriter, ItemProcessor will be configured into Step. Step is inside Job. Within one job, there can be multiple Steps. but within each Job, we have only one ItemReader, one ItemWriter, and one ItemProcessor
+
+JobLauncher launches the job. 
+
+JobLauncher -> Job -> Step -> one ItemReader, one ItemWriter, one ItemProcessor
+     |		|	|
+	  JobRepository
+
+Job is insider JobLauncher then we give all information to JobRepository
+
+Security configuration or Batch job configuration is one-time setup. Add "Spring Batch" dependency in Spring application. Others include Spring Web, MySQL Driver, SpringDataJPA, Spring Boot Dev tools
+
+in application.properties set spring.batch.jdbc.initialize-schema=ALWAYS
+
+
+
+
