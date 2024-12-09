@@ -1,0 +1,45 @@
+Spring Security
+
+it is about securing our APIs / resources / Application
+
+it is all about authentication and authorization. who can access which resource for how much time.
+
+Udemy course website
+level 3: all can access -> course list / fees etc
+level 2: you can access only courses you are enrolled only, for specified amount of time
+level 1: only Admin can add or modify courses
+
+OWASP : Open Web Application Security Project, which gives Top 10 trending web application security risks  
+
+the way you design software might lead to security risks
+
+something that was deprecated, functionality could be same but there might be other issues like security breach, possibility of security risks in deprecated annotations
+
+
+
+Default configuration models, filters (Session ID), CSRF, JWT (token based authentication), OAuth2
+
+Spring Security dependency creates a Login page by default
+
+whenever you visit any application, based on first request, in the server, one session ID is generated automatically. Same user from the same client can access any of the resources as long as session ID is valid. when Session ID expires, the login page shows up again. once you login successfully you get the Session ID
+
+client -> filter -> filter -> filter -> Servlet, Servlet will respond to Client. Filter-chaining -> requests go through multiple filters. Default Spring Security filters are there, like it is showing up the default login page. default behaviour of Spring Security is, it will secure all resources / APIs by default
+
+in Postman, you got to pick Basic Auth under Authorization, enter user and password
+
+instead of default user and password, we need user-defined name and password. for that we got to disturb the default settings
+
+Some hacker could use the same Session ID and use all resources. to overcome this problem, we have JWT and CSRF tokens
+
+if you have same-site restriction, then someone with the same Session ID and different-site wont be able to access the site
+
+next, JWT token, CSRF token, BCrypt algorithm to encrypt password
+
+
+
+
+
+
+
+
+
