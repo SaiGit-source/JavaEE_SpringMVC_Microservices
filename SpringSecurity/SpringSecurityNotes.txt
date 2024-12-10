@@ -35,6 +35,43 @@ if you have same-site restriction, then someone with the same Session ID and dif
 
 next, JWT token, CSRF token, BCrypt algorithm to encrypt password
 
+RestAPI methods are binded to GET, POST, PUT, DELETE. 
+
+CSRF -> Cross Site Request Forgery, by default it is implemented
+
+whenever a client is making request to application -> first request creates SessionID and gets stored in the form of cookies. GET request is not much of a problem, but POST/DELETE will make changes on Server-side. with same sessionID, we can only do GET requests but not POST/DELETE/PUT requests due to CSRF. Everytime you visit application, CSRF token is generated and it cannot be given to anyone. Where to get CSRF token? HttpServletRequest request.getAttribute("_csrf"); we need to pass CSRF token along with sessionID for POST/DEL requests
+
+For POST request: add new Header: copy csrf token and send POST request
+
+Stateful vs Stateless:
+Stateful means it will remember client info at the server. the server will understand the same user is coming back
+Stateless means server will not remember client info. every request is considered as a new request
+
+if make my application Stateless, then sessionID or CSRF dont come into pic. so it much safer
+
+By default, it will get username and password from application.properties and will do authentication
+
+till now, we have learned the default security system of Spring framework. it is risky to use the default system so we got to give our own configuration
+
+we want to disturb default settings -> change to stateless, disable CSRF, multi-user authentication
+
+
+next steps: few resources can be accessed by everyone, few resource accessed by only a few users
+
+then we got to understand JWT JSON Web Token. JTW generation, Token verification, then OAuth 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
