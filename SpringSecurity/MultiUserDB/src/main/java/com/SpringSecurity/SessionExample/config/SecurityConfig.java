@@ -12,6 +12,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
@@ -30,6 +31,9 @@ public class SecurityConfig {
 	{
 		http.csrf(customizer->customizer.disable());
 		//http.formLogin(Customizer.withDefaults());
+		http.authorizeHttpRequests(authorizeHttp->authorizeHttp
+				.requestMatchers("add-newuser").permitAll().anyRequest().authenticated());
+		//for /add-newuser API, we are permitting all users because it's like a signup page
 		
 		http.httpBasic(Customizer.withDefaults());
 		http.sessionManagement
@@ -42,7 +46,8 @@ public class SecurityConfig {
 	{
 		DaoAuthenticationProvider daoProvider = new DaoAuthenticationProvider();
 		daoProvider.setUserDetailsService(userDetailsService);
-		daoProvider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+		// daoProvider.setPasswordEncoder(NoOpPasswordEncoder.getInstance()); // this one is No password encoder
+		daoProvider.setPasswordEncoder(new BCryptPasswordEncoder(12));
 		return daoProvider;
 		
 	}

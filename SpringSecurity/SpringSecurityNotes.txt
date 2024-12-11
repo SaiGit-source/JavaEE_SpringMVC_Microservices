@@ -55,10 +55,33 @@ till now, we have learned the default security system of Spring framework. it is
 
 we want to disturb default settings -> change to stateless, disable CSRF, multi-user authentication
 
+********************************************************
 
 next steps: few resources can be accessed by everyone, few resource accessed by only a few users
 
 then we got to understand JWT JSON Web Token. JTW generation, Token verification, then OAuth 
+
+The problem is, Password is stored as in plain text in the database, which is unacceptable. How to encrypt passwords? BCrypt algorithm. create instance of BCryptPasswordEncoder bcrypt = new BcryptPasswordEncoder(12); // 12 rounds of encoding
+
+some of the resources can be accessed by anyone, answer is Yes (say User signup API). http.authorizeHttpRequests()
+
+***********************************************
+
+OAuth2.0:
+say you want to visit a 3rd party application, based on the info from 3rd party API, we give access to users accordingly. you want to register using 3rd party API like Google, Facebook, etc. thats when we need OAuth2.0. Add dependency OAuth2 -> Client, Spring Web. In OAuth2 by default, we are getting Spring Security login page. the class we got to disturb is SecurityFilterChain. Go to Google console -> console.cloud.google.com -> create OAuth client ID -> Add URI -> copy Client ID, Client secret. Set oauth2.registration.google.client.id in application.properties, same for client secret. if you enter the API endpoint in browser then it will redirect to Google login page. if you want to signin with Github, then do the same thing. github.com/settings/application
+
+***************************************************
+
+JWT token based authentication -> JSON Web Token: Two steps: token generation and token verification
+
+
+
+
+
+
+
+
+
 
 
 
