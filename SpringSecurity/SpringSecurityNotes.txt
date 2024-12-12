@@ -74,7 +74,30 @@ say you want to visit a 3rd party application, based on the info from 3rd party 
 
 JWT token based authentication -> JSON Web Token: Two steps: token generation and token verification
 
+All requests are Stateless that means all requests are treated like a new request
 
+This is something like buying an assigned subscription. for the first time, you visit the application, you got to pass-in login credentials, once verified the application returns 'signed pass' due to the trust. if the user is trustworthy, application generates the token for the user, next time the user visits, they dont need to provide login credentials again instead they got to present the token to use the application and to access resources.
+
+how to generate JWT token for the client? how to take-in the JWT token from the client and verify the token? the application will receive token back from client and extract information from that for authentication. third-party API: https://jwt.io/. add jwt library
+we got to create claims
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "iat": 1516239022
+}
+when you get the JWT, you got to go to Bearer Token and enter this token to access application resources. no need for username password any more.
+e
+how do we verify JWT?
+get the token, extract username, pass it into Spring method to verify same username in DB then authenticate
+
+
+
+
+ 
+
+ 
+
+ 
 
 
 
