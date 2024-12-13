@@ -1,0 +1,6 @@
+MultiDB config:
+
+SpringBoot App should get connected to multiple DBs like PostgresSQL, MySQL
+dependencies : Spring Web, JPA, Postgres driver, MySQL driver, dev tools
+we cannot configure two DBs in the same application.properties we need to write our own Config files
+SpringCloudConfiguration to separate yaml file from application for security purposes
