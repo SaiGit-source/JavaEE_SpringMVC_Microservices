@@ -1,4 +1,4 @@
-package com.SpringBoot.MultiDBProj.model;
+package com.SpringBoot.MultiDBProj.model.customer;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
