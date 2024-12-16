@@ -1,0 +1,79 @@
+Microservices:
+
+prerequisites: SpringCore, RestfulServices
+
+Topics must to know: API gateway (Filter, Routing)
+Service registry (Eureka server)
+Admin server
+Zipkin server
+Spring Cloud Config server
+Fieng client
+Apache Kafka
+Redis server
+Circuit breaker pattern & Retry pattern
+
+All the applications we have developed so far follow monolith architecture -> all features/functionality developed all part of single package or one single application
+The entire application is typically packaged as a JAR/WAR file and deployed to the server
+
+Advantages of Monolith architecture:
+Easier to maintain, Everything in one place, Single configuration
+
+Disadvantages of Monolith architecture:
+Single point of failure, Difficult to maintain as features increase, Small feature change then we got to repackage and redeploy application, Tight dependencies(components are tightly coupled)
+
+
+thats where Microservices comes in
+
+Microservices Architecture:
+Generic architecture design pattern helps to develop application with loose coupling. Most of Banking, Tourism applications follow microservices architecture. they have divided one single application into multiple applications -> multiple backend applications (deployed on different servers). we break application by functionalities into loosely coupled independently deployable units. Uses multiple Rest APIs and each API is treated as a Microservice.
+
+Advantages of microservice:
+Easy to maintain, New feature can be rolled out faster, Quick deployment, Less downtime, Technology independence, Scalability
+
+Disadvantages of microservice:
+At the architectural level itself, it is challenging to decide how many microservices should be there (Bounded context)
+We got to maintain so many Rest APIs / Microservices -> configuration difficult to manage (which technology to be used for which microservice)
+Visibility of application is hard -> difficult to monitor different services
+ 
+
+Lets say we have many Rest APIs or Microservices, they have to connect to Eureka Server (Service Registry), Admin server, Zipkin server, Spring config server (to separate config from application), Kafka to process real-time data, Redis, Feign client (to scale up application instead of WebClient. APIs are able to talk to each other). Entry point to the application is API gateway where we have the logic of Filter, Routing. User will only see UI. User -> API gateway -> Service registry -> API gateway -> routing to flight booking API
+
+They are not compulsory components for Microservices. Compulsory ones are API gateway and service registry
+
+Service Registry: All APIs must be registered here. it is acting like a database that keeps track of all the available services in the system including the API gateway. if someone wants to know about services, they will go to Service Registry to know how many services are present in the system. Allowing the discovery of all available services. Eureka server is commonly used as Service registry. 
+
+Load balancing: say we have massive concurrent visits, then server will break-down. thats where Load balancing comes into picture. say i am dividing application into 20 servers, that means 20 instances of applications. we use round-robin technique to divide the load because the application is divided right. Yes, Eureka server know how many servers / instances of the application are present. for this auto-scaling comes into picture. buy servers on cloud. AWS auto-scaling -> as load increases, automatically servers will be increased
+
+API Gateway: Primary purpose is routing and filtering. Entrypoint to the application. Routing is done from the endpoint at the API gateway itself. All authentication, logging, security everything is maintained in API gateway. It handles requests from users and forwards them to correct service. Spring Cloud Gateway for Spring based applications. Filters include Authentication, Authorization checks, logging. We cannot use Zuul proxy as API gateway after Spring 6, instead we will use Spring Cloud Gateway
+
+Admin server: it is optional. if you want to monitor health etc of application during production, we need Actuators. Admin server will maintain all endpoints of all Actuators. because there are multiple applications, Admin server helps to keep track of multiple actuators 
+
+Zipkin server: it will help you know the performance of application. how much time one microservice is taking etc can be managed using Zipkin server. helps with visibility and to optimize performance of microservices
+
+Cloud Config Server: where to maintain Kafka config, Database config etc usually in application.properties / application.yaml. thats where Cloud config server comes into picture this will keep config files away from application. Spring Cloud config server helps maintain config in some isolated repos it is easier to make changes moving forward.
+
+Redis and Kafka: Only Optional, not compulsory. 
+
+Kafka: critical while handling real-time data. how do we know the cricket score live? to transfer real-time streaming data between microservices, then Kafka is used.  
+
+Redis server: A cache for database, to reduce number of database hits
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
