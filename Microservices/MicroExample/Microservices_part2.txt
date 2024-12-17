@@ -1,0 +1,72 @@
+PartII
+
+How to create Eureka Server - service registry
+
+Eureka server App
+
+dependency : Spring Boot Dev Tools, Eureka server
+
+we need to attach a new annotation in Application file @EnableEurekaServer
+
+open localhost:8080 to see Eureka server dashboard
+
+registered replicas: localhost:8761/eureka
+
+application.properties: server.port = 8761
+when you deploy application on Eureka port then the application registers automatically with no extra efforts
+
+eureka.client.register-with-eureka=false // dont self-register Eureka server into Service registry
+
+
+Admin Server application
+maintain endpoints of all actuators of all microservices
+dependency: Codecentric Spring Boot Admin (Server), Spring Boot Dev Tools
+
+Attach: @EnableAdminServer
+server.port=1414
+
+To create Actuator endpoints:
+create another SpringBoot application -> Spring Web, Spring Boot Dev, Eureka Discovery Client, Spring Boot Actuator, codecentric Admin (Client)
+@EnableDiscoveryClient in Application file, deploy on server.port=8481
+
+first run EurekaServer, then AdminServer. goto application.properties file of microservice: spring.boot.admin.client.url=http://localhost:1414/ -> register the app with AdminServer
+to enable Actuator: management.endpoints.web.exposure.include=*
+now check both Eureka server and Admin server
+
+create Microservice2 application (dont copy paste project) -> server.port=8482
+
+
+Go to Postman: Get: localhost:8482/course-details  this endpoint is in Microservice2. it is coming from another Rest API
+right now, Microservice1 is deployed on one server. what if we deploy on 50 servers, 50 instances?
+
+in Eclipse, to go to other servers click that Monitor (Display Selected Console) icon in the terminal/console then pick the server you want
+
+how to deploy one microservice into multiple servers?
+Go to Arguments -> VM arguments in Configuration: right-click project and go to Run-As -> run configurations
+-Dserver.port=8081 -> Apply. Go to AdminServer and see 2 instances of microservice
+
+Lets say we have 100,000 requests from users. thats why we need Load balancing. we cannot implement load balancer if we go with RestTemplate or WebClient. thats why FeignClient comes into picture. because with WebClient, requests can only go to one port or server. we hardcode RestAPI with port in RestTemplate/WebClient
+
+
+Feign client:
+Spring Application
+when one microservice seeks help of another microservice, and also for load distribution between different instances of the same Microservice. thats why we need Feign client, we are not hardcoding the IP:Port of the microservice in Feign client
+dependency: OpenFeign, 
+create Interface with @FeignClient(name="ServiceName") // mention the service name not the port, doesn't matter how many instances of the service is available
+@EnableDiscoveryClient, @EnableFeignClients -> important
+
+
+Remember you got to run first Eureka Server, then Admin Server, then MainMicroservice then the rest of the microservices that are trying to connect to MainMicroservice
+
+
+
+
+
+
+
+
+
+
+
+
+
