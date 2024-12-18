@@ -1,0 +1,74 @@
+Microservices:
+
+say you have 3 instances of MainMicroservice -> FeignClientMicroservice makes request to MainMicroservice. the API requests are evenly distributed using round-robin technique.
+
+The concept of load-balancing is happening automatically, no extra dependencies, no extra configuration code. Load balancing is implemented by default.
+
+
+RestTemplate or WebClient directs traffic to only one instance of MainMicroservice because IP:Port is hardcoded. so it cannot support the concept of load-balancing
+
+Zipkin server: optional server
+
+Zipkin not available in Spring
+
+Search on Google Zipkin server, something called as Zipkin.io -> Java latest release -> download -> extract -> go to command prompt -> run the command shown in website. 
+java -jar zipkin-server-3.4.1-exec.jar
+in my pc:  C:\PATH_TO\openjdk-22.0.2_windows-x64_bin\jdk-22.0.2\bin\java.exe -jar zipkin-server-3.4.3-exec.jar
+
+zipkin server will get started and registered on port 9411
+
+open in browser: http://localhost:9411 -> no traces currently
+
+Spring project -> dependency -> Zipkin
+
+open in browser: http://localhost:9411 -> click Run Query
+
+Add
+spring.zipkin.base-url=http://localhost:9411
+
+
+Module to develop Microservices in SpringBoot : SpringCloud
+
+SpringCloudConfig Server: optional server
+
+Microservice is an independent application with its own yaml, properties and database
+
+any small change in properties file, we got to re-package and re-deploy. thats where we have Spring Cloud Config server. it will help separate yaml config files from actual application
+
+Microservice1 -> Cloud Config Server <- .yml or .properties file on Git
+Microservice2 -> 						
+Microservice3 ->
+
+All Microservices contact Cloud Config Server to retrieve config information . Any changes you make in Config files, you need not re-package and re-deploy. Spring Cloud Config server is used to separate config properties from application. Microservices connect to Config server, which in turn will load config data into microservices
+
+Spring application -> dependency -> Spring Dev Tools for auto-reloading, Config Server (central management for configuration)
+@EnableConfigServer
+
+@Value("${url})
+
+
+new Spring application -> for Microservice -> dependency -> Cloud Client, Spring Web, Spring Boot Dev Tools
+spring.config.import=optional:configserver:http://localhost:8080
+server.port=8282
+@Value("${msg})  -> msg key not mentioned in application.properties
+
+in SpringCloudConfigServer -> application.properties -> read data from spring.cloud.config.server.get.uri=https://github.com/SaiGit-Source/JavaEE path of the yml file
+
+for static application.properties -> no need for SpringCloudConfig
+for dynamic configuration -> it is good to have SpringCloudConfig to avoid re-deployment of application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
