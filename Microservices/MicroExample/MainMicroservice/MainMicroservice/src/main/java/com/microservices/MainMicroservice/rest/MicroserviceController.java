@@ -1,5 +1,7 @@
 package com.microservices.MainMicroservice.rest;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,10 +24,16 @@ management.endpoints.web.exposure.include=* to enable Actuators
 @RestController
 public class MicroserviceController {
 	
+	@Autowired
+	private Environment env;
+	
+	// the idea here is, load balancer sends requests to different instances or ports of the same application on round-robin basis
+	
 	@GetMapping("/get-main-info")
 	public ResponseEntity<String> getCourseInfo()
 	{
-		String info="Welcome to the main page! I am the main microservice";
+		String port = env.getProperty("server.port"); 
+		String info="Welcome to the main page! I am the Main microservice from port: "+port;
 		return new ResponseEntity<String>(info,HttpStatus.OK);
 	}
 

@@ -22,6 +22,14 @@ import com.microservices.FeignClientMicro.service.FeignService;
 // Right-click Application.java -> Run-as -> Run Configurations -> Arguments -> VM arguments -> -Dserver.port=8086
 // if you go to AdminServer you will see two instances of FeignClients
 
+/* Zipkin server
+ * download from https://zipkin.io/pages/quickstart not part of Spring
+ * it will help you know the performance of application. how much time one microservice is taking etc can be managed using Zipkin server. helps with visibility and to optimize performance of microservices
+ * to start:
+ *  C:\PATH_TO\openjdk-22.0.2_windows-x64_bin\jdk-22.0.2\bin\java.exe -jar zipkin-server-3.4.3-exec.jar
+ *  runs on: http://127.0.0.1:9411/
+ */
+
 @RestController
 public class FeignController {
 	
