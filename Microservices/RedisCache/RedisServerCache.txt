@@ -1,0 +1,63 @@
+Redis cache -> Server
+
+SpringBoot App -> Apache Kafka
+
+Cache -> Temporary storage
+
+	-> Data represented in the form of key-value pair
+	-> To reduce num of dbcalls from one App
+
+	       Cache
+	|		|
+Java App 	->    DBMS -> Static table
+	 <-	 -> non-static table
+
+first time you visit the website, it will keep in cache memory. afterwards, it comes from cache memory
+
+
+two components of Redis:
+
+1. Jeddis connection factory represents connection with Redis server (to get connection)
+2. RedisTemplate -> to perform operations with Redis template
+	|
+    Ops for Hash -> put data into Redis (Put()), Delete(), Get()
+
+open redis.io
+
+
+Spring App -> Spring Web, Spring Data Redis, Spring Dev Tools for auto-reloading,  https://mvnrepository.com/artifact/redis.clients/jedis
+
+if there is only parameterized constructor there will be NO zero param constructor -> for Spring to create an object of this class the only constructor left is param constructor. so without @Autowired, dependency injection is happening
+
+Java supports backward compatibility
+
+Download and open redis-server.exe. it will automatically start Redis server
+
+type: PING response: PONG
+
+set age 16
+get age
+"16"
+
+one of the advantages of Spring framework is automatically manage version -> version management
+
+Kafka:
+Apache Kafka + SpringBoot -> it is a message broker -> the one who takes data between applications real-time ->  microservice 1 | kafka | microservice 2 -> Kafka is the message broker between two microservices
+
+two components: producer and subscriber
+
+producer -> | kafka | <- subscriber. adding data into Kafka is producer and the one that's subscribing data is subscriber 
+    |
+publish
+
+
+
+
+
+
+
+
+
+
+
+
