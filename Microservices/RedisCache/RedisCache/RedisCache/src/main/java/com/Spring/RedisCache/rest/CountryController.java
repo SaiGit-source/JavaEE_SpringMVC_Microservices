@@ -18,6 +18,7 @@ import com.Spring.RedisCache.service.CountryService;
 	-> To reduce number of DBcalls from one App
 
  */
+// download Redis installer (Redis-x64-3.0.504.msi) from : https://github.com/microsoftarchive/redis/releases
 // Start Redis server -> click redis-server.exe installed
 // installer is on Git as well
 // POST: http://localhost:8080/add-country
