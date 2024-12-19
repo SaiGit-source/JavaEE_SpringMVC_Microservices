@@ -22,7 +22,12 @@ two components of Redis:
 	|
     Ops for Hash -> put data into Redis (Put()), Delete(), Get()
 
-open redis.io
+open redis.io 
+or download Redis-x64-3.0.504 from https://github.com/microsoftarchive/redis/releases
+install redis
+open redis-server.exe
+open redis-cl.exe
+
 
 
 Spring App -> Spring Web, Spring Data Redis, Spring Dev Tools for auto-reloading,  https://mvnrepository.com/artifact/redis.clients/jedis
