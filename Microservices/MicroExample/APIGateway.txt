@@ -1,0 +1,62 @@
+Microservices: API Gateway
+
+this is the entry-point to application same like Feignclient (microservice-microservice interaction) except it is for client-microservice interaction.
+
+client could be from any application -> web, iOS, Android. to access microservice, they have to mention port# of the microservice also. one microservice accessing while one microservice accessing another microservice, they dont need the port#. that's where API Gateway comes into picture, it is the entry-point.
+
+Clients like Web or Mobile doesn't reach out to microservice directly instead they go through API Gateway. All APIs or microservices will be registered with Eureka server. i want to give common entrypoints to all clients and they will be in API gateway. now no matter what the client is, they dont have to mention port# anymore. this port# problem is solved by API Gateway
+
+We can write the logic of routing and API gateway will redirect client requests to microservices
+
+
+Spring application -> dependency -> Eureka discovery client, Gateway, 
+ 
+application.properties: server.port=8448, spring.cloud.gateway.discovery.locator.enabled=true
+spring.cloud.gateway.discovery.locator.lower-case-service-id=true
+
+@EnableDiscoveryClient
+
+start EurekaServer, 
+
+After API gateway and get the port# of API gateway. http://localhost:8448/MicroserviceName/APIPath
+
+new package: .routes ->
+ 
+@Configuration
+public class Routes
+{	
+	@Bean
+	public RouterFunction<ServerResponse> response()
+	{
+		return GatewayRouterFunctions.route("microserviceName").route(RequestPredicates.path("APIPath"),HandlerFunctions.http("http://localhost:8583")).build();
+	}	
+}
+
+now reachout to API gateway: http://localhost:8448/APIPath not directly to microservice - doesn't matter how many microservices we have. we are only reaching out to API gateway
+
+application.properties: 
+server.port=8448
+spring.cloud.gateway.discovery.locator.enabled=true
+spring.cloud.gateway.discovery.locator.lower-case-service-id=true
+spring.cloud.gateway.routes[0].id=MicroserviceName1
+spring.cloud.gateway.routes[0].uri=http://localhost:8583
+spring.cloud.gateway.routes[0].predicates[0]=path=/APIPath
+
+spring.cloud.gateway.routes[1].id=MicroserviceName2
+spring.cloud.gateway.routes[1].uri=http://localhost:8484
+spring.cloud.gateway.routes[1].predicates[0]=path=/APIPath
+
+
+How to make our application resilient?
+Resilience4J library, how to write fallback logic all upcoming class
+
+
+
+
+
+
+
+
+
+
+

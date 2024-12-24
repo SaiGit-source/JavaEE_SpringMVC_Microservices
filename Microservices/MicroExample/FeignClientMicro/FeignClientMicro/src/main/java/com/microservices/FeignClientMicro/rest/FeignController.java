@@ -30,6 +30,14 @@ import com.microservices.FeignClientMicro.service.FeignService;
  *  runs on: http://127.0.0.1:9411/
  */
 
+/* After API Gateway
+ * 
+ * // now instead of reaching out directly to FeignClientMicro: 
+ * "http://localhost:8086/getWelcomePage", 
+ * we reach out to API Gateway IP: http://localhost:8448/getWelcomePage
+ * FeignClient: Welcome to the main page! I am the Main microservice from port: 8582 coming from MainMicroservice
+ */
+
 @RestController
 public class FeignController {
 	
