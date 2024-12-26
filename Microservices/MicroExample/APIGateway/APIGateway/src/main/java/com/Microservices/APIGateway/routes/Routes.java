@@ -22,7 +22,7 @@ public class Routes {
 	{
 		return GatewayRouterFunctions.route("FeignClientMicro")
 				.route(RequestPredicates.path("/getWelcomePage"),
-				HandlerFunctions.http("http://localhost:8086")).build();
+				HandlerFunctions.http("http://localhost:8085")).build();
 	}
 	
 	// note this works as well

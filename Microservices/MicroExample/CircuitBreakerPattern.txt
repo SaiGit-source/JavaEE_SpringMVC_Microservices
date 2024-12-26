@@ -1,0 +1,59 @@
+Circuit Breaker Pattern:
+
+How to make our microservices resilient?
+
+All requests -> API gateway -> microservice1
+			    -> microservice2
+
+Lets say we are getting 30 requests to a microservice, all 30 are first going to API gateway. that might be a burden to API gateway. API gateway might go down
+
+in case of such API gateway failure, how to make application resilient. burden should not go to API gateway
+
+thats why we got to implement 'Circuit breaker pattern'
+
+until Spring 3, we got to use 'Hystrix' library, these days it is resilence4j library
+
+Spring Cloud Circuit Breaker -> Resillence4J dependency
+
+In API gateway, we got to add this library/dependency
+
+
+management.health.circuitbreakers.enabled=true needed to actuator endpoints
+
+count_based : if 50% of requests going via API gateway fails then trigger Circuit breaker
+
+3 states: closed, open (in open state, no requests will go to microservice stay in open state for 5 sec dont make any requests to microservice), -> slowly go to -> half-open (try to send one or two requests to microservice and see). if microservice starts to respond, go to Closed state
+
+closed -> open -> half-open state loop. in closed state, circuit breaker is not triggered
+
+lets stop MainMicroservice then trigger GET request, then it will trigger circuit breaker logic
+
+
+Retry Pattern also for application resilience
+
+Realtime Dataprocessing -> lowest latency
+Apache Kafka: Publisher/Producer -> Subscriber/Consumer
+
+Microservice1 (Producer of data) -> Zookeeper (Kafka runs on Zookeeper) -> Kafka server (Kafka topic -> message) -> Microservice2 (Consumer of data). Apache Kafka is a message broker
+
+Microservice1 will publish data into Kafka topic -> specify the location of Kafka topic and Kafka server then Microservice2 can read from there
+
+Dependency: Spring for Apache Kafka
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

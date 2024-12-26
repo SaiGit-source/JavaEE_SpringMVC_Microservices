@@ -23,6 +23,13 @@ We can write the logic of routing and API gateway will redirect client requests 
 // now instead of FeignClientMicro: "http://localhost:8086/getWelcomePage", we reach out to API Gateway IP: http://localhost:8448/getWelcomePage
 // output: FeignClient: Welcome to the main page! I am the Main microservice from port: 8582 coming from MainMicroservice
 
+/* remember 3.3.7 only registers APIGateway with Eureka server (not 3.4.0)
+ * 
+ * 		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.3.7</version>
+
+ */
 
 @SpringBootApplication
 @EnableDiscoveryClient
