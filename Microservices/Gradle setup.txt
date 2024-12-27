@@ -1,0 +1,18 @@
+Gradle setup
+
+Gradle / Maven: In Maven we have pom.xml. Maven is a build tool for only Java stack 
+In Gradle: 
+1. Go to gradle.org -> v8.12 download binary
+2. Copy path until /bin and add in environment variables in Windows
+3. Open command prompt: type gradle -v
+	gradle init
+	yes
+	select 1.Application
+	select 1.Java
+	select 3.Groovy
+	select 4.Junit Jupiter
+
+
+Spring new App: Gradle-Groovy
+
+build.gradle -> it is in groovy language and it is similar to pom.xml

@@ -1,0 +1,52 @@
+Realtime Dataprocessing -> lowest latency
+Apache Kafka: Publisher/Producer -> Subscriber/Consumer
+
+Microservice1 (Producer of data) -> Zookeeper (Kafka runs on Zookeeper) -> Kafka server (Kafka topic -> message) -> Microservice2 (Consumer of data). Apache Kafka is a message broker
+
+Microservice1 will publish data into Kafka topic -> specify the location of Kafka topic and Kafka server then Microservice2 can read from there
+
+Dependency: Spring for Apache Kafka
+
+
+Gradle / Maven: In Maven we have pom.xml. Maven is a build tool for only Java stack 
+In Gradle: 
+1. Go to gradle.org -> v8.12 download binary
+2. Copy path until /bin and add in environment variables in Windows
+3. Open command prompt: type gradle -v
+	gradle init
+	yes
+	select 1.Application
+	select 1.Java
+	select 3.Groovy
+	select 4.Junit Jupiter
+
+
+Spring new App: Gradle-Groovy
+
+build.gradle -> it is in groovy language and it is similar to pom.xml
+
+Go to Google, download Kafka -> Download - Kafka -> quick start -> click 'Download' -> click. .tgz file -> extract all -> rename to Kafka
+go to /bin then /windows folder ->  open command prompt from that folder -> /Kafka -> .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties -> .bat for windows and sh for mac and Linux -> get the commands from Kafka quickstart webpage
+
+Best approach: Copy server and zookeeper files from config folder and add into windows folder. type: \bin\windows>zookeeper-server-start.bat zookeeper.properties
+
+Note if Kafka doesn't start use this command to set JAVA_HOME: run as administrator 'setx -m JAVA_HOME "C:\PATH_TO_JAVA22\openjdk-22.0.2_windows-x64_bin\jdk-22.0.2"'
+'
+
+
+first start zookeeper then start kafka server. Zookeeper is required for Kafka server
+
+then go into another command prompt: \bin\windows>kafka-server-start.bat server.properties 
+
+in case of errors, open environment variables delete zookeeper entries 
+
+New Spring application -> Maven -> Spring Web, Spring for Apache Kafka, Spring Boot DevTools -> two files one for Publisher and one for Subscriber
+
+
+
+
+
+
+
+	
+
