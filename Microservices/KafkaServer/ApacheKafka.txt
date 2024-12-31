@@ -43,6 +43,18 @@ in case of errors, open environment variables delete zookeeper entries
 New Spring application -> Maven -> Spring Web, Spring for Apache Kafka, Spring Boot DevTools -> two files one for Publisher and one for Subscriber
 
 
+App1(Publisher->configure ProducerFactory > KafkaTemplate) -> Zookeeper[Kafka server[Topic[message in the form of key-value pair]]] -> App2(Subscriber->configure ConsumerFactory -> KafkaListener)
+
+Default port number of Kafka is 9092
+
+Publisher application could be Python application and Subscriber application could be Spring application
+
+
+
+
+
+
+
 
 
 
