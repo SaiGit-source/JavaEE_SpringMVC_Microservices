@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run EcommerceApplication",
+      "request": "launch",
+      "mainClass": "com.microservices.ecommerce.EcommerceApplication",
+      "projectName": "ecommerce",
+      "cwd": "${workspaceFolder}/ecommerce",
+      "env": {
+        "JAVA_HOME": "C:\\Users\\saito\\Downloads\\openjdk-25.0.1_windows-x64_bin\\jdk-25.0.1"
+      }
+    },
+    {
+      "type": "java",
+      "name": "Run OrderServiceApplication",
+      "request": "launch",
+      "mainClass": "com.microservices.orderservice.OrderserviceApplication",
+      "projectName": "orderservice",
+      "cwd": "${workspaceFolder}/orderservice",
+      "env": {
+        "JAVA_HOME": "C:\\Users\\saito\\Downloads\\openjdk-25.0.1_windows-x64_bin\\jdk-25.0.1"
+      }
+    }
+  ]
+}

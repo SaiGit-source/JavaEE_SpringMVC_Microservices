@@ -1,0 +1,15 @@
+services:
+  user-service:
+    build: ./ecommerce
+    ports:
+      - "8080:8080"
+    container_name: user-service
+  order-service:
+    build: ./orderservice
+    ports:
+      - "8081:8080"
+    container_name: order-service
+  
+
+
+

@@ -1,0 +1,17 @@
+services:
+  user-service:
+    build: ./ecommerce
+    image: saidocker567/user-service:v1 
+    ports:
+      - "8080:8080"
+    container_name: user-service
+  order-service:
+    build: ./orderservice
+    image: saidocker567/order-service:v1
+    ports:
+      - "8081:8080"
+    container_name: order-service
+  
+
+
+
