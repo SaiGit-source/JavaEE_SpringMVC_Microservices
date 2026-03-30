@@ -1,0 +1,72 @@
+# Workspace metadata
+.metadata/
+
+# Build output (Maven/Gradle/Java)
+target/
+build/
+out/
+bin/
+*.class
+
+# Gradle
+.gradle/
+
+# Maven wrapper cache (keep scripts and properties)
+.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse/STS
+.project
+.classpath
+.settings/
+.factorypath
+*.launch
+
+# Eclipse workspace and server runtime files
+Servers/*-config/
+
+# Multi-project Eclipse files (recursive)
+**/.project
+**/.classpath
+**/.settings/
+**/.factorypath
+**/*.launch
+
+# Generated cache/index files in workspace metadata
+.metadata/**/*.dat
+.metadata/**/*.index
+.metadata/**/*.log
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temp
+*.log
+logs/
+tmp/
+temp/
+
+# Java package archives and dumps
+*.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+
+# Local env files
+.env
+.env.*
+!.env.example
