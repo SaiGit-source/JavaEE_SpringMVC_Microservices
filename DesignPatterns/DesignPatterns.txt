@@ -1,0 +1,49 @@
+DesignPatterns:
+
+When we build a software, we face a lot of problems.
+If we have a common problem, can we just solve with the same problem with the previously solved solution
+The best practices are called as Design patterns. They are like thumb-rules for solving similar problems
+
+First principle: Composition over Inheritance
+Second principle: Code for Interface not implementation
+
+Creational design pattern (How to create objects)
+Structural design pattern (What if one object wants to use another object? How to compose one object into another)
+Behavioral design pattern (To make communications between two objects)
+
+Creational: 
+Singleton: we can only create only one instance of this class. Example: UserManagement for Authentication
+Singleton Pattern ensures that a class has only one instance throughout the entire application, and provides a global point of access to it.
+Real-world analogy: Your country has one Government. No matter who asks "who is the government?", they all get the same one. You can't create a second government.
+
+Factory Pattern is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created. It promotes loose coupling by eliminating the need to bind application-specific classes into the code. The Factory Pattern is also known as the Factory Method Pattern.
+
+Builder pattern separates the construction of a complex object from its representation, allowing the same construction process to create different representations
+
+Structural:
+
+Adapter:
+The Adapter Pattern lets two incompatible interfaces work together without changing their existing code.
+Real-world analogy: A power plug adapter. Your laptop has a US plug, but the wall socket is European. The adapter fits in between — you don't modify the laptop or the wall, just plug in the adapter.
+
+Composite:
+The Composite Pattern lets you treat a single object and a group of objects the same way.
+Real-world analogy: A file system.
+A file is a single item — you can get its size.
+A folder contains files (or other folders) — you can also get its size (sum of everything inside).
+You call getSize() on both, and it just works. You don't care if it's a file or a folder.
+
+Prototype pattern:
+Object creation takes up space and time and if object requires data from the database then it takes even more time.
+So instead of creating a new object every time or second object, we clone the existing object itself
+Shallow cloning vs Deep cloning
+Snallow cloning - Cloned object data still depends on source data
+Deep cloning - Cloned object data is independent of source data. basically two different independent objects
+
+Observer pattern:
+Say we have a YouTube channel (Subject) with multiple Subscribers (Subscriber1, Subscriber2, Subscriber3).
+Subscribers are observers of the Subject. So when a new video is uploaded into the channel, the Subscribers are notified.
+This is Push notification.
+
+
+
