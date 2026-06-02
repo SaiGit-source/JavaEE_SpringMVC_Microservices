@@ -60,7 +60,7 @@ public class TransactionHandler implements RequestHandler<S3Event, String> {
         try (SnsClient snsClient = SnsClient.builder().build()) {
             
             // NOTE: Replace this ARN placeholder with your real SNS topic ARN from AWS Toolkit
-            String topicArn = "arn:aws:sns:us-east-1:123456789012:BankingAlerts"; 
+            String topicArn = "arn:aws:sns:us-east-1:577638386543:BankingAlerts"; 
 
             PublishRequest request = PublishRequest.builder()
                     .message(message)
