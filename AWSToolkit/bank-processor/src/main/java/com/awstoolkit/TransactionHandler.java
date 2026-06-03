@@ -17,13 +17,16 @@ public class TransactionHandler implements RequestHandler<S3Event, String> {
     public String handleRequest(S3Event s3Event, Context context) {
         LambdaLogger logger = context.getLogger();
         
-        logger.log("[CLOUDWATCH INFO] Lambda execution triggered by S3 Event.");
+logger.log("[CLOUDWATCH INFO] Lambda execution triggered.");
 
         try {
-            // 1. Extract the bucket name and file name from the S3 event metadata
+            if (s3Event == null || s3Event.getRecords() == null || s3Event.getRecords().isEmpty()) {
+                logger.log("[CLOUDWATCH WARNING] No S3 records found in event payload.");
+                return "No S3 records found. Please invoke with a valid S3 event or upload a file to the S3 trigger bucket.";
+            }
+
             String bucketName = s3Event.getRecords().get(0).getS3().getBucket().getName();
-            String fileName = s3Event.getRecords().get(0).getS3().getObject().getKey();
-            
+            String fileName = s3Event.getRecords().get(0).getS3().getObject().getKey();            
             logger.log("[CLOUDWATCH INFO] Attempting to process file: " + fileName + " from bucket: " + bucketName);
 
             // 2. Call your separate S3 service file to download the actual JSON content string

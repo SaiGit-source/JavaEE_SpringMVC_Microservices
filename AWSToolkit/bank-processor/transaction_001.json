@@ -1,0 +1,11 @@
+{
+  "transactionId": "TXN001",
+  "customerId": "CUST1001",
+  "accountNumber": "1234567890",
+  "amount": 250.75,
+  "currency": "CAD",
+  "transactionType": "DEBIT",
+  "merchant": "Amazon Canada",
+  "status": "APPROVED",
+  "timestamp": "2026-06-02T23:55:00Z"
+}

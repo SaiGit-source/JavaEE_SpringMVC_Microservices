@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: IaC Template for the Banking Notification & Statement Processor
+
+Resources:
+  # 1. The Storage Engine (S3 Bucket)
+  BankRecordsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "secure-bank-records-saito-${AWS::AccountId}"
+
+  # 2. The Compute Engine (Java Lambda Function)
+  BankingNotificationFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java17
+      Handler: com.bank.TransactionHandler::handleRequest
+      CodeUri: target/banking-processor-1.0-SNAPSHOT.jar
+      MemorySize: 512
+      Timeout: 15
+      # Automatically attaches basic CloudWatch logging permissions
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - SNSPublishMessagePolicy:
+            TopicName: BankingAlerts
+      # 3. The Automation Link (S3 Trigger)
+      Events:
+        NewFileUploaded:
+          Type: S3
+          Properties:
+            Bucket: !Ref BankRecordsBucket
+            Events: s3:ObjectCreated:*
+            Filter:
+              Subelement:
+                Pattern:
+                  Suffix: .json
+
+Outputs:
+  BucketName:
+    Description: Your secure banking S3 bucket name
+    Value: !Ref BankRecordsBucket

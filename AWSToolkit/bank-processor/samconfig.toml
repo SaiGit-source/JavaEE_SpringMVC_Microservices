@@ -1,0 +1,10 @@
+version = 0.1
+
+[default.global.parameters]
+stack_name = "banking-notification-stack"
+region = "us-east-1"
+
+[default.sync.parameters]
+template_file = "c:\\Users\\saito\\source\\repos\\Telusko_Java_Enterprise_Spring\\JavaEE_SpringMVC_Microservices\\AWSToolkit\\bank-processor\\template.yaml"
+dependency_layer = false
+watch = true

@@ -1,0 +1,13 @@
+{
+  "transactionId": "TXN999",
+  "customerId": "CUST9001",
+  "accountNumber": "9876543210",
+  "amount": 9500.00,
+  "currency": "CAD",
+  "transactionType": "WIRE_TRANSFER",
+  "merchant": "Unknown Offshore Account",
+  "status": "REJECTED",
+  "riskScore": 98,
+  "reason": "Suspicious high-value transfer to unknown destination",
+  "timestamp": "2026-06-02T23:58:00Z"
+}

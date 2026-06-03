@@ -1,0 +1,21 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-east-1",
+      "eventTime": "2026-06-02T23:55:00.000Z",
+      "eventName": "ObjectCreated:Put",
+      "s3": {
+        "bucket": {
+          "name": "secure-bank-records-saito-2026",
+          "arn": "arn:aws:s3:::secure-bank-records-saito-2026"
+        },
+        "object": {
+          "key": "transaction_REJECTED_001.json",
+          "size": 1024
+        }
+      }
+    }
+  ]
+}
