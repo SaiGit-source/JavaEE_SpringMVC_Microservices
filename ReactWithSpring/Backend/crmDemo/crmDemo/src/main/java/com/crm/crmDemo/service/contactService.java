@@ -1,5 +1,7 @@
 package com.crm.crmDemo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +19,8 @@ public class contactService {
         return contactRepo.save(contact);
     }
 
-
-    
-
-
-
+    public List<Contact> getContacts() {
+        return contactRepo.findAll();
+    }
 
 }

@@ -16,7 +16,7 @@ public class DemoLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
         // Code to load initial data into the database
         // For example, you can create some demo contacts and save them to the database
-        contactRepo.save(new Contact("John", "Doe", "john.doe@example.com"));
+        contactRepo.save(new Contact("Dave", "Doe", "dave.doe@example.com"));
     }
 
 }

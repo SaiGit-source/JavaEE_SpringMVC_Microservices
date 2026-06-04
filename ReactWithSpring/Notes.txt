@@ -11,5 +11,38 @@ Controller => Spring. Some logic could be handled by React as well
 View => React
 
 
+Why HTTP works without a controller
+Because this backend uses Spring Data REST.
+
+Key points
+pom.xml includes:
+
+spring-boot-starter-data-jpa
+spring-boot-starter-data-rest
+com.crm.crmDemo.repo.contactRepo extends JpaRepository<Contact, Long>
+
+Spring Data REST auto-exposes repository interfaces as REST endpoints
+
+No @RestController is needed
+No manual controller class is required
+
+
+materializecss.com
+Copy the CDN section
+https://materializecss.com/getting-started.html
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+Here both Frontend and Backend are on different ports so the server wont allow that, so we permit port 3000 also
+@CrossOrigin(origins = "http://localhost:3000")
+@Repository
+public interface contactRepo extends JpaRepository<Contact, Long> { 
+    
+}
+
 
 
