@@ -1,0 +1,15 @@
+Overview of the full-stack and MVC
+
+MVC = Model-View-Controller
+
+Model is where your data resides, where you define schemas, and models for your data
+View is the visuals (HTML). Pure HTML of the application.  
+Controller is where you have the logic of the application. The functions that make your application run.
+
+Model will be handles by Spring
+Controller => Spring. Some logic could be handled by React as well
+View => React
+
+
+
+
