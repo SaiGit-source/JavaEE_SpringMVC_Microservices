@@ -7,7 +7,7 @@ export default class AddContact extends Component {
         this.lastNameRef = React.createRef();
         this.emailRef = React.createRef();
     }
-    submitContact = (event) => {
+    submitContact = async (event) => {
         event.preventDefault();
         const newContact = {
                         firstName: this.firstNameRef.current.value,
@@ -15,18 +15,24 @@ export default class AddContact extends Component {
                         email: this.emailRef.current.value
         }
         console.log(newContact);
-        fetch("http://localhost:8080/api/contacts", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newContact)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-        window.location.reload();
+        try {
+            const response = await fetch("http://localhost:8080/api/contacts", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newContact)
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            console.log('Contact created successfully:', data);
+            window.location.reload();
+        } catch (error) {
+            console.error('Error creating contact:', error);
+            alert('Error creating contact: ' + error.message);
+        }
     }
 
     render() {

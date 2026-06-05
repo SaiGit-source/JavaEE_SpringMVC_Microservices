@@ -6,9 +6,21 @@ export default function Contacts() {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/contacts')
-      .then(response => response.json())
-      .then(data => setContacts(data._embedded?.contacts || []));
+    const fetchContacts = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/api/contacts');
+        const data = await response.json();
+        console.log('Full API Response:', data);
+        console.log('Response keys:', Object.keys(data));
+        const contactList = data._embedded?.contacts || data.contacts || data;
+        console.log('Extracted contacts:', contactList);
+        console.log('Is array?', Array.isArray(contactList));
+        setContacts(Array.isArray(contactList) ? contactList : []);
+      } catch (error) {
+        console.error('Error fetching contacts:', error);
+      }
+    };
+    fetchContacts();
   }, []);
 
   return (
