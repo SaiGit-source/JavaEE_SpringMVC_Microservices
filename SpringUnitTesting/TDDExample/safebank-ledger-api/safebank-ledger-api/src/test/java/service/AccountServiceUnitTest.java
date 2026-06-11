@@ -3,6 +3,7 @@ package service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,6 +24,7 @@ import com.safebank.ledgerapi.account.dto.AccountResponse;
 import com.safebank.ledgerapi.account.dto.CreateAccountRequest;
 import com.safebank.ledgerapi.account.dto.UpdateAccountRequest;
 import com.safebank.ledgerapi.account.entity.AccountEntity;
+import com.safebank.ledgerapi.account.entity.AccountStatus;
 import com.safebank.ledgerapi.account.repository.AccountRepository;
 import com.safebank.ledgerapi.account.repository.LedgerEntryRepository;
 import com.safebank.ledgerapi.account.service.AccountService;
@@ -128,7 +131,35 @@ public class AccountServiceUnitTest {
 		assertEquals("testUpdate", result.accountHolderName());
 	}
 	
+	@Test
+	void deleteAccount_Success() {
+		AccountEntity account = getMockAccountEntity();
+		account.setBalance(BigDecimal.ZERO);
+		account.setStatus(AccountStatus.ACTIVE);
+		lenient().when(accountRepository.findByAccountNumber(account.getAccountNumber())).thenReturn(Optional.of(account));
+		lenient().when(accountRepository.save(Mockito.any(AccountEntity.class))).thenAnswer(invocation -> invocation.getArgument(0));
+		accountService.closeAccount(account.getAccountNumber());
+		assertEquals(AccountStatus.CLOSED, account.getStatus());
+		Mockito.verify(accountRepository, Mockito.times(1)).save(account);
+	}
+	
+	
+	@Test
+	void deleteAccount_Success_2() {
+	    UUID id = UUID.randomUUID();
+	    AccountEntity account = getMockAccountEntity();
+	    account.setBalance(BigDecimal.ZERO); // Ensure balance is zero
+	    Mockito.when(accountRepository.findByAccountNumber(id.toString())).thenReturn(Optional.of(account));
+	    Mockito.doAnswer(invocation -> invocation.getArgument(0))
+	           .when(accountRepository).save(Mockito.any(AccountEntity.class));
+	    accountService.closeAccount(id.toString());
+	    assertEquals(AccountStatus.CLOSED, account.getStatus());
+	    Mockito.verify(accountRepository, Mockito.times(1)).save(account);
+	}
 
+	
+
+	
 		
 	
 

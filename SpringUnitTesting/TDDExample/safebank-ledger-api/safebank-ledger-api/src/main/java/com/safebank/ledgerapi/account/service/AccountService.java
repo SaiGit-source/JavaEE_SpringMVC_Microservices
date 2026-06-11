@@ -149,6 +149,14 @@ public class AccountService {
         account.setStatus(AccountStatus.CLOSED);
         accountRepository.save(account);
     }
+    
+    
+    @Transactional
+    public void removeAccountEntry(String accountNumber) {
+        AccountEntity account = findAccount(accountNumber);
+        accountRepository.delete(account);
+    }
+
 
     public AccountEntity findAccount(String accountNumber) {
         return accountRepository.findByAccountNumber(accountNumber)
