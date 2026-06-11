@@ -56,8 +56,10 @@ public class AccountEntity {
     public AccountStatus getStatus() { return status; }
     public OffsetDateTime getCreatedAt() { return createdAt; }
 
+    public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; }
     public void setAccountHolderName(String accountHolderName) { this.accountHolderName = accountHolderName; }
     public void setEmail(String email) { this.email = email; }
     public void setBalance(BigDecimal balance) { this.balance = balance; }
     public void setStatus(AccountStatus status) { this.status = status; }
+    
 }

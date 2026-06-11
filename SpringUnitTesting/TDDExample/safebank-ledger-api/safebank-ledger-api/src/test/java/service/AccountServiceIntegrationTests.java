@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 
 import com.safebank.ledgerapi.account.dto.AccountResponse;
 import com.safebank.ledgerapi.account.dto.CreateAccountRequest;
@@ -26,6 +27,7 @@ import io.micrometer.common.util.StringUtils;
 // instead of mocking, we will use the Embedded database H2, and we are running the actual seed .sql scripts on H2
 @SpringBootTest(classes = com.safebank.ledgerapi.LedgerApiApplication.class)
 @ActiveProfiles("test")
+@TestPropertySource(locations = "classpath:application-test.properties")
 //@AutoConfigureTestDatabase(replace=Replace.ANY)
 public class AccountServiceIntegrationTests {
 	
