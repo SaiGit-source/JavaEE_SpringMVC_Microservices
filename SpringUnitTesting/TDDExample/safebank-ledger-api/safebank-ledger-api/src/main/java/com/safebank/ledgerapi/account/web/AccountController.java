@@ -2,8 +2,11 @@ package com.safebank.ledgerapi.account.web;
 
 import com.safebank.ledgerapi.account.dto.*;
 import com.safebank.ledgerapi.account.service.AccountService;
+
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -73,4 +76,28 @@ public class AccountController {
     public void closeAccount(@PathVariable String accountNumber) {
         accountService.closeAccount(accountNumber);
     }
+    
+    
+    /**
+     * Extracts the "userEmail" attribute that was previously attached 
+     * to the HTTP request by an upstream filter or interceptor.
+     */
+    @GetMapping("/profile")
+    public String getProfileContext(@RequestAttribute("userEmail") String email) {
+        // Business logic running against the secure request attribute
+        return "Secure session active for account user: " + email;
+    }
+    
+    
+    @GetMapping("/profile1")
+    public ResponseEntity<String> getProfileWithEntity(HttpServletRequest request) {
+        // 1. Pull the attribute out of the incoming request
+        String email = (String) request.getAttribute("userEmail");
+        
+        // 2. Wrap it inside a standard ResponseEntity container
+        return ResponseEntity.ok()
+                .header("X-Account-Context", "Verified")
+                .body("Active Account Profile for: " + email);
+    }
+    
 }

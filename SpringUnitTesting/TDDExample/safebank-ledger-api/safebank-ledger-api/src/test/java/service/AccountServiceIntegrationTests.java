@@ -28,7 +28,7 @@ import io.micrometer.common.util.StringUtils;
 @SpringBootTest(classes = com.safebank.ledgerapi.LedgerApiApplication.class)
 @ActiveProfiles("test")
 @TestPropertySource(locations = "classpath:application-test.properties")
-//@AutoConfigureTestDatabase(replace=Replace.ANY)
+//@AutoConfigureTestDatabase(replace=Replace.ANY) //Not working for some reasons 
 public class AccountServiceIntegrationTests {
 	
 	@Autowired
